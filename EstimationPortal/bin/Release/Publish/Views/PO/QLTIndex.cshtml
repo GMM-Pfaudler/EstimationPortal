@@ -1,0 +1,160 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    ViewBag.Title = "Supplier Inspection Offer List";
+}
+
+@*<img src="~/Images/um.jpg" style="width:100%;height:auto"/>*@
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <p class="col-sm-2 border-left-primary bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                    @Html.ActionLink("Create New", "QLTCreate", null, new { @class = "text-primary" }) 
+                </p> 
+                <input type="button" id="BulkSubmit" value="Submit All" class="btn btn-sm  btn-outline-primary col-sm-2 font" />
+                <input type="button" id="BulkDelete" value="Delete All" class="btn btn-sm  btn-outline-danger col-sm-2 font" /> 
+                <br />  
+                @{Html.RenderPartial("_Loading");}
+                <div id="myPartialDash">
+                    @{Html.RenderPartial("_POSummry", Model);}
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+   
+    <script>
+        $(document).ready(function ()
+        { 
+            Summarydata(); 
+        });
+            $('#CBox1').click(function () {
+                debugger
+                $('.checkBox').prop('checked', this.checked)
+            });
+
+            $('#btn_search').click(function ()
+            {
+                let PONumbr = $("#search_PONumbr").val();
+                $.ajax({
+                    traditional: true,
+                    url: "@Url.Action("GetPOTableData", "PO")",
+                    data: { 'PONumbr': PONumbr},
+                    type: "Get",
+                    dataType: "html",
+                    success: function (data) {
+                        $("#myPartialDash").html(data);
+                        Summarydata();
+                    }
+                })
+            })
+            function Summarydata() {
+                $.fn.dataTable.moment('DD-MMM-YYYY');
+                var table = $('#dataTable2').DataTable({
+                    orderCellsTop: true,
+                    "order": [[3, 'desc']],
+                    "lengthMenu": [[10, 100, -1], [10, 100, "All"]],
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            exportOptions: {
+                                columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,18]
+                            },
+                            filename: function () {
+                                var d = new Date().toISOString().split('T')[0];
+                                return 'POListMasters_' + d;
+                            }
+                        }
+                    ]
+
+                }); 
+            }
+            $("body").on("click", "#BulkSubmit", function () {
+                $("#imgLoading").show();
+                $("#BulkSubmit").hide();
+                $("#BulkDelete").hide();
+                UpdateRecord();
+            });
+            $("body").on("click", "#BulkDelete", function () {
+                $("#imgLoading").show();
+                $("#BulkSubmit").hide();
+                $("#BulkDelete").hide();
+                DeleteRecord();
+                
+            });
+
+            function UpdateRecord() {
+                debugger 
+                var oTable = $('#dataTable2').dataTable(); 
+                var selectedIDs = new Array();
+                oTable.$('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val()); 
+                    }
+                });
+                var options = {};
+                options.url = "/PO/BulkSubmit";
+                options.type = "POST";
+                options.data = JSON.stringify(selectedIDs);
+                options.contentType = "application/json";
+                options.dataType = "json";
+                options.success = function (data) {
+                    $("#imgLoading").hide();
+                    $("#BulkSubmit").show();
+                    $("#BulkDelete").show();
+                    alert("Selected Records " + data.msg);
+                    location.reload();
+                };
+                options.error = function () {
+                    $("#imgLoading").hide();
+                    $("#BulkSubmit").show();
+                    $("#BulkDelete").show();
+                    alert("Error or Select record first!");
+                };
+                $.ajax(options);
+            }
+            function DeleteRecord() {
+                debugger
+                var oTable = $('#dataTable2').dataTable(); 
+                var selectedIDs = new Array();
+                oTable.$('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val()); 
+                    }
+                });
+                var options = {};
+                options.url = "/PO/BulkDelete";
+                options.type = "POST";
+                options.data = JSON.stringify(selectedIDs);
+                options.contentType = "application/json";
+                options.dataType = "json";
+                options.success = function (data) {
+                    $("#imgLoading").hide();
+                    $("#BulkSubmit").show();
+                    $("#BulkDelete").show();
+                    alert("Selected Record " + data.msg);
+                    location.reload();
+                };
+                options.error = function () {
+                    $("#imgLoading").hide();
+                    $("#BulkSubmit").show();
+                    $("#BulkDelete").show();
+                    alert("Error or Select record first!");
+                    location.reload();
+                };
+                $.ajax(options);
+            }
+        
+    </script>
+}
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SUP_CORE.DTO.RevHistoryDTO>
+@{
+    Layout = null;
+}
+<div class="table-responsive font">
+    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-wrap small">
+                <th  style="display:none">ID</th> 
+                <th>DocName</th>
+                <th>Rev</th>
+                <th>Planned Sub. Date</th>
+                <th>Actual Sub. Date</th> 
+                <th>Rev File</th>
+                <th>Rec Date</th>
+                <th>Rec File</th>  
+            </tr>
+        </thead>
+        <tbody class="text-nowrap">
+            @foreach (var item in Model)
+            { 
+                <tr class="nowrap small" style="text-transform: uppercase;">
+                    <td style="display:none">@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DocName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Rev)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PlannedSubDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ActualSubDate)</td>
+                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.RevFileName })</td>
+                    <td>@Html.DisplayFor(modelItem => item.RecDate)</td>
+                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.RecFileName })</td> 
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

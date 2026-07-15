@@ -1,0 +1,148 @@
+﻿@using DocManagement.Models
+@model LoginViewModel
+@{
+    /**/
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="~/Content/css/sb-admin-2.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-primary" style="        margin-top: 50px;
+        background-image: url('../../Images/bgimg_white_crystal.jpg');
+">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-md-around my-4">
+            <div class="col-xl-12 col-lg-5 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "user", role = "form" }))
+                        {
+                            @Html.HiddenFor(m => m.Location, new { id = "loc" })
+                            @Html.HiddenFor(m => m.Uip, new { id = "Uip" })
+                            <div class="row">
+                                <div class="col-lg-7 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-5">
+                                    <div class="p-5">
+                                        @*@ViewBag.userIpAddress4*@ 
+                                        <div class="row justify-content-center p-3"><img class="" src="~/Images/Logo_180X46.png" alt="lgCmpny"></div>
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <form>
+                                            <div class="form-group">
+                                                <div class="col-12">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-sm" id="UserID" aria-describedby="UsrHelp" placeholder="Enter UserName..." name="UserID" autocomplete="off" required>
+                                                        @Html.ValidationMessageFor(m => m.UserID, "", new { @class = "text-danger small  font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-12">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                                        </div>
+                                                        <input name="password" type="password" value="" class="form-control form-control-sm" id="password" placeholder="password" required="true" aria-label="password" aria-describedby="basic-addon1" autocomplete="off" />
+                                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger small  font-weight-bold" })
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" onclick="password_show_hide();">
+                                                                <i class="fas fa-eye" id="show_eye"></i>
+                                                                <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit" id="submit" class="btn btn-primary btn-user btn-block" value="btnLogIn">
+                                                    LogIn
+                                                </button>
+                                            </div>
+                                            <hr />
+                                            <h6 class="text-center">OR</h6>
+                                            <div class="col-md-12">
+                                                <a class="btn btn-outline-primary btn-user btn-block" href="/Account/LoginWithOTP">Login With OTP</a>
+                                            </div>
+                                            <hr>
+                                            <div class="text-center mb-1">
+                                                <a class="small text-primary" href="/Account/ForgotPassword">Forgot Password?</a>
+                                            </div>
+
+                                            <div class="text-center">
+                                                <p class="small text-primary">For support contact in case any technical issue: <u>notification@gmmpfaudler.com</u></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input style="visibility:hidden" type="text" id="Uip1" name="Uip1" value=@ViewBag.userIpAddress4>
+</body>
+</html>
+<script type="text/javascript">
+    function password_show_hide() {
+        var x = document.getElementById("password");
+        var show_eye = document.getElementById("show_eye");
+        var hide_eye = document.getElementById("hide_eye");
+        hide_eye.classList.remove("d-none");
+        if (x.type === "password") {
+            x.type = "text";
+            show_eye.style.display = "none";
+            hide_eye.style.display = "block";
+        } else {
+            x.type = "password";
+            show_eye.style.display = "block";
+            hide_eye.style.display = "none";
+        }
+    }
+</script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>*@
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script>
+    debugger
+   // $("#Uip").val($("#Uip1").val());
+    var LocationStatus = "";
+    function askForLocation() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    LocationStatus = "granted";
+                    $("#loc").val(LocationStatus);
+                    $("#Uip").val($("#Uip1").val());
+                },
+                function (error) {
+                    alert("Location access required. Please allow access to your location.");
+                    LocationStatus = "denied";
+                    $("#loc").val(LocationStatus);
+                    $("#Uip").val($("#Uip1").val());
+                }
+            );
+        }
+    }
+    window.onload = askForLocation;
+
+
+
+</script>
+

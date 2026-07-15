@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Create Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/NewDesignEffects.css" rel="stylesheet">
+@using (Html.BeginForm("RoleCreate", "UserMaster", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+<div id="content">
+    <div class="content-wrapper">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="page-title">
+                <h2>@ViewBag.Title</h2>
+                <div class="breadcrumb-custom">Master / Role Master / @ViewBag.Title</div>
+            </div>
+            <a href="@Url.Action("RoleIndex", "UserMaster")" class="btn-animate-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to List</span>
+            </a>
+        </div>
+        <div class="container-scroller">
+            <div class="border-0 col-md-12">
+                <div class="card-body">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("RoleName", "Role Name", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("Role", null, new { @id = "RoleName", @class = "form-control form-control-sm", @AutoComplete = "Off" })
+                                                @Html.ValidationMessage("Role", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-md-12" style="margin-top:10px;">
+            <div class="col-md-offset-2 col-md-12" align="center">
+                <input type="submit" value="Create" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+</div>
+    }
+

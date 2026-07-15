@@ -1,0 +1,657 @@
+﻿@model List<SUP_CORE.EFModelViews.InqListViewModel>
+@{
+    ViewBag.Title = "Inquiry Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var today = DateTime.Today;
+    var tomorrow = today.AddDays(1);
+}
+<style>
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .select2-selection--single {
+        height: 38px !important;
+        padding-top: 4px;
+    }
+
+    .row-highlight {
+        background-color: #ff000080; /* light red */
+    }
+
+        .row-highlight:hover {
+            background-color: #ff000080 !important;
+        }
+
+    /*.custom-table_scroll {
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+        white-space: nowrap;
+    }*/
+
+    .table-custom td {
+        font-size: 0.9rem;
+        color: #334155;
+        word-wrap: break-word;
+    }
+   
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-4">
+        <div class="d-flex justify-content-between align-items-center page-header-container mb-4">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Reports</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Inquiry Register</li>
+                    </ol>
+                </nav>
+            </div>
+            @*<div class="d-flex gap-2">
+                    <button onclick="exportToExcel()" class="btn btn-success shadow-sm rounded-pill px-4 fw-bold">
+                        <i class="fas fa-file-excel me-2"></i> DOWNLOAD EXCEL
+                    </button>
+                </div>*@
+        </div>
+        <div class="row g-3 mb-4 no-print">
+        </div>
+        <div class="report-container p-4 mb-4 no-print">
+            @*<form method="get" class="row g-3 align-items-end" id="filterForm">
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Project</label>
+                        <select id="ProjectNumber" name="ProjectNo" class="form-control form-control-custom">
+                            <option value="">All Projects</option>
+                            @foreach (var project in ViewBag.ProjectNoList)
+                            {
+                                <option value="@project.Value" selected="@(ViewBag.SelectedProjectNo == project.Value)">
+                                    @project.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Inquiry Type</label>
+                        <select id="InqTypeId" name="InqType" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.InqTypeList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedInqType == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Dom / Exp</label>
+                        <select id="DomExpId" name="DomExp" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.DomExpList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedDomExp == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Enquiry Status</label>
+                        <select id="EnqStatusId" name="EnqStatus" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.EnqStatusList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedEnqStatus == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Due Date</label>
+                        @Html.TextBox("DueDate", "{0:yyyy-MM-dd}", new { name = "DueDate", type = "date", @class = "form-control custom-input" })
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Thermal Engineer</label>
+                        <select id="ThEid" name="ThEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.TEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedThEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Praposal Engineer</label>
+                        <select id="PrEid" name="PrEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.PEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedPrEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Estimation Engineer</label>
+                        <select id="EstEid" name="EstEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.EEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedEstEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex gap-2">
+                        <button type="submit" class="btn btn-primary w-100 fw-bold  rounded-pill shadow-sm">
+                            <i class="fas fa-filter me-2"></i> Apply Filter
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn btn-light border w-100 fw-bold  rounded-pill shadow-sm" style="margin-left:15px;">
+                            <i class="fas fa-redo me-2"></i> Clear
+                        </a>
+                    </div>
+
+
+                </form>*@
+            <form method="get" class="container-fluid" id="filterForm">
+
+                <div class="row g-3">
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Project</label>
+                        <select id="ProjectNumber" name="ProjectNo" class="form-control form-control-custom">
+                            <option value="">All Projects</option>
+                            @foreach (var project in ViewBag.ProjectNoList)
+                            {
+                                <option value="@project.Value" selected="@(ViewBag.SelectedProjectNo == project.Value)">
+                                    @project.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Inquiry Type</label>
+                        <select id="InqTypeId" name="InqType" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.InqTypeList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedInqType == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Dom / Exp</label>
+                        <select id="DomExpId" name="DomExp" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.DomExpList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedDomExp == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Enquiry Status</label>
+                        <select id="EnqStatusId" name="EnqStatus" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.EnqStatusList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedEnqStatus == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Due Date</label>
+                        @Html.TextBox(
+                            "DueDate",
+                            null,
+                            new
+                                 {
+                                name = "DueDate",
+                                type = "date",
+                                @class = "form-control custom-input"
+                            })
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label small fw-bold">Thermal Engineer</label>
+                        <select id="ThEid" name="ThEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.TEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedThEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 mt-3">
+                        <label class="form-label small fw-bold">Proposal Engineer</label>
+                        <select id="PrEid" name="PrEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.PEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedPrEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 mt-3">
+                        <label class="form-label small fw-bold">Estimation Engineer</label>
+                        <select id="EstEid" name="EstEngg" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.EEList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedEstEngg == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 mt-3">
+                        <label class="form-label small fw-bold">Project Status</label>
+                        <select id="ProjStatusId" name="ProjStatus" class="form-control form-control-custom">
+                            <option value="">All</option>
+                            @foreach (var sp in ViewBag.ProjStatusList)
+                            {
+                                <option value="@sp.Value" selected="@(ViewBag.SelectedProjStatus == sp.Value)">
+                                    @sp.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit"
+                                class="btn btn-primary fw-bold rounded-pill shadow-sm w-100">
+                            <i class="fas fa-filter me-2"></i> Apply Filter
+                        </button>
+                    </div>
+
+                    <div class="col-md-2 d-flex align-items-end">
+                        <a href="@Url.Action("Index")"
+                           class="btn btn-light border fw-bold rounded-pill shadow-sm w-100">
+                            <i class="fas fa-redo me-2"></i> Clear
+                        </a>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div class="report-container overflow-hidden">
+            <div class="custom-table_scroll">
+                <table class="table table-hover mb-0 table-custom" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>SF No</th>
+                            <th>Project No</th>
+                            <th>Sales Person</th>
+                            <th>Inquiry Receipt Date</th>
+                            <th>Inquiry Type</th>
+                            <th>Dom / Exp</th>
+                            <th>Due Date</th>
+                            <th>Actual Submission Date</th>
+                            <th>Sub Type</th>
+                            <th>Enquiry Status</th>
+                            <th>End User / Client</th>
+                            <th>EPC / Licensor</th>
+                            <th>Equipment Type</th>
+                            <th>Tag Qty</th>
+                            <th>Total Qty</th>
+                            <th>Major MOC</th>
+                            <th>Design Scope</th>
+                            <th>TE</th>
+                            <th>PE</th>
+                            <th>EE</th>
+                            <th>TQ No</th>
+                            <th>TQ Received Date</th>
+                            <th>TQ Due Date</th>
+                            <th>TQ Submission Date</th>
+                            <th>Project Received Date</th>
+                            <th>Project Status</th>
+                            <th>Value (in RS)</th>
+                            <th>Remarks</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                var highlight = item.DueDate.HasValue
+                                         && !item.ActualSubDate.HasValue
+                                         && item.DueDate.Value.Date <= tomorrow;
+                                <tr>
+                                    <td>@item.SFNo</td>
+                                    <td>@item.ProjectNo</td>
+                                    <td>@item.SalesPerson</td>
+                                    <td>
+                                        @(item.InqReceiptDate.HasValue
+                                        ? item.InqReceiptDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.InqReceiptDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.InqReceiptDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>@item.InqType</td>
+                                    <td>@item.DomExp</td>
+                                    <td>
+                                        @(item.DueDate.HasValue
+                                        ? item.DueDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.DueDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.DueDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @(item.ActualSubDate.HasValue
+                                            ? item.ActualSubDate.Value.ToString("dd-MM-yyyy")
+                                            : "-")
+                                        @if (item.ActualSubDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.ActualSubDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>@item.SubType</td>
+                                    <td style="
+                                            background-color:@(
+                                                (item.DueDate.HasValue
+                                                    && !item.ActualSubDate.HasValue
+                                                    && item.DueDate.Value.Date <= tomorrow)
+                                                    ? "red"
+                                                    : item.EnqStatus == "Completed" ? "lightgreen"
+                                                    : item.EnqStatus == "Hold" ? "#ff000080"
+                                                    : item.EnqStatus == "Regret" ? "orange"
+                                                    : item.EnqStatus == "Bid/No Bid decision pending" ? "#90ee9063"
+                                                    : item.EnqStatus == "Query Res. Pending" ? "#e9595975"
+                                                    : item.EnqStatus == "Revision" ? "#8080805e"
+                                                    : item.EnqStatus == "Need to Discuss with sales" ? "yellow"
+                                                    : "transparent"
+                                            );
+                                            color:@(
+                                                (item.DueDate.HasValue
+                                                    && !item.ActualSubDate.HasValue
+                                                    && item.DueDate.Value.Date <= tomorrow)
+                                                    ? "white"
+                                                    : "black"
+                                            );
+                                        ">
+                                        @item.EnqStatus
+                                    </td>
+                                    <td>@item.Client</td>
+                                    <td>@item.EPC</td>
+                                    <td>@item.EquipType</td>
+                                    <td>@item.TagQty</td>
+                                    <td>@item.TotalQty</td>
+                                    <td>@item.MajorMOC</td>
+                                    <td>@item.DesignScope</td>
+                                    <td>@item.TE</td>
+                                    <td>@item.PE</td>
+                                    <td>@item.EE</td>
+                                    <td>@item.TqNo</td>
+                                    <td>
+                                        @(item.TqReceivedDate.HasValue
+                                        ? item.TqReceivedDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.TqReceivedDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.TqReceivedDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @(item.TqDueDate.HasValue
+                                        ? item.TqDueDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.TqDueDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.TqDueDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @(item.TqSubDate.HasValue
+                                        ? item.TqSubDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.TqSubDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.TqSubDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @(item.ProjReceivedDate.HasValue
+                                        ? item.ProjReceivedDate.Value.ToString("dd-MM-yyyy")
+                                        : "-")
+                                        @if (item.ProjReceivedDate.HasValue)
+                                        {
+                                            <span style="display:none;">@item.ProjReceivedDate.Value.ToString("yyyy-MM-dd")</span>
+                                        }
+                                    </td>
+                                    <td>@item.ProjStatus</td>
+                                    <td>@item.RsValue</td>
+                                    <td>@item.Remarks</td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+@section scripts {
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css">
+    <script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#ProjectNumber').select2({
+            });
+        });
+
+        $(document).ready(function () {
+            var table = $('#dataTable').DataTable({
+                pageLength: 15,
+                lengthMenu: [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]],
+                dom: '<"row px-4 pt-2"<"col-sm-12 col-md-6"B><"col-sm-12 col-md-6"f>>rt<"row px-4 pb-2"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+                // 1. Enable the FixedHeader feature
+                fixedHeader: {
+                    header: true,
+                    headerOffset: 0 // Adjust this if you have a top navigation bar
+                },
+
+                // --- SCROLLING CONFIGURATION ---
+                scrollY: "400px",  // Fixes the header vertically after 400px
+                scrollX: true,     // Enables horizontal scrolling
+                scrollCollapse: true,     // Collapses the container height if there are fewer rows
+                paging: true,
+
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Export',
+                        className: 'btn btn-success btn-sm',
+                        filename: function () {
+                            var d = new Date();
+                            var day = String(d.getDate()).padStart(2, '0');
+                            var month = String(d.getMonth() + 1).padStart(2, '0');
+                            var year = d.getFullYear();
+
+                            return 'InquiryReport_' + day + '-' + month + '-' + year;
+                        },
+                        exportOptions: {
+                            columns: ':visible',
+                            // This forces DataTables to strip HTML but leaves data intact
+                            format: {
+                                body: function (data, row, column, node) {
+                                    // Check if the cell contains a hidden ISO date span
+                                    var hasDate = $(node).find('span');
+                                    if (hasDate.length > 0) {
+                                        return hasDate.text(); // Returns 'yyyy-MM-dd'
+                                    }
+                                    return data;
+                                }
+                            }
+                        },
+                        // This tells Excel to format these columns as actual Dates
+                        customize: function (xlsx) {
+                            var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                            // Loop through the cells to find dates in yyyy-MM-dd format and apply Excel date formatting
+                            $('row c', sheet).each(function () {
+                                var cellText = $(this).text();
+
+                                // Regular expression to match yyyy-MM-dd
+                                if (window.RegExp(/^\d{4}-\d{2}-\d{2}$/).test(cellText)) {
+                                    $(this).attr('t', 'd'); // Set type to Date
+                                    // Optional: Apply an Excel date style index if needed,
+                                    // but 't=d' is usually enough for Excel to activate its date filters.
+                                }
+                            });
+                        }
+                    }
+                ],
+                language: {
+                    search: "",
+                    searchPlaceholder: "Search...",
+                    lengthMenu: "_MENU_ per page"
+                },
+                ordering: true,
+                responsive: false
+            });
+
+            $('.dataTables_filter input').addClass('form-control shadow-sm border-0 bg-light').css({
+                borderRadius: '10px',
+                padding: '8px 15px',
+                width: '250px'
+            });
+
+            $('.dataTables_length select').addClass('form-select-sm border-0 bg-light shadow-sm').css({
+                borderRadius: '8px',
+                margin: '0 10px'
+            });
+        });
+    </script>
+}
+<script>
+    //async function exportToExcel() {
+    //    const workbook = new ExcelJS.Workbook();
+    //    const worksheet = workbook.addWorksheet('Inquiry');
+
+    //    // 1. Define Column Widths (11 Columns: A to K)
+    //    worksheet.columns = [
+    //        { header: 'SF No', key: 'SFNo', width: 15 },
+    //        { header: 'Project No', key: 'pno', width: 20 },
+    //        { header: 'Sales Person', key: 'sp', width: 50 },
+    //        { header: 'Inquiry Receipt Date', key: 'ird', width: 15 },
+    //        { header: 'Inquiry Type', key: 'it', width: 15 },
+    //        { header: 'Dom / Exp', key: 'de', width: 15 },
+    //        { header: 'Due Date', key: 'dd', width: 15 },
+    //        { header: 'Actual Submission Date', key: 'asd', width: 15 },
+    //        { header: 'Sub Type', key: 'st', width: 15 },
+    //        { header: 'Enquiry Status', key: 'es', width: 15 },
+    //        { header: 'End User / Client', key: 'client', width: 50 },
+    //        { header: 'EPC / Licensor', key: 'el', width: 25 },
+    //        { header: 'Equipment Type', key: 'et', width: 20 },
+    //        { header: 'Tag Qty', key: 'tq', width: 10 },
+    //        { header: 'Total Qty', key: 'totq', width: 10 },
+    //        { header: 'Major MOC', key: 'moc', width: 25 },
+    //        { header: 'Design Scope', key: 'dc', width: 10 },
+    //        { header: 'TE', key: 'te', width: 10 },
+    //        { header: 'PE', key: 'pe', width: 10 },
+    //        { header: 'EE', key: 'ee', width: 10 },
+    //        { header: 'TQ No', key: 'tn', width: 15 },
+    //        { header: 'TQ Received Date', key: 'trd', width: 15 },
+    //        { header: 'TQ Due Date', key: 'tdd', width: 15 },
+    //        { header: 'TQ Submission Date', key: 'tsd', width: 15 },
+
+    //        { header: 'Project Received Date', key: 'prd', width: 15 },
+    //        { header: 'Project Status', key: 'pst', width: 15 },
+    //        { header: 'Value (in RS)', key: 'rsval', width: 25 },
+    //        { header: 'Remarks', key: 'rm', width: 50 },
+
+
+    //    ];
+
+    //    // 2. Add Title Row at Row 1
+    //    worksheet.spliceRows(1, 0, ['Inquiry Report']);
+
+    //    // Merge across all 11 columns (A to K)
+    //    worksheet.mergeCells('A1:AB1');
+
+    //    // Style Title Row
+    //    const titleRow = worksheet.getRow(1);
+    //    titleRow.height = 30;
+    //    titleRow.getCell(1).font = { size: 16, bold: true };
+    //    titleRow.getCell(1).alignment = { vertical: 'middle', horizontal: 'center' };
+
+    //    // 3. Get Data from your HTML table
+    //    let table = document.getElementById("reportTable");
+    //    let rows = table.querySelectorAll("tbody tr");
+
+    //    rows.forEach(row => {
+    //        let rowData = [];
+    //        row.querySelectorAll("td").forEach(cell => {
+    //            rowData.push(cell.innerText.trim());
+    //        });
+    //        worksheet.addRow(rowData);
+    //    });
+
+    //    // 4. Style the Header Row (Now Row 2)
+    //    const headerRow = worksheet.getRow(2);
+    //    headerRow.font = { bold: true };
+    //    headerRow.eachCell((cell) => {
+    //        cell.fill = {
+    //            type: 'pattern',
+    //            pattern: 'solid',
+    //            fgColor: { argb: 'FFE0E0E0' } // Light Grey
+    //        };
+    //        cell.border = {
+    //            top: { style: 'thin' },
+    //            left: { style: 'thin' },
+    //            bottom: { style: 'thin' },
+    //            right: { style: 'thin' }
+    //        };
+    //        cell.alignment = { vertical: 'middle', wrapText: true };
+    //    });
+
+    //    // 5. Generate and Download
+    //    const buffer = await workbook.xlsx.writeBuffer();
+    //    const fileName = "Inquiry_Report_" + new Date().toISOString().slice(0, 10) + ".xlsx";
+    //    saveAs(new Blob([buffer]), fileName);
+    //}
+</script>

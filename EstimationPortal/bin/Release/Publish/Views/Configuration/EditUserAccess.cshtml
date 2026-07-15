@@ -1,0 +1,67 @@
+﻿@model  List<SUP_CORE.EFModel.UserAccessMaster>
+@using SUP_CORE.EFModel;
+
+@{
+    ViewBag.Title = "Edit User Access";
+
+}
+
+<div class="content-wrapper">
+    <div class="container-scroller">
+        <div class="card border-0">
+            <div class="card-body ">
+                <h5 class="font-weight-bold" style="margin-top:5px;">Select Role</h5>
+                @Html.DropDownList("RoleList", null, "-Select-", htmlAttributes: new { @class = "form-control" })
+                <div id="formEditUserAccess">
+
+                </div>
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                    <script>
+                        debugger
+                        $(document).ready(function () {
+                            $("#RoleList").select2().show();
+                        });
+                        $(function () {
+                            $("#RoleList").change(function () {
+                                debugger
+                                var RType = $("#RoleList option:selected").text();
+                                if (RType != null || RType != undefined) {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/Configuration/GetUserAccessDetails",
+                                        data: { "RType": RType },
+                                        //contentType: "application/json; charset=utf-8",
+                                        dataType: "html",
+                                        success: function (response) {
+                                            $("#formEditUserAccess").html(response);
+                                        }
+                                    });
+
+                                }
+                            });
+
+
+                        });
+
+                        function edituseraccessform() {
+                            var data = $("#userAccessForm").serialize();
+                            $.ajax({
+                                type: "POST",
+                                url: "/Configuration/EditUserAccess",
+                                data: data,
+                                //contentType: "application/json; charset=utf-8",
+                                dataType: "html",
+                                success: function (response) {
+                                    $("#formEditUserAccess").html(response);
+                                    alert("Updated Successfully!!!")
+                                }
+                            });
+                        }
+
+                    </script>
+                }
+            </div>
+        </div>
+    </div>
+</div>

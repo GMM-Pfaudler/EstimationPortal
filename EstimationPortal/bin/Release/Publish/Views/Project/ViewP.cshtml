@@ -1,0 +1,445 @@
+﻿@model SUP_CORE.DTO.ProjectEditViewModel
+
+@{
+    ViewBag.Title = "View Details";
+    var pid = ViewBag.pid as int?;
+}
+@using (Html.BeginForm("ViewP", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "IndexP", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0 col-md-12">
+                <div class="card-body">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <p class="col-sm-12 border-left-primary bg-whiteDark m-2" align="left" style="margin-top:10px;padding:5px;">
+                                        Project Details:
+                                    </p>
+                                    @Html.HiddenFor(m => m.Project.Id, new { @class = "form-control form-control-sm", @autocomplete = "off" })
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PO", "PO Number", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.PO, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("PO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Client", "Client Name", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.Client, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("Client", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("SO", "SO Number", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.SO, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("SO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QTY", "Qty", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.QTY, new { @class = "form-control form-control-sm", @autocomplete = "off", @Type = "number", @readonly = "readonly" })
+                                                @Html.ValidationMessage("QTY", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Facility", "Facility", htmlAttributes: new { @class = "control-label" })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.DropDownListFor(m => m.Project.Facility, new[]{
+                                                   new SelectListItem{ Text = "Karamsad", Value ="Karamsad" },
+                                                   new SelectListItem{ Text = "Ahmedabad", Value ="Ahmedabad" },
+                                                   new SelectListItem{ Text = "Hydrabad", Value ="Hydrabad" }
+                                               }, null, new { @class = "form-control form-control-sm font padding-drop", @disabled = "disabled" })
+                                                @Html.ValidationMessage("Facility", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("StartDate", "Start Date", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.StartDate, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "date", @readonly = "readonly" })
+                                                @Html.ValidationMessage("StartDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("EndDate", "End Date", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.EndDate, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "date", @readonly = "readonly" })
+                                                @Html.ValidationMessage("EndDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("TurnAroundDays", "Doc Turnaround (Days)", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.TurnAroundDays, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "number", @readonly = "readonly" })
+                                                @Html.ValidationMessage("TurnAroundDays", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PMOUsers", "PMO Users", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.PMOUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("PMOUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QLTUsers", "Quality Users", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.QLTUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("QLTUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("WLDUsers", "Welding Users", htmlAttributes: new { @class = "control-label " })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.WLDUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("WLDUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("ENGUsers", "Engineering Users", htmlAttributes: new { @class = "control-label" })
+
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Project.ENGUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("ENGUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="col-sm-12 border-left-primary bg-whiteDark m-2" align="left" style="margin-top:10px;padding:5px;">
+                                    Documents Details:
+                                </p>
+                                <!--new table-->
+
+                                <div class="table-responsive font">
+                                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr class="text-nowrap small">
+                                                <th class="control-label">Doc Name</th>
+                                                <th class="control-label">GMM Doc Number</th>
+                                                <th class="control-label">Client Doc Number</th>
+                                                <th class="control-label">Discipline</th>
+                                                <th class="control-label">Doc Category</th>
+                                                <th class="control-label">Planned Sub. Date</th>
+                                                <th class="control-label">Rev</th>
+                                                <th class="control-label">Status</th>
+                                                <th class="control-label">Doc</th>
+                                                <th class="control-label">Rec. Doc</th>
+                                                <th class="control-label">Rev. History</th>
+                                                <th class="control-label">Remarks</th>
+                                                @if (Session["Dept"].ToString() == "PMO")
+                                                {
+                                                    <th class="control-label">Action</th>
+                                                    <th class="control-label">Rev. Doc</th>
+                                                    <th class="control-label">Remarks</th>
+                                                }
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var doc in Model.DocMasters.Select((item, index) => new { item, index }))
+                                            {
+                                            <tr class="nowrap small">
+                                                @Html.Hidden("DocMasters[" + doc.index + "].Id", doc.item.Id, new { @class = "form-control form-control-sm" })
+                                                <td>@Html.DisplayFor(modelItem => doc.item.DocName)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.GMMDocNumber)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.ClientDocNumber)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.Discipline)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.DocCategory)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.PlannedSubDate)</td>
+                                                <td>@Html.DisplayFor(modelItem => doc.item.Rev)</td>
+                                                @if (doc.item.SID == 1)
+                                                {
+                                                    <td><b id="Pendingstatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                }
+                                                else if (doc.item.SID == 2)
+                                                {
+                                                    <td><b id="Primarystatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.FileName })</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                }
+                                                else if (doc.item.SID == 3)
+                                                {
+                                                    <td><b id="Primarystatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.FileName })</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                }
+                                                else if (doc.item.SID == 4)
+                                                {
+                                                    <td><b id="Pendingstatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.FileName })</td>
+                                                    <td id="blinking-text" class="blinking-text" style="color:darkred;">@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.RevFileName }, new { style = "color:red;" })</td>
+                                                    <td id="blinking-text" class="blinking-text" style="color:darkred;">@Html.ActionLink("Rev. History", "RevHistory", "Project", new { id1 = doc.item.Id }, new { style = "color:darkblue;" })   </td>
+                                                }
+                                                else if (doc.item.SID == 5)
+                                                {
+                                                    <td><b id="Rejectstatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.FileName })</td>
+                                                    <td id="blinking-text1" class="blinking-text" style="color:darkred;">@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.RevFileName }, new { style = "color:red;" })</td>
+                                                    <td id="blinking-text" class="blinking-text" style="color:darkred;">@Html.ActionLink("Rev. History", "RevHistory", "Project", new { id1 = doc.item.Id }, new { style = "color:darkblue;" })   </td>
+                                                }
+                                                else if (doc.item.SID == 6)
+                                                {
+                                                    <td><b id="Approvedstatus">@Html.DisplayFor(modelItem => doc.item.StatusName)</b></td>
+                                                    <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = doc.item.FileName })</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                }
+                                                <td style = "min-width:190px">@Html.DisplayFor(modelItem => doc.item.Remarks )</td>
+                                                @if (Session["Dept"].ToString() == "PMO" && (doc.item.SID == 2 || doc.item.SID == 3))
+                                                {
+                                                    <td>
+                                                        @Html.DropDownList("StatusMasterList_" + doc.index, ViewBag.StatusMasterList as SelectList, "-Status-", htmlAttributes: new { @id = "StatusMasterList" + doc.index, @class = "form-control form-control-sm", @autocomplete = "off", @style = "min-width:100px" })
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" name="fileUploader_@doc.index" style="max-width:190px" />
+                                                    </td>
+                                                    <td>
+                                                        @Html.TextArea("DocMasters[" + doc.index + "].Remarks", doc.item.Remarks, new { @class = "form-control form-control-sm", @autocomplete = "off", @style = "min-width:190px" })
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                }
+
+
+
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!--new table end-->
+                                <!-- Display DocMasters details -->
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-md-12">
+            <div class="col-md-offset-2 col-md-12" align="center">
+                <input type="submit" value="Update" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+        //    var fileName = document.getElementById("file").files[0].name;
+        //    var nextSibling = e.target.nextElementSibling
+        //    nextSibling.innerText = fileName;
+        //});
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            var blinkElements = document.querySelectorAll('.blinking-text');
+            setInterval(function () {
+                blinkElements.forEach(function (element) {
+                    element.style.visibility = (element.style.visibility === 'hidden' ? '' : 'hidden');
+                });
+            }, 1000); // Adjust the interval as needed
+        });
+        
+
+        function removeRow(button) {
+            button.closest('tr').remove();
+        }
+    </script>
+ 
+    <style> 
+
+        .table-responsive {
+            max-height: 400px; /* Set the height you want */
+            overflow-y: auto; /* Vertical scroll */
+            overflow-x: auto; /* Horizontal scroll */
+            display: block;
+        }
+
+        .table {
+            width: 100%;
+            min-width: 1200px; /* Set minimum width based on your column count */
+        }
+
+        .custom-file-input {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        /* Style the custom label */
+        .custom-file-label {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 0.8;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+            /* Hover effect */
+            .custom-file-label:hover {
+                background-color: #e9ecef;
+                border-color: #b3b3b3;
+            }
+
+        /* Show the filename in the label after a file is selected */
+        .custom-file-input:focus + .custom-file-label {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .custom-file-input + .custom-file-label::after {
+            content: "Browse";
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Adjust the look on hover */
+        .custom-file-label:hover::after {
+            background-color: #0056b3;
+        }
+
+        #Approvedstatus {
+            border-radius: 25px;
+            background: #7ac745;
+            padding-top: 3px;
+            padding-bottom: 4px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+
+        #Primarystatus {
+            border-radius: 25px;
+            background: #032980;
+            padding: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+
+        #Pendingstatus {
+            border-radius: 25px;
+            background: #ffeb00;
+            padding-top: 3px;
+            padding-bottom: 4px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: black;
+        }
+
+        #Rejectstatus {
+            border-radius: 25px;
+            background: #e74a3b;
+            padding: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+    </style>
+
+}
+

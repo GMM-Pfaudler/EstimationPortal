@@ -1,0 +1,1707 @@
+﻿@model SUP_CORE.EFModelViews.DashboardViewModel
+@{
+    ViewBag.Title = "Estimation Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link href="~/Content/css/listpage.css" rel="stylesheet">
+<style>
+    .table-title h5 {
+        margin: 0;
+        line-height: 38px; /* Align with Export/Search controls */
+        color: #64748b;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    /* table header fix start */
+  
+    .table-card {
+        position: relative;
+    }
+
+    .table-scroll {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    #dataTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+       
+    }
+
+    /* Fix Export and Search row */
+    .dataTables_wrapper .row:first-child {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Header below toolbar */
+    #dataTable thead th {
+        top: 55px; /* adjust according to toolbar height */
+    }
+    .custom-table {
+        max-height: 500px; /* adjust as needed */
+        overflow-y: auto;
+    }
+
+        .custom-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #fff; /* or your header color */
+        }
+
+        .custom-table thead tr:first-child th {
+            top: 0;
+        }
+
+        .custom-table thead tr:nth-child(2) th {
+            top: 38px; /* adjust based on first header row height */
+        }
+        /* table header fix end */
+    /* Enquiries quoted start */
+    .Enquiries-table thead th {
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #dee2e6;
+        background: #147dc9;
+    }
+
+    .Enquiries-table thead tr:first-child th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        background: #147dc9;
+    }
+    .CustEnqTableTd {
+        text-align: center;
+    }
+    /* Enquiries quoted end */
+
+    /* Manpower Start*/
+    
+    .table-responsive {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+        .table-responsive.table-tall {
+            max-height: 700px;
+        }
+    .manpower-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--pmo-indigo);
+        color: white;
+    }
+
+    .manpower-table thead th {
+        font-size: 12px;
+        font-weight: 800;
+        color: white;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e2e8f0;
+        white-space: nowrap;
+        padding: 14px 12px;
+        background: #032980;
+    }
+
+    .manpower-table tbody td {
+        padding: 16px 12px;
+        border-bottom: 1px solid #f1f5f9;
+        color: #0f172a;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .manpower-table tbody tr:hover {
+        background-color: #f8fafc;
+    }
+
+    .engineer-name {
+        color: var(--pmo-slate);
+        font-weight: 700;
+    }
+
+    .manpower-table tbody td.text-center {
+        font-weight: 600;
+    }
+    /* Manpower End*/
+    :root {
+        --pmo-indigo: #6366f1;
+        --pmo-slate: #0f172a;
+    }
+
+    body {
+        background-color: #f8fafc;
+    }
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    .filter-section {
+        background: white;
+        padding: 0.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        border: 1px solid #e2e8f0;
+        min-width: 400px;
+    }
+
+    .chart-card {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        padding: 1.5rem;
+        height: 100%;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    }
+
+    .chart-container {
+        position: relative;
+        height: 260px;
+        width: 100%;
+    }
+
+    .card-label {
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: #64748b;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .kpi-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--pmo-indigo);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    .kpi-val {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--pmo-slate);
+        display: block;
+    }
+
+    .kpi-lbl {
+        font-size: 0.7rem;
+        color: #94a3b8;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        border: none !important;
+    }
+
+    .container-fluid {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+</style>
+
+<div class="container-fluid px-4">
+    <div class="dashboard-header">
+        <div>
+            <h1 class="fw-extrabold tracking-tight mb-0" style="color:var(--pmo-slate)">Estimation <span style="color:var(--pmo-indigo)">Inquiry</span></h1>
+            <p class="text-muted  " style="margin-top:5px; font-size:13px;">Dashboard / Estimation & Analytics</p>
+        </div>
+
+    </div>
+
+    <div class="table-card">
+        <div class="table-responsive table-tall">
+            <table class="table" id="dataTable" width="100%">
+                <thead style="position: sticky; top: 0; background: #fff; z-index: 2;">
+                    <tr>
+                        <th>SF No</th>
+                        <th>Inquiry Receipt Date</th>
+                        <th>Dom / Exp</th>
+                        <th>Due Date</th>
+                        <th>Sub Type</th>
+                        <th>Enquiry Status</th>
+                        <th>End User / Client</th>
+                        <th>Design Scope</th>
+                        <th>TE</th>
+                        <th>PE</th>
+                        <th>EE</th>
+                        <th>Remarks</th>
+                        @*<th>Project No</th>
+                            <th>Sales Person</th>
+                            <th>Inquiry Type</th>
+                            <th>Actual Submission Date</th>
+                            <th>EPC / Licensor</th>
+                            <th>Equipment Type</th>
+                            <th>Tag Qty</th>
+                            <th>Total Qty</th>
+                            <th>Major MOC</th>
+                            <th>TQ No</th>
+                            <th>TQ Received Date</th>
+                            <th>TQ Due Date</th>
+                            <th>TQ Submission Date</th>
+                            <th>Project Received Date</th>
+                            <th>Project Status</th>
+                            <th>Value (in RS)</th>*@
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.DueInquiryList)
+                    {
+                        <tr>
+                            <td>@item.SFNo</td>
+                            <td>
+                                @(item.InqReceiptDate.HasValue
+                            ? item.InqReceiptDate.Value.ToString("dd-MMM-yyyy")
+                            : "-")
+                            </td>
+                            <td>@item.DomExp</td>
+                            <td>
+                                @(item.DueDate.HasValue
+                            ? item.DueDate.Value.ToString("dd-MMM-yyyy")
+                            : "-")
+                            </td>
+                            <td>@item.SubType</td>
+                            <td>@item.EnqStatus</td>
+                            <td>@item.Client</td>
+                            <td>@item.DesignScope</td>
+                            <td>@item.TE</td>
+                            <td>@item.PE</td>
+                            <td>@item.EE</td>
+                            <td>@item.Remarks</td>
+
+                            @*<td>@item.ProjectNo</td>
+                                <td>@item.SalesPerson</td>
+                                <td>@item.InqType</td>
+                                <td>
+                                    @(item.ActualSubDate.HasValue
+                                    ? item.ActualSubDate.Value.ToString("dd-MMM-yyyy")
+                                    : "-")
+                                </td>
+                                <td>@item.EPC</td>
+                                <td>@item.EquipType</td>
+                                <td>@item.TagQty</td>
+                                <td>@item.TotalQty</td>
+                                <td>@item.MajorMOC</td>
+                                <td>@item.TqNo</td>
+                                <td>
+                                    @(item.TqReceivedDate.HasValue
+                                ? item.TqReceivedDate.Value.ToString("dd-MMM-yyyy")
+                                : "-")
+                                </td>
+                                <td>
+                                    @(item.TqDueDate.HasValue
+                                ? item.TqDueDate.Value.ToString("dd-MMM-yyyy")
+                                : "-")
+                                </td>
+                                <td>
+                                    @(item.TqSubDate.HasValue
+                                ? item.TqSubDate.Value.ToString("dd-MMM-yyyy")
+                                : "-")
+                                </td>
+                                <td>
+                                    @(item.ProjReceivedDate.HasValue
+                                ? item.ProjReceivedDate.Value.ToString("dd-MMM-yyyy")
+                                : "-")
+                                </td>
+                                <td>@item.ProjStatus</td>
+                                <td>@item.RsValue</td>*@
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row g-4 mb-4 mt-3">
+        <div class="col-lg-12">
+            <div class="chart-card">
+                <div class="card-label"><i class="fas fa-clock text-warning"></i> Enquiry Status / Total Inquiry</div>
+                <div class="chart-container"><canvas id="EnqStatusChart"></canvas></div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+
+            <div class="chart-card">
+
+                <div class="card-label">
+                    <i class="fa fa-users"></i>
+                    MAN POWER LOADING
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle manpower-table mb-0">
+
+                        <thead>
+                            <tr>
+                                <th>Engineer Name</th>
+
+                                @*<th class="text-center">Mechanical</th>
+                                    <th class="text-center">Estimation</th>
+                                    <th class="text-center">TQ</th>*@
+
+                                <th class="text-center">Total Firm Designs</th>
+                                <th class="text-center">Total Budgetary Designs</th>
+                                <th class="text-center">Total Firm Estimates</th>
+                                <th class="text-center">Total Budgetary Estimates</th>
+                                <th class="text-center">Thermal</th>
+                                <th class="text-center">Total Enquiries</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model.ManPowerLoadings)
+                            {
+                                <tr>
+
+                                    <td class="fw-bold engineer-name">
+                                        @item.EngineerName
+                                    </td>
+
+
+
+                                    @*<td class="text-center">@item.MechnicalDesignCount</td>
+
+                                        <td class="text-center">@item.EstimationCount</td>
+
+                                        <td class="text-center">@item.TQcount</td>*@
+
+
+
+                                    <td class="text-center">
+                                        @item.TotalFirmDesigns
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalBudgetaryDesigns
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalFirmEstimates
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalBudgetaryEstimates
+                                    </td>
+                                    <td class="text-center">@item.ThermalDesignCount</td>
+                                    <td class="text-center fw-bold">
+                                        @item.Total_Enquiries
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row g-4 mb-4 mt-3">
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <div class="card-label"><i class="fas fa-chart-bar text-danger"></i> Dom-Exp / Total Tag Qty</div>
+                <div class="chart-container"><canvas id="DomExpChart"></canvas></div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <div class="card-label"><i class="fas fa-clock text-warning"></i> Inquiry Type / Total Inquiry</div>
+                <div class="chart-container"><canvas id="InqTypeChart"></canvas></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+
+            <div class="chart-card">
+
+                <div class="card-label">
+                    <i class="fa fa-users"></i>
+                    Tags Quoted by Engineer
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle manpower-table mb-0">
+
+                        <thead>
+                            <tr>
+                                <th>Engineer Name</th>
+                                <th class="text-center">Total Thermal Designs</th>
+                                <th class="text-center">Total Designs (Firm)</th>
+                                <th class="text-center">Total Estimates (Firm)</th>
+                                <th class="text-center">Total Designs (Budgetary)</th>
+                                <th class="text-center">Total Estimates (Budgetary)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model.ManPowerTags)
+                            {
+                                <tr>
+
+                                    <td class="fw-bold engineer-name">
+                                        @item.EngineerName
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalThermalDesigns
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalFirmDesigns
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalFirmEstimates
+                                    </td>
+
+                                    <td class="text-center">
+                                        @item.TotalBudgetaryDesigns
+                                    </td>
+                                    <td class="text-center">
+                                        @item.TotalBudgetaryEstimates
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-6">
+
+            <div class="chart-card">
+
+                @*<div class="card-label">
+                        <i class="fa fa-file-invoice-dollar"></i>
+                        Total enquiries quoted
+                    </div>*@
+
+                <div class="table-responsive custom-table">
+                    <table class="table align-middle Enquiries-table mb-0">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="text-center">
+                                    Total enquiries quoted
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @{
+                                var summary = Model.TotalEnqSummry.FirstOrDefault();
+                            }
+
+                            <tr>
+                                <td>Firm Enquiries</td>
+                                <td>
+                                    @(summary?.TotalFirmQuoted?.ToString("N2") ?? "0.00")
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Budgetary Enquiries</td>
+                                <td>
+                                    @(summary?.TotalBudgetaryQuoted?.ToString("N2") ?? "0.00")
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Grand Total</strong></td>
+                                <td>
+                                    <strong>
+                                        @(summary?.GrandTotal?.ToString("N2") ?? "0.00")
+                                    </strong>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Total Order Received</td>
+                                <td>
+                                    @Model.TotalOrder_Received.ToString("N2")
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Strike Rate (Firm vs Order Received)</td>
+                                <td>
+                                    @Model.StrikeRateText
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="chart-card">
+                <div class="card-label text-center mb-3">
+                    <strong>Enquiry Distribution</strong>
+                </div>
+                <div style="position: relative; height:300px; width:100%;">
+                    <canvas id="enquiryPieChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    @{
+        decimal totalOrderBookingEnq = 0;
+
+        if (Model.EnqQuotedSummry != null)
+        {
+            foreach (var item in Model.EnqQuotedSummry)
+            {
+                decimal value = 0;
+                decimal.TryParse(item.TotalOrderReceived.Replace(",", ""), out value);
+                totalOrderBookingEnq += value;
+            }
+        }
+    }
+    <div class="row g-4 mb-4">
+
+        <div class="col-12">
+
+            <div class="chart-card">
+
+                <div class="card-label">
+                    <i class="fa fa-user-tie"></i>
+                    Individual Summary of Enquiries quoted
+                </div>
+
+                <div class="table-responsive custom-table">
+                    <table class="table align-middle Enquiries-table mb-0">
+
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Engineer Name</th>
+                                <th colspan="2">Total Quoted</th>
+                                <th rowspan="2">Order Received</th>
+                                <th rowspan="2">Strike Rate<br />(Firm vs order)</th>
+                            </tr>
+
+                            <tr>
+                                <th>Firm</th>
+                                <th>Budgetory</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @if (Model.EnqQuotedSummry != null && Model.EnqQuotedSummry.Count > 0)
+                            {
+                                foreach (var item in Model.EnqQuotedSummry)
+                                {
+                                    <tr class="CustEnqTableTd">
+                                        <td>@item.EngineerName</td>
+                                        <td>@item.TotalFirm</td>
+                                        <td>@item.TotalBudgetary</td>
+                                        <td>@item.TotalOrderReceived</td>
+                                        <td>@item.StrikeRate</td>
+                                    </tr>
+                                }
+                                <!-- Total Row -->
+                                <tr style="background:#f8f9fa;font-weight:bold;">
+                                    <td colspan="3" class="text-center">
+                                        Total Order Booking
+                                    </td>
+                                    <td class="text-center">
+                                        @totalOrderBookingEnq.ToString("N2")
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        No data available
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="chart-card">
+                <div class="card-label">
+                    <i class="fa fa-user-tie"></i>
+                    Individual Summary of Enquiries quoted
+                </div>
+
+                <div class="chart-container" style="height:600px;">
+                    <canvas id="IndividualSummaryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @{
+        decimal totalOrderBooking = 0;
+
+        if (Model.EnqQuotedSalesSummry != null)
+        {
+            foreach (var item in Model.EnqQuotedSalesSummry)
+            {
+                decimal value = 0;
+                decimal.TryParse(item.TotalOrderReceived.Replace(",", ""), out value);
+                totalOrderBooking += value;
+            }
+        }
+    }
+    <div class="row g-4 mb-4">
+
+        <div class="col-12">
+
+            <div class="chart-card">
+
+                <div class="card-label">
+                    <i class="fa fa-user-tie"></i>
+                    Individual Order Booking Summary vs Sales Booking
+                </div>
+
+                <div class="table-responsive custom-table">
+
+                    <table class="table align-middle Enquiries-table mb-0">
+
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Engineer Name</th>
+                                <th colspan="2" class="text-center">Total Quoted</th>
+                                <th rowspan="2">Order Received</th>
+                                <th rowspan="2">Strike Rate<br />(Firm vs Order)</th>
+                            </tr>
+
+                            <tr>
+                                <th>Firm</th>
+                                <th>Budgetary</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @if (Model.EnqQuotedSalesSummry != null && Model.EnqQuotedSalesSummry.Count > 0)
+                            {
+                                foreach (var item in Model.EnqQuotedSalesSummry)
+                                {
+                                    <tr class="CustEnqTableTd">
+                                        <td>@item.EngineerName</td>
+                                        <td>@item.TotalFirm</td>
+                                        <td>@item.TotalBudgetary</td>
+                                        <td>@item.TotalOrderReceived</td>
+                                        <td>@item.StrikeRate</td>
+                                    </tr>
+                                }
+
+                                <!-- Total Row -->
+                                <tr style="background:#f8f9fa;font-weight:bold;">
+                                    <td colspan="3" class="text-center">
+                                        Total Order Booking
+                                    </td>
+                                    <td class="text-center">
+                                        @totalOrderBooking.ToString("N2")
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        No data available
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="chart-card">
+                <div class="card-label">
+                    <i class="fa fa-user-tie"></i>
+                    Individual Order Booking Summary vs Sales Booking
+                </div>
+
+                <div class="chart-container" style="height:600px;">
+                    <canvas id="EngineerSummaryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+
+<script>
+    $(document).ready(function () {
+        // Simple & Professional Chart Animation
+        const professionalAnimation = {
+            duration: 1200,      // Fast enough to not annoy users
+            easing: 'easeOutQuart', // Smooth deceleration
+            delay: (context) => {
+                // Staggers the elements so they "fill" the chart sequentially
+                return context.dataIndex * 100;
+            },
+            // This creates the "filling up" effect from the bottom/center
+            from: (context) => {
+                if (context.type === 'data') return 0;
+            }
+        };
+
+        const chartConfig = {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: professionalAnimation, // Apply the smooth filling animation
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 8, font: { size: 10, weight: '600' }, padding: 15 }
+                }
+            }
+        };
+
+        /* DomExp chart start */
+         const domExpLabels = [
+        @Html.Raw(string.Join(",", Model.DomExpChartData
+            .Select(x => $"'{x.TypeName}'")))
+        ];
+         const domExpValues = [
+            @Html.Raw(string.Join(",", Model.DomExpChartData
+                .Select(x => x.TotalTagQty)))
+        ];
+         new Chart(document.getElementById('DomExpChart'), {
+            type: 'pie',
+            plugins: [ChartDataLabels],
+            data: {
+                labels: domExpLabels,
+                datasets: [{
+                    data: domExpValues,
+                    backgroundColor: [
+                        '#6366f1',
+                        '#14b8a6'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: professionalAnimation,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { boxWidth: 8, font: { size: 10, weight: '600' }, padding: 15 }
+                    },
+                    datalabels: {
+                        color: '#ffffff',
+                        font: {
+                            //weight: 'bold',
+                            size: 14
+                        },
+                        formatter: function (value) {
+                            return value;
+                        }
+                    }
+                }
+            }
+        });
+         /* DomExp chart end */
+        /* Enquiry Status wise Total Inquiry start */
+            const statusLabels = [
+            @Html.Raw(string.Join(",", Model.EnquiryStatusChartData
+                .Select(x => $"'{x.StatusName}'")))
+            ];
+
+            const statusCounts = [
+                @Html.Raw(string.Join(",", Model.EnquiryStatusChartData
+                    .Select(x => x.InquiryCount)))
+            ];
+            // Generate dynamic colors based on status count
+            const backgroundColors = statusLabels.map((_, index) => {
+                const hue = (index * 360 / statusLabels.length) % 360;
+                return `hsl(${hue}, 70%, 60%)`;
+            });
+
+            const hoverColors = statusLabels.map((_, index) => {
+                const hue = (index * 360 / statusLabels.length) % 360;
+                return `hsl(${hue}, 70%, 50%)`;
+            });
+            const statusCtx = document.getElementById('EnqStatusChart');
+
+            new Chart(statusCtx, {
+                type: 'bar',
+                plugins: [ChartDataLabels],
+                data: {
+                    labels: statusLabels,
+                    datasets: [{
+                        label: 'Inquiry Count',
+                        data: statusCounts,
+                        backgroundColor: backgroundColors, // Solid modern Indigo
+                        hoverBackgroundColor: hoverColors, // Slightly darker on hover
+                        borderRadius: 8, // ✅ Modern rounded corners
+                        borderSkipped: false,
+                        barThickness: 20, // Controls bar width for a professional look
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: professionalAnimation,
+                    layout: {
+                        padding: { top: 30 } // Space for labels at the top
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1e293b', // Modern dark tooltip
+                            padding: 12,
+                            titleFont: { size: 14 },
+                            bodyFont: { size: 13 }
+                        },
+                        // ✅ DISPLAY VALUES ON TOP OF BARS
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            color: '#475569',
+                            font: { weight: 'bold', size: 12 },
+                            formatter: (value) => value.toLocaleString() // Formats 1000 as 1,000
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false }, // Remove vertical lines for cleaner look
+                            ticks: { color: '#64748b', font: { weight: '600' } },
+                            border: { display: false }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            border: { display: false, dash: [5, 5] }, // Dashed grid lines
+                            grid: { color: '#e2e8f0' },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+
+        /* Enquiry Status wise Total Inquiry end */
+        /*  start EnqQuotedSalesSummry */
+
+            @*const engineerLabels = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => $"'{x.EngineerName}'")))
+        ];
+
+            const firmData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalFirm.Replace(",", ""))))
+            ];
+
+            const budgetData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalBudgetary.Replace(",", ""))))
+            ];
+
+            const orderData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalOrderReceived.Replace(",", ""))))
+            ];
+
+            const strikeData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry
+                    .Select(x => x.StrikeRate.Replace("%", "").Trim())))
+            ];
+
+            new Chart(document.getElementById("EngineerSummaryChart"), {
+
+                type: 'bar',
+                plugins: [ChartDataLabels],
+
+                data: {
+                    labels: engineerLabels,
+                    datasets: [
+                        {
+                            label: 'Firm',
+                            data: firmData,
+                            backgroundColor: '#3B82F6'
+                        },
+                        {
+                            label: 'Budgetary',
+                            data: budgetData,
+                            backgroundColor: '#F59E0B'
+                        },
+                        {
+                            label: 'Order Received',
+                            data: orderData,
+                            backgroundColor: '#10B981'
+                        },
+                        {
+                            label: 'Strike Rate (%)',
+                            data: strikeData,
+                            backgroundColor: '#EF4444'
+                        }
+                    ]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    indexAxis: 'y',   // <-- Makes the chart horizontal
+
+                    scales: {
+                        x: {
+                            stacked: true,
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return Number(value).toLocaleString();
+                                }
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+
+                        datalabels: {
+                            color: "#fff",
+                            anchor: "center",
+                            align: "center",
+                            formatter: function (value) {
+                                return Number(value).toLocaleString();
+                            }
+                        }
+                    }
+                }
+
+            });*@
+
+            const engineerLabels = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => $"'{x.EngineerName}'")))
+        ];
+
+            const firmData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalFirm.Replace(",", ""))))
+            ];
+
+            const budgetData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalBudgetary.Replace(",", ""))))
+            ];
+
+            const orderData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry.Select(x => x.TotalOrderReceived.Replace(",", ""))))
+            ];
+
+            const strikeData = [
+                @Html.Raw(string.Join(",", Model.EnqQuotedSalesSummry
+                    .Select(x => x.StrikeRate.Replace("%", "").Trim())))
+            ];
+        new Chart(document.getElementById("EngineerSummaryChart"), {
+
+            type: 'bar',
+
+            plugins: [ChartDataLabels],
+
+            data: {
+                labels: engineerLabels,
+
+                datasets: [
+
+                    {
+                        label: 'Firm',
+                        data: firmData,
+                        backgroundColor: '#4F46E5',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        label: 'Budgetary',
+                        data: budgetData,
+                        backgroundColor: '#F59E0B',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        label: 'Order Received',
+                        data: orderData,
+                        backgroundColor: '#10B981',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        type: 'line',
+
+                        label: 'Strike Rate %',
+
+                        data: strikeData,
+
+                        yAxisID: 'y1',
+
+                        borderColor: '#EF4444',
+
+                        backgroundColor: '#EF4444',
+
+                        borderWidth: 3,
+
+                        pointRadius: 5,
+
+                        pointHoverRadius: 7,
+
+                        tension: 0.35,
+
+                        fill: false
+                    }
+
+                ]
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Engineer',
+                            color: '#333',
+                            font: {
+                                size: 14,
+                                //weight: 'bold'
+                            }
+                        }
+                    },
+                    y: {
+
+                        beginAtZero: true,
+
+                        position: 'left',
+
+                        title: {
+                            display: true,
+                            text: 'Booking Value'
+                        },
+
+                        ticks: {
+                            callback: function (value) {
+                                return Number(value).toLocaleString();
+                            }
+                        }
+                    },
+
+                    y1: {
+
+                        beginAtZero: true,
+
+                        position: 'right',
+
+                        max: 100,
+
+                        grid: {
+                            drawOnChartArea: false
+                        },
+
+                        title: {
+                            display: true,
+                            text: 'Strike Rate (%)'
+                        },
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + "%";
+                            }
+                        }
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: {
+                        position: 'top'
+                    },
+
+                    tooltip: {
+
+                        callbacks: {
+
+                            label: function (context) {
+
+                                if (context.dataset.label == 'Strike Rate %') {
+                                    return context.dataset.label + ": " + context.parsed.y + "%";
+                                }
+
+                                return context.dataset.label + ": " +
+                                    Number(context.parsed.y).toLocaleString();
+                            }
+
+                        }
+
+                    },
+
+                    datalabels: {
+
+                        color: "#000",
+
+                        anchor: "end",
+
+                        align: "top",
+
+                        formatter: function (value, context) {
+
+                            if (context.dataset.label == "Strike Rate %")
+                                return value + "%";
+
+                            return Number(value).toLocaleString();
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+        /*  end EnqQuotedSalesSummry */
+        /* start Individual Summary Enquiries quoted Chart */
+        const individualLabels = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSummry.Select(x => $"'{x.EngineerName}'")))
+        ];
+
+        const individualFirm = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSummry.Select(x => x.TotalFirm.Replace(",", ""))))
+        ];
+
+        const individualBudgetary = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSummry.Select(x => x.TotalBudgetary.Replace(",", ""))))
+        ];
+
+        const individualOrder = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSummry.Select(x => x.TotalOrderReceived.Replace(",", ""))))
+        ];
+
+        const individualStrike = [
+            @Html.Raw(string.Join(",", Model.EnqQuotedSummry.Select(x => x.StrikeRate.Replace("%", "").Trim())))
+        ];
+        new Chart(document.getElementById("IndividualSummaryChart"), {
+
+            type: 'bar',
+
+            plugins: [ChartDataLabels],
+
+            data: {
+
+                labels: individualLabels,
+
+                datasets: [
+
+                    {
+                        label: 'Firm',
+                        data: individualFirm,
+                        backgroundColor: '#4F46E5',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        label: 'Budgetary',
+                        data: individualBudgetary,
+                        backgroundColor: '#F59E0B',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        label: 'Order Received',
+                        data: individualOrder,
+                        backgroundColor: '#10B981',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                    },
+
+                    {
+                        type: 'line',
+
+                        label: 'Strike Rate %',
+
+                        data: individualStrike,
+
+                        borderColor: '#EF4444',
+
+                        backgroundColor: '#EF4444',
+
+                        borderWidth: 3,
+
+                        pointRadius: 5,
+
+                        pointHoverRadius: 7,
+
+                        tension: 0.35,
+
+                        fill: false,
+
+                        yAxisID: 'y1'
+                    }
+
+                ]
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+
+                scales: {
+
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Engineer'
+                        }
+                    },
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        title: {
+                            display: true,
+                            text: 'Quoted Value'
+                        },
+
+                        ticks: {
+                            callback: function (value) {
+                                return Number(value).toLocaleString();
+                            }
+                        }
+
+                    },
+
+                    y1: {
+
+                        beginAtZero: true,
+
+                        position: 'right',
+
+                        max: 100,
+
+                        grid: {
+                            drawOnChartArea: false
+                        },
+
+                        title: {
+                            display: true,
+                            text: 'Strike Rate (%)'
+                        },
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + "%";
+                            }
+                        }
+
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: {
+                        position: 'top'
+                    },
+
+                    tooltip: {
+
+                        callbacks: {
+
+                            label: function (context) {
+
+                                if (context.dataset.label === 'Strike Rate %')
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
+
+                                return context.dataset.label + ': ' +
+                                    Number(context.parsed.y).toLocaleString();
+
+                            }
+
+                        }
+
+                    },
+
+                    datalabels: {
+
+                        color: '#000',
+
+                        anchor: 'end',
+
+                        align: 'top',
+
+                        formatter: function (value, context) {
+
+                            if (context.dataset.label === 'Strike Rate %')
+                                return value + '%';
+
+                            return Number(value).toLocaleString();
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+        /* end Individual Summary Enquiries quoted Chart */
+
+        /*Inquiry Type wise Total Inquiry start */
+            const inquiryTypeLabels = [
+                @Html.Raw(string.Join(",", Model.InquiryTypeChartData
+                    .Select(x => $"'{x.InqType}'")))
+            ];
+
+            const inquiryTypeCounts = [
+                @Html.Raw(string.Join(",", Model.InquiryTypeChartData
+                    .Select(x => x.InquiryCount)))
+            ];
+
+            // Dynamic colors
+            //const doughnutColors = inquiryTypeLabels.map((_, index) => {
+            //    const hue = (index * 360 / inquiryTypeLabels.length) % 360;
+            //    return `hsl(${hue}, 70%, 55%)`;
+            //});
+
+            const doughnutHoverColors = inquiryTypeLabels.map((_, index) => {
+                const hue = (index * 360 / inquiryTypeLabels.length) % 360;
+                return `hsl(${hue}, 70%, 45%)`;
+            });
+
+            new Chart(document.getElementById('InqTypeChart'), {
+                type: 'doughnut',
+                plugins: [ChartDataLabels],
+                data: {
+                    labels: inquiryTypeLabels,
+                    datasets: [{
+                        data: inquiryTypeCounts,
+                        //backgroundColor: doughnutColors,
+                        hoverBackgroundColor: doughnutHoverColors,
+                        //borderWidth: 0
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.3)',  // Red
+                            'rgba(54, 162, 235, 0.3)',  // Blue
+                            'rgba(255, 206, 86, 0.3)',  // Yellow
+                            'rgba(75, 192, 192, 0.3)',  // Green
+                            'rgba(153, 102, 255, 0.3)', // Purple
+                            'rgba(255, 99, 132, 0.8)',   // Red
+                            'rgba(54, 162, 235, 0.8)',   // Blue
+                            'rgba(255, 206, 86, 0.8)',   // Yellow
+                            'rgba(75, 192, 192, 0.8)',   // Green
+                            'rgba(153, 102, 255, 0.8)'  // Purple
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',  // Red
+                            'rgba(54, 162, 235, 1)',  // Blue
+                            'rgba(255, 206, 86, 1)',  // Yellow
+                            'rgba(75, 192, 192, 1)',  // Green
+                            'rgba(153, 102, 255, 1)', // Purple
+                            'rgba(255, 99, 132, 1)',   // Red
+                            'rgba(54, 162, 235, 1)',   // Blue
+                            'rgba(255, 206, 86, 1)',   // Yellow
+                            'rgba(75, 192, 192, 1)',   // Green
+                            'rgba(153, 102, 255, 1)'  // Purple
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: professionalAnimation,
+                    cutout: '65%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 10,
+                                padding: 15,
+                                font: {
+                                    size: 11,
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1e293b',
+                            padding: 12
+                        },
+                        datalabels: {
+                            color: '#000000',
+                            font: {
+                                //weight: 'bold',
+                                size: 14
+                            },
+                            formatter: function (value) {
+                                return value > 0 ? value : '';
+                            }
+                        }
+                    }
+                }
+            });
+        /*Inquiry Type wise Total Inquiry end */
+    });
+    $(document).ready(function () {
+        //var table = $('#dataTable').DataTable({
+        //    pageLength: 15,
+        //    lengthMenu: [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]],
+        //    dom: '<"row px-4 pt-2"<"col-sm-12 col-md-6"B><"col-sm-12 col-md-6"f>>rt<"row px-4 pb-2"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+
+        //    buttons: [
+        //        {
+        //            extend: 'excelHtml5',
+        //            text: 'Export',
+        //            className: 'btn btn-success btn-sm',
+        //            filename: function () {
+        //                var d = new Date();
+        //                var day = String(d.getDate()).padStart(2, '0');
+        //                var month = String(d.getMonth() + 1).padStart(2, '0');
+        //                var year = d.getFullYear();
+
+        //                return 'DueInquiryList_' + day + '-' + month + '-' + year;
+        //            }
+        //            //,exportOptions: {
+        //            //    columns: ':not(:first-child)'
+        //            //}
+        //        }
+        //    ],
+
+        //    language: {
+        //        search: "",
+        //        searchPlaceholder: "Search...",
+        //        lengthMenu: "_MENU_ per page"
+        //    },
+        //    ordering: true,
+        //    responsive: false
+        //});
+        var table = $('#dataTable').DataTable({
+            pageLength: 15,
+            lengthMenu: [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]],
+
+            dom: '<"row px-4 pt-2 align-items-center"' +
+                '<"col-md-3"B>' +
+                '<"col-md-6 text-center table-title">' +
+                '<"col-md-3"f>' +
+                '>rt' +
+                '<"row px-4 pb-2"' +
+                '<"col-sm-12 col-md-5"i>' +
+                '<"col-sm-12 col-md-7"p>' +
+                '>',
+
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    text: 'Export',
+                    className: 'btn btn-success btn-sm',
+                    filename: function () {
+                        var d = new Date();
+                        var day = String(d.getDate()).padStart(2, '0');
+                        var month = String(d.getMonth() + 1).padStart(2, '0');
+                        var year = d.getFullYear();
+
+                        return 'DueInquiryList_' + day + '-' + month + '-' + year;
+                    }
+                }
+            ],
+
+            language: {
+                search: "",
+                searchPlaceholder: "Search...",
+                lengthMenu: "_MENU_ per page"
+            },
+
+            ordering: true,
+            responsive: false,
+
+            initComplete: function () {
+                $('.table-title').html('<h5 class="mb-0 fw-bold">Due  Inquiry</h5>');
+            }
+        });
+        $('.dataTables_filter input').addClass('form-control shadow-sm border-0 bg-light').css({
+            borderRadius: '10px',
+            padding: '8px 15px',
+            width: '250px'
+        });
+
+        $('.dataTables_length select').addClass('form-select-sm border-0 bg-light shadow-sm').css({
+            borderRadius: '8px',
+            margin: '0 10px'
+        });
+    });
+    /* start enq qouted chart */
+    document.addEventListener("DOMContentLoaded", function () {
+        // Extracting data dynamically from your Razor Model
+        var firmEnquiries = @(Model.TotalEnqSummry.FirstOrDefault()?.TotalFirmQuoted ?? 0);
+        var budgetaryEnquiries = @(Model.TotalEnqSummry.FirstOrDefault()?.TotalBudgetaryQuoted ?? 0);
+
+        var ctx = document.getElementById('enquiryPieChart').getContext('2d');
+
+        var enquiryPieChart = new Chart(ctx, {
+            type: 'pie',
+            plugins: [ChartDataLabels], // Registering the datalabels plugin
+            data: {
+                labels: ['Firm Enquiries', 'Budgetary Enquiries'],
+                datasets: [{
+                    data: [firmEnquiries, budgetaryEnquiries],
+                    backgroundColor: [
+                        '#4e73df', // Theme Color for Firm (Blue)
+                        '#1cc88a'  // Theme Color for Budgetary (Green)
+                    ],
+                    hoverBackgroundColor: [
+                        '#2e59d9',
+                        '#17a673'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 15,
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    // Formats tooltips to match your "N2" table formatting
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.raw !== null) {
+                                    label += new Intl.NumberFormat('en-US', {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }).format(context.raw);
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    // Calculates and displays percentages directly on the pie slices
+                    datalabels: {
+                        color: '#ffffff',
+                        font: {
+                            weight: 'bold',
+                            size: 13
+                        },
+                        formatter: (value, ctx) => {
+                            let sum = 0;
+                            let dataArr = ctx.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            if (sum === 0) return "0%";
+                            let percentage = (value * 100 / sum).toFixed(2) + "%";
+                            return percentage;
+                        }
+                    }
+                }
+            }
+        });
+    });
+    /* end enq qouted chart */
+
+
+</script>

@@ -1,0 +1,884 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    int? pId = Convert.ToInt32(Session["RoleID"].ToString());
+}
+
+<div class="card-body" style="padding:0px;color:black">
+    <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!-- DataTales Example -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (pId == 1 || pId == 2 || pId == 4)
+                                {<p class="col-sm-12 border-left-primary bg-gradient m-2" align="left" style="padding:5px;">
+                                        Purchase order 	&#38; Invoice Statistics:
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-primary text-white h-100">
+                                                <div class="card-body">
+
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Suppliers</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.Supplier</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/u2.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Open PO Line Items</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.PendingPO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_1.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">PMSC Line items</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.PMSC</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_21.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-success text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Invoice details </div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.Invoice</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_7.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color1 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Due delivery PO Lines</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.DuePO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_5.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color2 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Undue delivery PO Lines</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.UnduePO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_4.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="border-left-primary bg-gradient m-2" style="padding: 5px;"> Inspection Call Statistics:</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right" style="padding: 5px;">
+                                                Filter: <input type="text" id="datepicker" class="dtpInsp" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color3 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Total Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="vtlClass">@ViewBag.TotalList</h5></div>
+
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IInsp1.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Pending Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="ptlClass">@ViewBag.PendingList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IPending.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color5 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Allocated Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="acClass">@ViewBag.Allocated</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IAllocate.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Reworked Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rdClass">@ViewBag.Reworked</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IRework.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color6 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Approved/Waiver Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="appClass">@ViewBag.Approved</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IApproved.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Rejected Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rjList">@ViewBag.RejectedList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IReject1.png" width="45" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+                                else if (pId == 3)
+                                {<p class="col-sm-12 border-left-primary bg-gradient m-2" align="left" style="padding:5px;">
+                                        Purchase order 	&#38; Invoice Statistics:
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Open PO Line Items</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.PendingPO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_1.png" width="80" /></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Pending Material at Subcontractor</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.PMSC</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_21.png" width="80" /></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-success text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Invoice details</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.Invoice</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_3.png" width="80" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color1 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Due delivery PO Lines</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.SDuePO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_5.png" width="80" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color2 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Undue delivery PO Lines</div>
+                                                            <div class="text-lg fw-bold"><h5>@ViewBag.SUnduePO</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/po_4.png" width="80" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="border-left-primary bg-gradient m-2" style="padding: 5px;"> Inspection Call Statistics:</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right" style="padding: 5px;">
+                                                Filter: <input type="text" id="datepicker" class="dtpInsp" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color3 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Total Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="vtlClass">@ViewBag.TotalList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IInsp1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Pending Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="ptlClass">@ViewBag.PendingList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IPending.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color4 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Allocated Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="acClass">@ViewBag.Allocated</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IAllocate.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color5 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Reworked Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rdClass">@ViewBag.Reworked</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IRework.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color6 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Approved/Waiver Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="appClass">@ViewBag.Approved</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IApproved.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Rejected Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rjList">@ViewBag.RejectedList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IReject1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                                else if (pId == 6 || pId == 34)
+                                {
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="border-left-primary bg-gradient m-2" style="padding: 5px;"> Inspection Call Statistics:</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right" style="padding: 5px;">
+                                                Filter: <input type="text" id="datepicker" class="dtpInsp" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color3 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Total Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="vtlClass">@ViewBag.TotalList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IInsp1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Pending Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="ptlClass">@ViewBag.PendingList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IPending.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color5 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Allocated Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="acClass">@ViewBag.Allocated</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IAllocate.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Reworked Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rdClass">@ViewBag.Reworked</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IRework.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color6 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Approved/Waiver Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="appClass">@ViewBag.Approved</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IApproved.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Rejected Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rjList">@ViewBag.RejectedList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IReject1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+                                else if (pId == 7)
+                                {
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="border-left-primary bg-gradient m-2" style="padding: 5px;"> Inspection Call Statistics:</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="text-right" style="padding: 5px;">
+                                                Filter: <input type="text" id="datepicker" class="dtpInsp" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color3 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Total Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="vtlClass">@ViewBag.TotalList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IInsp1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-warning text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Pending Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="ptlClass">@ViewBag.PendingList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IPending.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color5 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Allocated Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="acClass">@ViewBag.Allocated</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IAllocate.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Reworked Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rdClass">@ViewBag.Reworked</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IRework.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-color6 text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Approved/Waiver Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="appClass">@ViewBag.Approved</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IApproved.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-6 mb-4">
+                                            <div class="card bg-danger text-white h-100">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="me-3">
+                                                            <div class="text-white-75 small">Rejected Calls</div>
+                                                            <div class="text-lg fw-bold"><h5 id="rjList">@ViewBag.RejectedList</h5></div>
+                                                        </div>
+                                                        <div style="text-align: right"><img src="../../Images/IReject1.png" width="65" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+                                else
+                                {
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (pId == 1 || pId == 2 || pId == 3 || pId == 4)
+                {
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-pie me-1"></i>
+                                Open PO Warehouse
+                            </div>
+                            <div class="card-body"><canvas id="myChart" width="100%" height="60"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-pie me-1"></i>
+                                PMSC Warehouse
+                            </div>
+                            <div class="card-body"><canvas id="myChart2" width="100%" height="60"></canvas></div>
+                        </div>
+                    </div>
+
+                    @section scripts
+                    { 
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+
+                                firstchart();
+                                SecondChart();
+
+
+                            });
+
+
+                            function firstchart() {
+                                //var ctx = document.getElementById("myChart").getContext('2d');
+                                //$.ajax({
+                                //    type: "POST",
+                                //    url: "/Home/BarChart",
+                                //    data: "",
+                                //    success: function (data) {
+                                //        var _data = data;
+                                //        var _chartLabels = _data[0];
+                                //        var _chartData = _data[1];
+                                //        var barColor = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Cyan', 'Grey', 'pink'];
+
+                                //        var myChart = new Chart(ctx, {
+                                //            type: "doughnut",
+                                //            data: {
+                                //                labels: _chartLabels,
+                                //                datasets: [{
+                                //                    label: _chartLabels,
+                                //                    backgroundColor: barColor,
+                                //                    data: _chartData,
+                                //                }],
+                                //                borderWidth: 1
+                                //            },
+                                //            options: {
+                                //                scales: {
+                                //                    x: {
+                                //                        ticks: {
+                                //                            maxRotation: 0
+                                //                        }
+                                //                    }
+                                //                }
+                                //            }
+                                //        });
+                                //    },
+                                //    error: function (data) {
+                                //        alert("Some Error Occured!");
+                                //    }
+                                //});
+
+
+                                ///second code
+                                debugger
+                                var ctx = document.getElementById('myChart').getContext('2d');
+			                    var workloadChart = new Chart(ctx, {
+                                    type: 'doughnut',
+                                data: {
+                                    labels: @Html.Raw(Json.Encode(ViewBag.labeldata)),
+                                    datasets: [{
+                                        data: @Html.Raw(Json.Encode(ViewBag.TotalOrder)),
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',  // Red
+                                            'rgba(54, 162, 235, 0.2)',  // Blue
+                                            'rgba(255, 206, 86, 0.2)',  // Yellow
+                                            'rgba(75, 192, 192, 0.2)',  // Green
+                                            'rgba(153, 102, 255, 0.2)', // Purple
+                                            'rgba(255, 99, 132, 0.8)',   // Red
+                                            'rgba(54, 162, 235, 0.8)',   // Blue
+                                            'rgba(255, 206, 86, 0.8)',   // Yellow
+                                            'rgba(75, 192, 192, 0.8)',   // Green
+                                            'rgba(153, 102, 255, 0.8)'  // Purple   
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',  // Red
+                                            'rgba(54, 162, 235, 1)',  // Blue
+                                            'rgba(255, 206, 86, 1)',  // Yellow
+                                            'rgba(75, 192, 192, 1)',  // Green
+                                            'rgba(153, 102, 255, 1)', // Purple
+                                            'rgba(255, 99, 132, 1)',   // Red
+                                            'rgba(54, 162, 235, 1)',   // Blue
+                                            'rgba(255, 206, 86, 1)',   // Yellow
+                                            'rgba(75, 192, 192, 1)',   // Green
+                                            'rgba(153, 102, 255, 1)'  // Purple
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        title: {
+                                            display: false,
+                                            text: 'Workload Distribution'
+                                        }
+                                    }
+                                }
+                            });
+                         }
+                            function SecondChart() {
+                                //var ctx = document.getElementById("myChart2").getContext('2d');
+                                //$.ajax({
+                                //    type: "POST",
+                                //    url: "/Home/CircleChart",
+                                //    data: "",
+                                //    success: function (data) {
+                                //        var _data = data;
+                                //        var _chartLabels = _data[0];
+                                //        var _chartData = _data[1];
+                                //        var barColor = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Cyan', 'Grey', 'pink'];
+
+                                //        var myChart = new Chart(ctx, {
+                                //            type: "doughnut",
+                                //            data: {
+                                //                labels: _chartLabels,
+                                //                datasets: [{
+                                //                    label: _chartLabels,
+                                //                    backgroundColor: barColor,
+                                //                    data: _chartData,
+                                //                }],
+                                //                borderWidth: 1
+                                //            },
+                                //            options: {
+                                //                scales: {
+                                //                    x: {
+                                //                        ticks: {
+                                //                            maxRotation: 0
+                                //                        }
+                                //                    }
+                                //                }
+                                //            }
+                                //        });
+                                //    },
+                                //    error: function (data) {
+                                //        alert("Some Error Occured!");
+                                //    }
+                                //});
+
+                                //second chart
+                                    ///second code
+                                debugger
+                                var ctx = document.getElementById('myChart2').getContext('2d');
+			                    var workloadChart = new Chart(ctx, {
+                                    type: 'doughnut',
+                                data: {
+                                    labels: @Html.Raw(Json.Encode(ViewBag.labeldata1)),
+                                    datasets: [{
+                                        data: @Html.Raw(Json.Encode(ViewBag.totalOrder1)),
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',  // Red
+                                            'rgba(54, 162, 235, 0.2)',  // Blue
+                                            'rgba(255, 206, 86, 0.2)',  // Yellow
+                                            'rgba(75, 192, 192, 0.2)',  // Green
+                                            'rgba(153, 102, 255, 0.2)', // Purple
+                                            'rgba(255, 99, 132, 0.8)',   // Red
+                                            'rgba(54, 162, 235, 0.8)',   // Blue
+                                            'rgba(255, 206, 86, 0.8)',   // Yellow
+                                            'rgba(75, 192, 192, 0.8)',   // Green
+                                            'rgba(153, 102, 255, 0.8)'  // Purple   
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',  // Red
+                                            'rgba(54, 162, 235, 1)',  // Blue
+                                            'rgba(255, 206, 86, 1)',  // Yellow
+                                            'rgba(75, 192, 192, 1)',  // Green
+                                            'rgba(153, 102, 255, 1)', // Purple
+                                            'rgba(255, 99, 132, 1)',   // Red
+                                            'rgba(54, 162, 235, 1)',   // Blue
+                                            'rgba(255, 206, 86, 1)',   // Yellow
+                                            'rgba(75, 192, 192, 1)',   // Green
+                                            'rgba(153, 102, 255, 1)'  // Purple
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        title: {
+                                            display: false,
+                                            text: 'Workload Distribution'
+                                        }
+                                    }
+                                }
+                            });
+                            }
+
+
+                        </script>
+                    }
+
+                    <style>
+                        .parentDiv {
+                            display: block;
+                            height: 110px;
+                            width: 400px;
+                            font-size: 30px;
+                        }
+
+                        /* To set icon at the right side of the div*/
+                        .icon {
+                            margin-left: 10px;
+                            float: right;
+                        }
+                    </style>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<style>
+    .ui-datepicker-calendar {
+        display: none;
+    }
+
+    .dtpInsp {
+        border: 2px solid #032980;
+        border-radius: 5px;
+        padding: 5px;
+        /* Add any additional styles you want */
+    }
+</style>
+<script src="~/Content/vendor/jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+                $(document).ready(function () {
+                    debugger
+                    $("#datepicker").datepicker({
+                        dateFormat: "mm/yy",
+                        changeMonth: true,
+                        changeYear: true,
+                        showButtonPanel: true,
+                        onChangeMonthYear: function (year, month, inst) {
+                            debugger
+                            var selectedMonth = month;
+                            var selectedYear = year;
+                            var formattedDate = ('0' + selectedMonth).slice(-2) + '/' + selectedYear; // Format month and year (e.g., "01/2022")
+                            $("#datepicker").val(formattedDate);
+                            fetchDataByMonthYear(selectedMonth, selectedYear);
+
+                        }
+
+                    });
+                });
+                $("#datepicker").val("Select Month - Year");
+                function fetchDataByMonthYear(month, year) {
+                    $.ajax({
+                        url: '@Url.Action("DataByMonthYear", "Home")',
+                        type: 'GET',
+                        data: { month: month, year: year },
+                        success: function (response) {
+                            debugger
+                            // Handle the response
+                            if (response.TotalList !== null && response.TotalList !== undefined) {
+                                $("#vtlClass").text(response.TotalList);
+                            } else {
+                                $("#vtlClass").text("0");
+                            }
+                            if (response.PendingList !== null && response.PendingList !== undefined) {
+                                $("#ptlClass").text(response.PendingList);
+                            } else {
+                                $("#ptlClass").text("0");
+                            }
+                            if (response.Allocated !== null && response.Allocated !== undefined) {
+                                $("#acClass").text(response.Allocated);
+                            } else {
+                                $("#acClass").text("0");
+                            }
+                            if (response.Reworked !== null && response.Reworked !== undefined) {
+                                $("#rdClass").text(response.Reworked);
+                            } else {
+                                $("#rdClass").text("0");
+                            }
+                            if (response.Approved !== null && response.Approved !== undefined) {
+                                $("#appClass").text(response.Approved);
+                            } else {
+                                $("#appClass").text("0");
+                            }
+                            if (response.RejectedList !== null && response.RejectedList !== undefined) {
+                                $("#rjList").text(response.RejectedList);
+                            } else {
+                                $("#rjList").text("0");
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle errors
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+</script>
+

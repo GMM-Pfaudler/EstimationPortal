@@ -1,0 +1,114 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    ViewBag.Title = "Purchase Inspection List";
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <div class="row" style="display:none">
+                    <div class="col-md-12">
+                        <label class="control-label font-weight-bold">Filters :</label>
+                        <br />
+                        <input type='text' id='search_status' placeholder='Status' class="m-1">
+                        <input type='text' id='search_bpcode' placeholder='BP Code' class="m-1">
+                        <input type='text' id='search_supname' placeholder='BP Name' class="m-1">
+                        <input type='text' id='search_buyercode' placeholder='Buyer Code' class="m-1">
+                        <input type='text' id='search_buyername' placeholder='Buyer Name' class="m-1">
+                        <input type='text' id='search_office' placeholder='Purchase Office' class="m-1">
+                        <input type='text' id='search_warehouse' placeholder='Warehouse' class="m-1">
+                        <input type='text' id='search_so' placeholder='SO' class="m-1">
+                        <input type='text' id='search_itemcode' placeholder='Item Code' class="m-1">
+                        <input type='text' id='search_description' placeholder='Description' class="m-1">
+                        <input type='text' readonly id='search_submitteddate' class="datepicker m-1" placeholder='Call Submitted Date'>
+                        <input type='text' readonly id='search_assigneddate' class="datepicker m-1" placeholder='Call Assigned Date'>
+                        <input type='text' readonly id='search_attendeddate' class="datepicker m-1" placeholder='Call Attended Date'>
+                        <input type='text' id='search_insp_engineer' placeholder='Inspector Engineer' class="m-1"> 
+                        <input type='text' id='search_trnumber' placeholder='TrNumber' class="m-1">
+                        <input type='button' id="btn_search" value="Search" class="btn btn-sm btn-outline-primary m-1" />
+                        <input type='button' id="btn_clear" value="Clear" class="btn btn-sm btn-outline-secondary m-1">
+                    </div>
+                </div>
+                <div id="myPartialDash">
+                    @{Html.RenderPartial("_PurOffSummry", Model);}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function ()
+        { 
+            Summarydata();
+            $('#btn_search').click(function ()
+            {debugger
+            let PONumbr = $("#search_status").val();
+                
+                $.ajax({
+                    traditional: true,
+                    url: "@Url.Action("GetPOTableData", "PO")",
+                    data: { 'search_BName': PONumbr },
+                    type: "Get",
+                    dataType: "html",
+                    success: function (data) {
+                        $("#myPartialDash").html(data);
+                        Summarydata();
+                    }
+                })
+            })
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+        });
+        function Summarydata() {
+            $.fn.dataTable.moment('DD-MMM-YYYY');
+            $('#dataTable2 thead tr').clone(true).appendTo('#dataTable2 thead');
+            // Setup - add a text input to each footer cell
+
+            $('#dataTable2 thead tr:eq(1) th').each(function (i) {
+                debugger
+                var title = $(this).text();
+                $(this).html('<input type="text" style="width:70px;" placeholder="Search ' + title + '" />');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+            var table = $('#dataTable2').DataTable({
+                orderCellsTop: true,
+                "order": [[19, 'asc']],
+                "lengthMenu": [[10, 100, -1], [10, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17,18,19,20,21,22]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'POListMasters_' + d;
+                        }
+                    }
+                ]
+
+            });
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+        }
+    </script>
+}

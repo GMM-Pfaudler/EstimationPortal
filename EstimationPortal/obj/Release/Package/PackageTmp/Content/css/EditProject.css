@@ -1,0 +1,887 @@
+﻿:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --surface: #ffffff;
+    --background: #f8fafc;
+}
+
+.PageHeading {
+    /* Forces standard sans-serif if Inter isn't loaded */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.breadcrumb-item {
+    font-size: 0.85rem !important;
+}
+
+.page-header-container {
+    margin-bottom: 1.5rem;
+}
+
+body {
+    background-color: var(--background);
+}
+
+/* Glassmorphism & Depth */
+.stat-card {
+    border: none;
+    border-radius: 16px;
+    transition: transform 0.2s ease;
+    background: var(--surface);
+}
+
+    .stat-card:hover {
+        transform: translateY(-3px);
+    }
+
+.report-container {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Professional Table Styling */
+.table thead th {
+    background-color: rgba(20, 125, 201, 2);
+    color: white;
+    /*background-color: #f1f5f9;
+    color: var(--secondary);*/
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-top: none;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table tbody td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Custom Row Highlights */
+.row-overdue {
+    background-color: rgba(239, 68, 68, 0.02);
+}
+
+    .row-overdue:hover {
+        background-color: rgba(239, 68, 68, 0.05) !important;
+    }
+
+/* Badge Refinement */
+.badge-soft {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.badge-soft-primary {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+/* Input Styling */
+.form-control-custom {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+
+    .form-control-custom:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .report-container {
+        box-shadow: none;
+        border: none;
+    }
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-soft: #eef2ff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-body: #f1f5f9;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+.content-wrapper {
+    background: transparent !important;
+}
+
+/* Header & Back Button */
+.page-header-container {
+    margin-bottom: 1.5rem;
+}
+
+.btn-animate-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--text-main) !important;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+    .btn-animate-back:hover {
+        background: #f8fafc;
+        transform: translateX(-3px);
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+/* Main Modern Card */
+.glass-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+/* Modern Tabs Styling */
+.custom-tabs {
+    background: #fafafa;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 1.5rem;
+}
+
+    .custom-tabs .nav-link {
+        border: none !important;
+        padding: 1.2rem 1.5rem;
+        color: var(--text-muted) !important;
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+        /* Fixed Hover: Icon and Text stay visible */
+        .custom-tabs .nav-link:hover {
+            background-color: rgba(79, 70, 229, 0.05) !important;
+            color: var(--primary) !important;
+        }
+
+            .custom-tabs .nav-link:hover i,
+            .custom-tabs .nav-link:hover .tab-icon {
+                color: var(--primary) !important;
+                opacity: 1 !important;
+            }
+
+        .custom-tabs .nav-link.active {
+            background: transparent !important;
+            color: var(--primary) !important;
+        }
+
+            .custom-tabs .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--primary);
+                border-radius: 10px 10px 0 0;
+            }
+
+.tab-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Section Headings */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Form Controls */
+.form-group label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-control-modern {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-main);
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+    .form-control-modern:focus {
+        border-color: var(--primary);
+        outline: 0;
+        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    }
+
+/* Select2 Modern Overrides */
+.select2-container--default .select2-selection--single {
+    height: 38px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Document Checkbox Box */
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+/* Save Button */
+.btn-save-order {
+    background: var(--primary);
+    color: #fff !important;
+    padding: 12px 40px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    transition: all 0.2s ease;
+}
+
+    .btn-save-order:hover {
+        background: #4338ca;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+    }
+
+.PageHeading {
+    /* Forces standard sans-serif if Inter isn't loaded */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+/* NEW: Top Menu Strip Styles */
+.menu-strip {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-clr);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+    z-index: 100;
+}
+
+.menu-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-menu {
+    background: #ffffff;
+    border: 1px solid transparent;
+    color: var(--text-main);
+    padding: 4px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+    .btn-menu:hover {
+        background: #f3f4f6;
+        border-color: var(--border-clr);
+    }
+
+.btn-save {
+    background: var(--accent-save);
+    color: white;
+}
+
+    .btn-save:hover {
+        background: #047857;
+    }
+
+.btn-back {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-clr);
+}
+/* 1. Scoping everything to prevent font/color leaking */
+.order-form-container {
+    --m-primary: #4f46e5;
+    --m-primary-dark: #3730a3;
+    --m-soft: #f5f7ff;
+    --m-text: #1e293b;
+    --m-muted: #64748b;
+    --m-border: #e2e8f0;
+}
+
+    /* 2. Fix the 'disappearing' hover text on tabs */
+    .order-form-container .custom-tabs .nav-link {
+        border: none !important;
+        padding: 1rem 1.5rem;
+        color: var(--m-muted) !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+    }
+
+        /* Solid color on hover - no transparency/white-out */
+        .order-form-container .custom-tabs .nav-link:hover {
+            color: var(--m-primary) !important;
+            background-color: rgba(79, 70, 229, 0.05) !important;
+        }
+
+        .order-form-container .custom-tabs .nav-link.active {
+            color: var(--m-primary) !important;
+            background: white !important;
+        }
+
+            .order-form-container .custom-tabs .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--m-primary);
+                border-radius: 10px 10px 0 0;
+            }
+
+    /* 3. Fix Page Header Fonts */
+    .order-form-container h2 {
+        font-weight: 700 !important;
+        font-size: 1.75rem !important;
+        color: var(--m-text) !important;
+    }
+
+    .order-form-container .breadcrumb-item {
+        font-size: 0.85rem !important;
+    }
+
+    /* 4. Back Button Hover Fix */
+    .order-form-container .btn-animate-back {
+        background: #fff !important;
+        color: var(--m-text) !important;
+        border: 1px solid var(--m-border) !important;
+        font-weight: 600 !important;
+    }
+
+        .order-form-container .btn-animate-back:hover {
+            background: #f8fafc !important;
+            border-color: var(--m-muted) !important;
+            color: var(--m-primary) !important;
+        }
+
+    /* 5. Form Label Clarity */
+    .order-form-container .form-group label {
+        font-weight: 700 !important;
+        font-size: 11px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--m-muted) !important;
+        margin-bottom: 6px;
+    }
+
+
+
+
+    /* 6. Fix for 'Select Option' dropdown appearing weird */
+    .order-form-container .select2-container--default .select2-selection--single {
+        height: 36px !important;
+        border: 1px solid var(--m-border) !important;
+        border-radius: 8px !important;
+        padding-top: 6px;
+    }
+
+    /* 7. Save Button Visibility */
+    .order-form-container .btn-save-order {
+        background: var(--m-primary) !important;
+        color: white !important;
+        font-weight: 600 !important;
+        padding: 12px 30px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2) !important;
+    }
+
+        .order-form-container .btn-save-order:hover {
+            background: var(--m-primary-dark) !important;
+            transform: translateY(-1px);
+        }
+
+/* Container for the footer buttons */
+.tab-footer-nav {
+    display: flex;
+    justify-content: space-between; /* Pushes Back to left, Next to right */
+    align-items: center;
+    padding: 25px 0 10px 0;
+    margin-top: 30px;
+    border-top: 1px dashed var(--border-color);
+}
+/* Back Button Styling */
+.btn-prev-tab {
+    background: var(--primary) !important;
+    color: white !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+    .btn-prev-tab i {
+        transition: transform 0.3s ease;
+    }
+
+    /* Sliding Left Animation */
+    .btn-prev-tab:hover {
+        background: #f8fafc !important;
+        border-color: var(--primary) !important;
+        color: var(--primary) !important;
+        padding-left: 35px;
+    }
+
+        .btn-prev-tab:hover i {
+            transform: translateX(-8px);
+        }
+/* Next Button Styling */
+.btn-next-tab {
+    background: var(--primary) !important;
+    color: white !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+    .btn-next-tab i {
+        transition: transform 0.3s ease;
+    }
+
+    /* Sliding Animation on Hover */
+    .btn-next-tab:hover {
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+        padding-right: 35px; /* Creates room for the slide */
+    }
+
+        .btn-next-tab:hover i {
+            transform: translateX(8px); /* The sliding arrow effect */
+        }
+
+/* Save Button Centering (Final Tab Only) */
+.last-tab-footer {
+    justify-content: center !important;
+}
+
+/* Container for the switch */
+.modern-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    vertical-align: middle;
+}
+
+/* Hide the actual checkbox but keep it functional */
+.switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* The background track of the switch */
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1; /* Gray for Deactive */
+    transition: .3s;
+    border-radius: 34px;
+}
+
+    /* The white circle (the knob) */
+    .switch-slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .3s;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+/* When checked: Change track color to Green */
+.switch-input:checked + .switch-slider {
+    background-color: #22c55e;
+}
+
+    /* When checked: Move the white circle to the right */
+    .switch-input:checked + .switch-slider:before {
+        transform: translateX(24px);
+    }
+
+/* Optional: Subtle focus ring for accessibility */
+.switch-input:focus + .switch-slider {
+    box-shadow: 0 0 1px #22c55e;
+}
+
+/* Styling for read-only fields */
+.form-control-modern[readonly],
+.form-control-modern[disabled] {
+    background-color: #f8fafc; /* Light gray background */
+    border-color: #e2e8f0;
+    color: #64748b;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Ensure active tab icons have color */
+.nav-link.active i {
+    color: var(--primary-color);
+}
+
+/*Risk tab design*/
+.risk-card {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 7px;
+    border: 1px solid #f1f4f9;
+}
+
+    .risk-card:hover {
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+        transform: translateY(-2px);
+    }
+
+/* Modern Dropdown Fix */
+.modern-dropdown {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+    .modern-dropdown:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+/* Input Fields inside the "Add" Bar */
+.risk-card input::placeholder {
+    color: #a0aec0;
+    font-size: 0.8rem;
+}
+
+.bg-light {
+    background-color: #f1f5f9 !important;
+}
+
+/* Prevent button width jumping when spinner appears */
+.btn-sm {
+    min-width: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Customizing the Spinner Speed */
+.fa-spin {
+    animation: fa-spin 1s infinite linear;
+}
+
+/* Smooth opacity transition for the loading state */
+.opacity-75 {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* Optional: Pulse effect on success */
+.btn-success {
+    animation: pulse-green 0.5s rgba(40, 167, 69, 0.4);
+}
+
+@@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+/*Risk tab design end*/
+
+/*Deviation tab design*/
+.card-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    color: #a0aec0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.deviation-card {
+    transition: transform 0.3s ease;
+    border: 1px solid #eef2f7;
+}
+
+    .deviation-card:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+    }
+
+.border-right-dash {
+    border-right: 1px dashed #e2e8f0;
+}
+
+.badge-soft-primary {
+    background-color: #ebf4ff;
+    color: #3182ce;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.time-taken-pill {
+    background: #fff5f5;
+    color: #c53030;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.add-card {
+    background-color: #ffffff;
+    border: 2px dashed #cbd5e0 !important;
+}
+
+.deviation-card {
+    border: 1px solid #eef2f7;
+    transition: transform 0.2s;
+}
+
+    .deviation-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    }
+
+.border-dashed {
+    border: 2px dashed #cbd5e0 !important;
+    background-color: #fbfcfe !important;
+}
+
+.op-7 {
+    opacity: 0.7;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.deviation-card {
+    border: 1px solid #eef2f7;
+    transition: transform 0.2s;
+}
+
+    .deviation-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    }
+
+.border-dashed {
+    border: 2px dashed #cbd5e0 !important;
+    background-color: #fbfcfe !important;
+}
+
+.op-7 {
+    opacity: 0.7;
+}
+
+.italic {
+    font-style: italic;
+}
+/*Deviation tab design end*/
+
+/*Deliverables tab*/
+/* Header Accent */
+.accent-line {
+    width: 4px;
+    height: 24px;
+    background: #4e73df;
+    border-radius: 10px;
+}
+
+.badge-count {
+    background: #e8eaf6;
+    color: #3f51b5;
+    font-weight: 700;
+}
+
+/* Advanced Card Design */
+.deliverable-card-advanced {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .deliverable-card-advanced:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0,0,0,0.08) !important;
+    }
+
+.card-status-bar {
+    height: 4px;
+    width: 100%;
+    background: #4e73df;
+    opacity: 0.1;
+}
+
+.deliverable-card-advanced:hover .card-status-bar {
+    opacity: 1;
+}
+
+/* Form Elements */
+.modern-form-group label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #a0aec0;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.custom-input-advanced, .custom-select-advanced {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    font-size: 13px !important;
+}
+
+.btn-save-advanced {
+    padding: 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+/* Date Box */
+.date-icon-box {
+    background: #f0f7ff;
+    color: #007bff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+}
+/*Deliverables end*/
+
+.custom-tab {
+    position: relative;
+    display: inline-block;
+    background: #00338d;
+    color: #fff;
+    padding: 10px 25px;
+    font-weight: 600;
+    border-radius: 6px 0 0 0;
+}
+
+
+    .custom-tab::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -20px;
+        width: 0;
+        height: 0;
+        border-bottom: 40px solid #00338d;
+        border-right: 20px solid transparent;
+    }
+.custom-input {
+    border: none !important;
+    background-color: #f1f5f9 !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #1e293b !important;
+    transition: all 0.2s ease;
+}

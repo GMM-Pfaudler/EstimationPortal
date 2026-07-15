@@ -1,0 +1,93 @@
+﻿@using DocManagement.Models
+@model LoginViewModelWithOTP
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Content/css/sb-admin-2.css" rel="stylesheet">
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+
+<body class="bg-gradient-primary" style="margin-top:50px;background-image:url(../../Images/bgimg_white_crystal.jpg)">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-md-around my-4">
+            <div class="col-xl-10 col-lg-5 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        @using (Html.BeginForm("LoginWithOTP", "Account" ,FormMethod.Post))
+                        {
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="row justify-content-center p-3"><img class="" src="~/Images/Logo_180X46.png" alt="lgCmpny"></div>
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        @Html.HiddenFor(m => m.Uip, new { id = "Uip" })
+                                        <div class="form-group">
+                                            <div class="col-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <input type="email" class="form-control form-control-sm" id="UserEmailId" aria-describedby="UsrHelp" placeholder="Enter Email ID..." name="UserEmailId" autocomplete="off" required>
+                                                    @Html.ValidationMessageFor(m => m.UserEmailId, "", new { @class = "text-danger small  font-weight-bold" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                                Send
+                                            </button>
+                                        </div>
+                                        <hr />
+                                        <div class="text-center mb-1">
+                                            <a class="small text-success" href="/Account/Login">Already have an account? Login!</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <p class="small text-primary" href="#">For support contact in case any technical issue: <u>notification@gmmpfaudler.com</u></p>
+                                        </div>
+                                        <input style="visibility:hidden" type="text" id="Uip1" name="Uip1" value=@ViewBag.userIpAddress2>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger
+        $("#Uip").val($("#Uip1").val());
+    });
+
+
+
+</script>
+
+

@@ -1,0 +1,66 @@
+﻿@model List<SUP_CORE.EFModel.Tbl_SubTypeMasters>
+@{
+    ViewBag.Title = "Sub Type Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var roleId = Session["RoleID"]?.ToString();
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link href="~/Content/css/listpage.css" rel="stylesheet">
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / Manage Sub Type</div>
+        </div>
+        <a href="@Url.Action("Create", "SubTypeMaster")" class="btn-create shadow-sm">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+
+    <div class="table-card">
+        <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%">
+                <thead>
+                    <tr>
+                        @if (roleId == "1")
+                        {
+                            <th>Actions</th>
+                        }
+                        <th>Sub Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @if (roleId == "1")
+                            { 
+                                <td>
+                                    <a href="@Url.Action("Edit", "SubTypeMaster", new { id = item.Id })" class="btn-edit-icon" title="Edit Sub Type">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            }
+                            <td>@item.SubType</td>
+                            <td>
+                                @if (item.IsDelete == false)
+                                {
+                                    <span class="badge-soft-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge-soft-danger">Deactive</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model SUP_CORE.EFModel.BPTMaster
+@{
+    ViewBag.Title = "Delete Type";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Code", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBoxFor(model => model.Code, new { @class = "form-control form-control-sm", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-12 m-md-2" align="center">
+                <input type="submit" value="Delete" class="btn btn-sm  btn-outline-danger col-sm-1 font" />
+
+            </div>
+        </div>
+    </div>
+
+}

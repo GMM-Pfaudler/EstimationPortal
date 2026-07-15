@@ -1,0 +1,916 @@
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocManagement.dll.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocManagement.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocManagement.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csc.exe
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csc.exe.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csc.rsp
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csi.exe
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csi.exe.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\csi.rsp
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.AppContext.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Console.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.IO.Compression.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Claims.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.ValueTuple.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\vbc.exe
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\vbc.exe.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\vbc.rsp
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlcese40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlceqp40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlceme40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlceer40EN.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlcecompact40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\sqlceca40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlcese40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlceqp40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlceme40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlceer40EN.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlcecompact40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\sqlceca40.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Win32.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\netstandard.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.AppContext.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Collections.Concurrent.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Collections.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Collections.NonGeneric.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Collections.Specialized.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ComponentModel.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ComponentModel.EventBasedAsync.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ComponentModel.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ComponentModel.TypeConverter.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Console.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Data.Common.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.Contracts.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.Debug.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.FileVersionInfo.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.Process.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.StackTrace.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.Tools.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.TraceSource.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.Tracing.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Drawing.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Dynamic.Runtime.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Globalization.Calendars.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Globalization.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Globalization.Extensions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.Compression.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.Compression.ZipFile.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.FileSystem.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.FileSystem.DriveInfo.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.FileSystem.Watcher.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.IsolatedStorage.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.MemoryMappedFiles.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.Pipes.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.IO.UnmanagedMemoryStream.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Linq.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Linq.Expressions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Linq.Parallel.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Linq.Queryable.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Http.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.NameResolution.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.NetworkInformation.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Ping.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Requests.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Security.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.Sockets.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.WebHeaderCollection.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.WebSockets.Client.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Net.WebSockets.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ObjectModel.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Reflection.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Reflection.Extensions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Reflection.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Resources.Reader.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Resources.ResourceManager.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Resources.Writer.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Extensions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Handles.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.InteropServices.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Numerics.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Serialization.Formatters.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Serialization.Json.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Serialization.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Serialization.Xml.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Claims.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Cryptography.Csp.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Principal.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.SecureString.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Text.Encoding.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Text.Encoding.Extensions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Text.RegularExpressions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.Overlapped.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.Tasks.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.Tasks.Parallel.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.Thread.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.ThreadPool.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Threading.Timer.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.ValueTuple.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.ReaderWriter.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.XDocument.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.XmlDocument.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.XmlSerializer.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.XPath.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Xml.XPath.XDocument.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Antlr3.Runtime.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\CaptchaMvc.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Core.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Facilities.Logging.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Windsor.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\dotless.AspNet.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\dotless.Core.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.SqlServer.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\log4net.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Owin.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Newtonsoft.Json.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Owin.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_BAL.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_CORE.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_DAL.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Data.SqlServerCe.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Runtime.Loader.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Principal.Windows.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Helpers.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Mvc.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Optimization.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Optimization.Less.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Razor.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\WebActivatorEx.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\WebGrease.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_BAL.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_BAL.dll.config
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_CORE.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\SUP_DAL.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Antlr3.Runtime.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\CaptchaMvc.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\CaptchaMvc.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Core.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Facilities.Logging.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Castle.Windsor.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.SqlServer.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\log4net.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.Owin.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Newtonsoft.Json.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Security.Principal.Windows.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Optimization.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Optimization.Less.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Razor.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Helpers.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\System.Web.Mvc.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\obj\Debug\DocManagement.csprojAssemblyReference.cache
+C:\Users\10580\source\repos\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CoreCompileInputs.cache
+C:\Users\10580\source\repos\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CopyComplete
+C:\Users\10580\source\repos\DocManagement\DocManagement\obj\Debug\DocManagement.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\obj\Debug\DocManagement.pdb
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EPPlus.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EPPlus.Interfaces.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EPPlus.System.Drawing.dll
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.xml
+C:\Users\10580\source\repos\DocManagement\DocManagement\bin\EPPlus.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocManagement.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocManagement.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocManagement.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csi.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csi.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\csi.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.Managed.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.AppContext.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Collections.Immutable.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Console.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.IO.Compression.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Claims.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Xml.XmlDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\vbc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\vbc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\vbc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Win32.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\netstandard.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.AppContext.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Collections.Concurrent.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Collections.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Collections.NonGeneric.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Collections.Specialized.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ComponentModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ComponentModel.EventBasedAsync.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ComponentModel.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ComponentModel.TypeConverter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Console.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Data.Common.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.Contracts.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.Debug.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.FileVersionInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.Process.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.StackTrace.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.Tools.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.TraceSource.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.Tracing.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Drawing.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Dynamic.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Globalization.Calendars.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Globalization.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Globalization.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.Compression.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.Compression.ZipFile.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.FileSystem.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.FileSystem.DriveInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.FileSystem.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.FileSystem.Watcher.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.IsolatedStorage.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.MemoryMappedFiles.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.Pipes.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.IO.UnmanagedMemoryStream.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Linq.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Linq.Expressions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Linq.Parallel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Linq.Queryable.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Http.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.NameResolution.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.NetworkInformation.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Ping.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Requests.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Security.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.Sockets.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.WebHeaderCollection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.WebSockets.Client.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Net.WebSockets.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ObjectModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Reflection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Reflection.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Reflection.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Resources.Reader.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Resources.ResourceManager.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Resources.Writer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Handles.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.InteropServices.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Numerics.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Serialization.Formatters.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Serialization.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Serialization.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Serialization.Xml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Claims.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Cryptography.Algorithms.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Cryptography.Csp.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Cryptography.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Cryptography.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Cryptography.X509Certificates.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Principal.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.SecureString.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Text.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Text.Encoding.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Text.RegularExpressions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.Overlapped.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.Tasks.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.Tasks.Parallel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.Thread.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.ThreadPool.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Threading.Timer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.ReaderWriter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.XmlDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.XmlSerializer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.XPath.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Xml.XPath.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Antlr3.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\CaptchaMvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Facilities.Logging.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Windsor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\dotless.AspNet.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\dotless.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EPPlus.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EPPlus.Interfaces.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EPPlus.System.Drawing.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\log4net.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Web.Infrastructure.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Newtonsoft.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Data.SqlServerCe.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Runtime.Loader.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Helpers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Mvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Optimization.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Optimization.Less.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\WebActivatorEx.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\WebGrease.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Antlr3.Runtime.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\CaptchaMvc.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\CaptchaMvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Facilities.Logging.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Castle.Windsor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\EPPlus.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\log4net.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.Owin.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Newtonsoft.Json.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Security.Principal.Windows.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Optimization.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Optimization.Less.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Helpers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\System.Web.Mvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\obj\Debug\DocManagement.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\obj\Debug\DocManagement.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\DocManagement\obj\Debug\DocManagement.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocManagement.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocManagement.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocManagement.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csi.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csi.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\csi.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.Managed.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.AppContext.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Collections.Immutable.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Console.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.IO.Compression.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Claims.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Xml.XmlDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\vbc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\vbc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\vbc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Win32.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\netstandard.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.AppContext.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Collections.Concurrent.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Collections.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Collections.NonGeneric.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Collections.Specialized.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ComponentModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ComponentModel.EventBasedAsync.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ComponentModel.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ComponentModel.TypeConverter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Console.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Data.Common.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.Contracts.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.Debug.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.FileVersionInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.Process.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.StackTrace.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.Tools.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.TraceSource.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.Tracing.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Drawing.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Dynamic.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Globalization.Calendars.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Globalization.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Globalization.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.Compression.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.Compression.ZipFile.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.FileSystem.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.FileSystem.DriveInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.FileSystem.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.FileSystem.Watcher.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.IsolatedStorage.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.MemoryMappedFiles.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.Pipes.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.UnmanagedMemoryStream.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Linq.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Linq.Expressions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Linq.Parallel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Linq.Queryable.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Http.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.NameResolution.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.NetworkInformation.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Ping.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Requests.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Security.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.Sockets.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.WebHeaderCollection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.WebSockets.Client.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Net.WebSockets.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ObjectModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Reflection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Reflection.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Reflection.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Resources.Reader.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Resources.ResourceManager.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Resources.Writer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Handles.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.InteropServices.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Numerics.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Serialization.Formatters.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Serialization.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Serialization.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Serialization.Xml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Claims.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Cryptography.Algorithms.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Cryptography.Csp.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Cryptography.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Cryptography.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Cryptography.X509Certificates.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Principal.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.SecureString.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Encoding.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.RegularExpressions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Overlapped.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Tasks.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Tasks.Parallel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Thread.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.ThreadPool.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Timer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.ReaderWriter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.XmlDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.XmlSerializer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.XPath.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Xml.XPath.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Antlr3.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\CaptchaMvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Facilities.Logging.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Windsor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\dotless.AspNet.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\dotless.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EPPlus.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EPPlus.Interfaces.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EPPlus.System.Drawing.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\log4net.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Web.Infrastructure.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Newtonsoft.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Buffers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Data.SqlServerCe.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.Pipelines.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Memory.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Numerics.Vectors.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.Loader.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Encodings.Web.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Tasks.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Helpers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Mvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Optimization.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Optimization.Less.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\WebActivatorEx.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\WebGrease.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Antlr3.Runtime.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\CaptchaMvc.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\CaptchaMvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Facilities.Logging.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Castle.Windsor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\EPPlus.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\log4net.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.Owin.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Newtonsoft.Json.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Buffers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.IO.Pipelines.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Memory.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Numerics.Vectors.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Security.Principal.Windows.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Encodings.Web.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Text.Json.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Threading.Tasks.Extensions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Optimization.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Optimization.Less.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Helpers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\System.Web.Mvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\obj\Debug\DocManagement.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\obj\Debug\DocManagement.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\DocManagement\obj\Debug\DocManagement.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\DocManagement.dll.config
+D:\Latest Project\DocManagement\DocManagement\bin\DocManagement.dll
+D:\Latest Project\DocManagement\DocManagement\bin\DocManagement.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csc.exe
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csc.exe.config
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csc.rsp
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csi.exe
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csi.exe.config
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\csi.rsp
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.AppContext.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Collections.Immutable.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Console.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.IO.Compression.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.IO.Pipes.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.AccessControl.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Claims.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.ValueTuple.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\vbc.exe
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\vbc.exe.config
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\vbc.rsp
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe
+D:\Latest Project\DocManagement\DocManagement\bin\roslyn\VBCSCompiler.exe.config
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlcese40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlceqp40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlceme40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlceer40EN.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlcecompact40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\sqlceca40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+D:\Latest Project\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlcese40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlceqp40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlceme40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlceer40EN.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlcecompact40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\sqlceca40.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+D:\Latest Project\DocManagement\DocManagement\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\Latest Project\DocManagement\DocManagement\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\Latest Project\DocManagement\DocManagement\bin\Antlr3.Runtime.dll
+D:\Latest Project\DocManagement\DocManagement\bin\CaptchaMvc.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Core.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Facilities.Logging.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Windsor.dll
+D:\Latest Project\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.dll
+D:\Latest Project\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.dll
+D:\Latest Project\DocManagement\DocManagement\bin\dotless.AspNet.dll
+D:\Latest Project\DocManagement\DocManagement\bin\dotless.Core.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.SqlServer.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EPPlus.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EPPlus.Interfaces.dll
+D:\Latest Project\DocManagement\DocManagement\bin\EPPlus.System.Drawing.dll
+D:\Latest Project\DocManagement\DocManagement\bin\log4net.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyModel.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Owin.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Web.Infrastructure.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Newtonsoft.Json.dll
+D:\Latest Project\DocManagement\DocManagement\bin\Owin.dll
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_BAL.dll
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_CORE.dll
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_DAL.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Buffers.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Data.SqlServerCe.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.IO.Pipelines.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Memory.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Numerics.Vectors.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Runtime.Loader.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Security.Principal.Windows.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Text.Encodings.Web.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Text.Json.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Threading.Tasks.Extensions.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Helpers.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Mvc.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Optimization.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Optimization.Less.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Razor.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.dll
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.dll
+D:\Latest Project\DocManagement\DocManagement\bin\WebActivatorEx.dll
+D:\Latest Project\DocManagement\DocManagement\bin\WebGrease.dll
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_BAL.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_BAL.dll.config
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_CORE.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\SUP_DAL.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\Antlr3.Runtime.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\CaptchaMvc.pdb
+D:\Latest Project\DocManagement\DocManagement\bin\CaptchaMvc.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Core.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Facilities.Logging.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Services.Logging.Log4netIntegration.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Castle.Windsor.xml
+D:\Latest Project\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.xml
+D:\Latest Project\DocManagement\DocManagement\bin\DocumentFormat.OpenXml.Framework.xml
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.xml
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.SqlServer.xml
+D:\Latest Project\DocManagement\DocManagement\bin\EntityFramework.SqlServerCompact.xml
+D:\Latest Project\DocManagement\DocManagement\bin\EPPlus.xml
+D:\Latest Project\DocManagement\DocManagement\bin\log4net.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.Owin.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Newtonsoft.Json.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Buffers.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Diagnostics.EventLog.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.IO.Pipelines.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Memory.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Numerics.Vectors.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Security.Principal.Windows.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Text.Encodings.Web.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Text.Json.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Threading.Tasks.Extensions.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Optimization.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Optimization.Less.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Razor.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.Deployment.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Webpages.Razor.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Helpers.xml
+D:\Latest Project\DocManagement\DocManagement\bin\System.Web.Mvc.xml
+D:\Latest Project\DocManagement\DocManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Latest Project\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.AssemblyReference.cache
+D:\Latest Project\DocManagement\DocManagement\obj\Debug\DocManagement.csproj.CoreCompileInputs.cache
+D:\Latest Project\DocManagement\DocManagement\obj\Debug\DocManag.11CBC05C.Up2Date
+D:\Latest Project\DocManagement\DocManagement\obj\Debug\DocManagement.dll
+D:\Latest Project\DocManagement\DocManagement\obj\Debug\DocManagement.pdb

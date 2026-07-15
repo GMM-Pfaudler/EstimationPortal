@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.CountryMaster>
+
+@{
+    ViewBag.Title = "Country List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+
+            <div class="card-body bg-white">
+                <p class="col-sm-2 border-left-primary bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "text-primary" })
+                </p>
+
+                <div class="table-responsive font">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-nowrap">
+                                <th>Actions</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CountryName)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-nowrap">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "CountryMasters", new { id = item.Id }, new { @class = "badge badge-primary" }) |
+                                        @Html.ActionLink("Delete", "Delete", "CountryMasters", new { id = item.Id }, new { @class = "badge badge-danger" })
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CountryName)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $('#dataTable').DataTable({
+                destroy: true,
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+
+                ],
+                "order": [[1, "desc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'CountryMasters_' + d;
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+}

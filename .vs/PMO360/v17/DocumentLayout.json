@@ -1,0 +1,233 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Latest Project\\PMO360\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\views\\project\\aedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\project\\aedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\views\\project\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\project\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\views\\project\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\project\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|d:\\latest project\\pmo360\\pmo360\\utility\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\utility\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|d:\\latest project\\pmo360\\pmo360\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\views\\home\\viewordstatusdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\home\\viewordstatusdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|D:\\Latest Project\\PMO360\\pmo360\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|PMO360\\PMO360.csproj|solutionrelative:pmo360\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Utility\\EmailService.cs",
+              "RelativeDocumentMoniker": "PMO360\\Utility\\EmailService.cs",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Utility\\EmailService.cs",
+              "RelativeToolTip": "PMO360\\Utility\\EmailService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T12:24:01.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAHgBAAAAAAAAAAAwwI4BAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-21T05:00:00.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAIsAAAAAAAAAAAD4v6kAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-18T09:42:08.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ViewOrdStatusData.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Home\\ViewOrdStatusData.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Home\\ViewOrdStatusData.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Home\\ViewOrdStatusData.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Home\\ViewOrdStatusData.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAiwJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-18T09:40:53.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Web.config",
+              "RelativeDocumentMoniker": "PMO360\\Web.config",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Web.config",
+              "RelativeToolTip": "PMO360\\Web.config",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHUAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-04-18T09:38:35.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "PMO360\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "PMO360\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAcwFgAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T12:43:20.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PMO360\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PMO360\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABwBAAAAAAAAAIA7wCUBAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T12:11:55.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AEdit.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\AEdit.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Project\\AEdit.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\AEdit.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Project\\AEdit.cshtml",
+              "ViewState": "AgIAAEwEAAAAAAAAAAAwwGIEAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T11:59:47.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Project\\Edit.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\Edit.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Project\\Edit.cshtml",
+              "ViewState": "AgIAANICAAAAAAAAAAAtwOYCAACTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T11:54:16.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\Create.cshtml",
+              "RelativeDocumentMoniker": "PMO360\\Views\\Project\\Create.cshtml",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Views\\Project\\Create.cshtml",
+              "RelativeToolTip": "PMO360\\Views\\Project\\Create.cshtml",
+              "ViewState": "AgIAAH8CAAAAAAAAAAAtwJMCAACUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-16T11:50:55.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "PMO360\\Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\Latest Project\\PMO360\\PMO360\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "PMO360\\Controllers\\ProjectController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T11:47:03.393Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1563,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

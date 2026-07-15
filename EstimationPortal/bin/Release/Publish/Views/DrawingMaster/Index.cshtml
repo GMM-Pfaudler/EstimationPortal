@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "Drawing Upload List";
+
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <p class="col-sm-2 border-left-primary bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                    @Html.ActionLink("Upload Drawing", "UploadPO", null, new { @class = "text-primary" })
+                </p>
+                <div class="table-responsive font">
+                    <table id="demodata" class="table table-bordered" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>ItemCode</th> 
+                                <th>UploadBy</th>
+                                <th>Username</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            DemoDatatable();
+
+        });
+        function DemoDatatable() {
+            table = $("#demodata").DataTable({
+                "processing": true,
+                "serverSide": true,
+                "filter": true,
+                "orderMulti": false,
+                "lengthMenu": [[10, 25, 200, -1], [10, 25, 200, "All"]],
+                "ajax": {
+                    "url": '/DrawingMaster/GetPOTableData',
+                    "type": "POST",
+                    "datatype": "json",
+                    "beforesend": function () {
+                        $("#loader").show();
+                    },
+                    "complete": function () {
+                        $("#loader").hide();
+                    }
+                },
+                "columns": [
+                      { "data": "Id", "Name": "Id", "autoWidth": true },
+                      { "data": "ItemCode", "Name": "ItemCode", "autoWidth": true }, 
+                      { "data": "CreatedBy", "Name": "CreatedBy", "autoWidth": true },
+                      { "data": "UserName", "Name": "UserName", "autoWidth": true },
+                      {
+                          "data": "CreatedDate", "Name": "CreatedDate", "autoWidth": true,
+                          "render": function (data) {
+                              return getDateString(data);
+                          }
+                      },
+                       { "data": null, "Name": "DrwNo", "autoWidth": true }
+                        
+
+                ], 
+                "columnDefs": [
+                   {
+
+                       "targets":[5] ,
+                       "data": null, render: function (data, type, row)
+                       {
+                        return '<a class="d-inline" href="@Url.Action("DownLoadPOPDF", "DrawingMaster")/?DrawingNo=' + data.Id + '">Download</a>'
+
+                       },
+                       'orderable': false,
+                   }
+               
+                   ],
+                "dom": '<"row"<"col-md-12"<"pull-right"B>l>><"custom-spacer"f>rtip',
+                "buttons": [
+                    {
+                        "extend": 'excel',
+                        "action": newexportaction,
+                        filename: function () {
+                            header: false
+                            return 'POUploadDetails';
+                        },
+                        exportOptions: {
+                            columns: [1,2,3,4]
+
+                        }
+                    }
+                ]
+
+            });
+        }
+        function getDateString(date) {
+            var dateObj = new Date(parseInt(date.substr(6)));
+            return dateObj.toLocaleString();
+        }
+        function newexportaction(e, dt, button, config) {
+            var self = this;
+            var oldStart = dt.settings()[0]._iDisplayStart;
+            dt.one('preXhr', function (e, s, data) {
+                // Just this once, load all data from the server...
+                data.start = 0;
+                data.length = 500000000;
+                dt.one('preDraw', function (e, settings) {
+                    debugger
+                    // Call the original action function
+                    if (button[0].className.indexOf('buttons-copy') >= 0) {
+                        $.fn.dataTable.ext.buttons.copyHtml5.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-excel') >= 0) {
+                        $.fn.dataTable.ext.buttons.excelHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.excelFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-csv') >= 0) {
+                        $.fn.dataTable.ext.buttons.csvHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.csvHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.csvFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-pdf') >= 0) {
+                        $.fn.dataTable.ext.buttons.pdfHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.pdfHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.pdfFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-print') >= 0) {
+                        $.fn.dataTable.ext.buttons.print.action(e, dt, button, config);
+                    }
+                    dt.one('preXhr', function (e, s, data) {
+                        // DataTables thinks the first item displayed is index 0, but we're not drawing that.
+                        // Set the property to what it was before exporting.
+                        settings._iDisplayStart = oldStart;
+                        data.start = oldStart;
+                    });
+                    // Reload the grid with the original page. Otherwise, API functions like table.cell(this) don't work properly.
+                    setTimeout(dt.ajax.reload, 0);
+                    // Prevent rendering of the full data to the DOM
+                    return false;
+                });
+            });
+            // Requery the server with the new one-time export settings
+            dt.ajax.reload();
+        }
+    </script>
+}
+
+
+
+

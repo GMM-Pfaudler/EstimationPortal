@@ -1,0 +1,105 @@
+﻿@using DocManagement.Models;
+@model IEnumerable<SUP_CORE.EFModel.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table id="tblCustomers" class="table" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th style="width:150px">Name</th>
+                <th style="width:150px">OrderId</th>
+                <th style="width:150px">Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (SUP_CORE.EFModel.Customer customer in Model)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.OrderId</td>
+                    <td>@customer.Price</td>
+                    <td><input type="button" value="Remove" onclick="Remove(this)" /></td>
+                </tr>
+            }*@
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input type="text" id="txtName" /></td>
+                <td><input type="text" id="txtOrderId" /></td>
+                <td><input type="text" id="txtPrice" /></td>
+                <td><input type="button" id="btnAdd" value="Add" /></td>
+            </tr>
+        </tfoot>
+    </table>
+    <input type="button" id="btnSave" value="Save All" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript">
+        $("body").on("click", "#btnAdd", function () {
+            var txtName = $("#txtName");
+            var txtOrderId = $("#txtOrderId");
+            var txtPrice = $("#txtPrice");
+            var tBody = $("#tblCustomers > TBODY")[0];
+            var row = tBody.insertRow(-1);
+            var cell = $(row.insertCell(-1));
+            cell.html(txtName.val());
+            cell = $(row.insertCell(-1));
+            cell.html(txtOrderId.val());
+            cell = $(row.insertCell(-1));
+            cell.html(txtPrice.val());
+            cell = $(row.insertCell(-1));
+            var btnRemove = $("<input />");
+            btnRemove.attr("type", "button");
+            btnRemove.attr("onclick", "Remove(this);");
+            btnRemove.val("Remove");
+            cell.append(btnRemove);
+            txtName.val("");
+            txtOrderId.val("");
+            txtPrice.val("");
+        });
+
+        function Remove(button) {
+            var row = $(button).closest("TR");
+            var name = $("TD", row).eq(0).html();
+            if (confirm("Do you want to delete: " + name)) {
+                var table = $("#tblCustomers")[0];
+                table.deleteRow(row[0].rowIndex);
+            }
+        };
+
+        $("body").on("click", "#btnSave", function () {
+            var customers = new Array();
+            $("#tblCustomers TBODY TR").each(function () {
+                var row = $(this);
+                var customer = {};
+                customer.Name = row.find("TD").eq(0).html();
+                customer.OrderId = row.find("TD").eq(1).html();
+                customer.Price = row.find("TD").eq(2).html();
+                customers.push(customer);
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "/Test/Insert",
+                data: JSON.stringify(customers),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    alert(r + " record(s) inserted.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

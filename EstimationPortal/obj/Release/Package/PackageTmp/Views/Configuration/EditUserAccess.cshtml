@@ -1,0 +1,116 @@
+﻿@model SUP_CORE.EFModelViews.UserAccessViewModel
+@{
+    ViewBag.Title = "Edit User Access";
+
+}
+<link href="~/Content/css/NewDesignEffects.css" rel="stylesheet">
+@using (Html.BeginForm("EditUserAccess", "Configuration", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2>@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / @ViewBag.Title</div>
+        </div>
+
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div class="border-0">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Select User", "Select User", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @*@Html.DropDownList("UserMaster_Id", ViewBag.UserList as SelectList, "-Select-", new { @id = "userId", @class = "form-control form-control-sm" })*@
+                                    @Html.DropDownListFor(m => m.UserMaster_Id, ViewBag.UserList as SelectList, "-Select-", new { @class = "form-control form-control-sm", @id = "userId" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <div class="form-group w-100">
+                                <input type="submit" name="actionType" id="btnShow" value="Search" class="btn btn-sm btn-outline-primary font w-100" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <div class="form-group w-100">
+                                <input type="button" id="btnRefresh" value="Refresh" class="btn btn-sm btn-outline-primary font w-100" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if (Model.MainMenus != null)
+                        {
+                            for (int i = 0; i < Model.MainMenus.Count; i++)
+                            {
+                                @Html.HiddenFor(m => m.RoleId)
+                                <div class="card mb-3 shadow-sm">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0">@Model.MainMenus[i].MenuName</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        @Html.HiddenFor(m => m.MainMenus[i].MainMenuId)
+
+                                        @if (Model.MainMenus[i].SubMenus != null && Model.MainMenus[i].SubMenus.Any())
+                                        {
+                                            <ul class="list-group list-group-flush">
+                                                @for (int j = 0; j < Model.MainMenus[i].SubMenus.Count; j++)
+                                                {
+                                                    <li class="list-group-item">
+                                                        <div class="form-check">
+                                                            @Html.HiddenFor(m => m.MainMenus[i].SubMenus[j].SubMenuId)
+                                                            <input type="checkbox"
+                                                                   class="form-check-input"
+                                                                   name="MainMenus[@i].SubMenus[@j].IsChecked"
+                                                                   value="true"
+                                                                   @(Model.MainMenus[i].SubMenus[j].IsChecked ? "checked" : "") />
+                                                            <label class="form-check-label">
+                                                                @Model.MainMenus[i].SubMenus[j].SubMenuName
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
+
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-12 m-md-2" align="center">
+                <input type="submit" id="btnUpdate" name="actionType" value="Update" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+</div>
+    }
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        debugger
+        $('#userId').select2({
+            allowClear: true
+        });
+        var count = @Model.MainMenus.Count;
+       if (count > 0) {
+            $('#btnUpdate').show();
+        } else {
+            $('#btnUpdate').hide();
+        }
+        $('#btnRefresh').on('click', function () {
+            debugger
+            window.location.href = '/Configuration/EditUserAccess';
+        });
+    });
+    </script>

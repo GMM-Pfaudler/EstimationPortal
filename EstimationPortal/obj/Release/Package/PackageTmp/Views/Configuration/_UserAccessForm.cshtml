@@ -1,0 +1,68 @@
+﻿@model  List<SUP_CORE.EFModel.UserAccessMaster>
+@using SUP_CORE.EFModel;
+@{
+    List<MainMenuMaster> mainMenuMaster = ViewBag.mainMenuList;
+    int mainMenuLength = mainMenuMaster.Count;
+}
+
+@using (Html.BeginForm("EditUserAccess", "configuration", FormMethod.Post, new { Id = "userAccessForm" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="UserAccessMaster.UserMaster_Id" value=@Model.FirstOrDefault().UserMaster_Id />
+    <div id="accordion">
+        @for (int i = 0; i < mainMenuLength; i++)
+        {
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" style="padding:10px;">                    
+                            <input type="checkbox" class="form-check d-inline-block pr-2" value="@mainMenuMaster[i].Id" name="UserAccessMaster.MainMenuMaster[@i].Id"
+                                   @(Model != null && @Model.Any(t => t.MainMenuMaster_Id == mainMenuMaster[i].Id) ? "checked" : "none") />
+                            <span data-toggle="collapse" href="#editMenuAccess_@mainMenuMaster[i].Id">@mainMenuMaster[i].MenuName</span>
+                            <input type="hidden" name="UserAccessMaster.MainMenuMaster[@i].MenuName" value="@mainMenuMaster[i].MenuName" />
+                    </a>
+                </div>
+
+                <div id="editMenuAccess_@mainMenuMaster[i].Id" class="collapse show" data-parent="#accordion">
+                    <ul style="list-style-type:none;margin-left:40px">
+                        @{int subMenuCount = mainMenuMaster[i].SubMenuMaster.Count;}
+                        @for (int j = 0; j < subMenuCount; j++)
+                        {
+                        <li>
+                                <p class="collapse-item">
+                                    <input type="checkbox" class="form-check d-inline-block pr-2" name="UserAccessMaster.MainMenuMaster[@i].SubMenuMaster[@j].Id" value="@mainMenuMaster[i].SubMenuMaster[j].Id"
+                                           @(Model != null && @Model.Any(t => t.MainMenuMaster_Id == @mainMenuMaster[i].Id && t.SubMenuMaster_Id == @mainMenuMaster[i].SubMenuMaster[j].Id) ? "checked" : "none") />
+                                    @mainMenuMaster[i].SubMenuMaster[j].SubMenuNameDisp
+                                    <input type="hidden" name="UserAccessMaster.MainMenuMaster[@i].SubMenuMaster[@j].SubMenuName" value="@mainMenuMaster[i].SubMenuMaster[j].SubMenuName" />
+                                </p>
+                               
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="form-group col-sm-12 m-md-2" align="center">
+        <div>
+            <Button type="button" id="userAccessFormSubmit" class="btn btn-sm btn-outline-primary col-sm-1 font" onclick="edituseraccessform();">Submit</Button>
+        </div>
+    </div>
+}
+
+@section Scripts 
+{
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $('.checked_all').on('change', function () {
+            $('.checkbox').prop('checked', $(this).prop("checked"));
+        });
+        $('.checkbox').change(function () {
+            if ($('.checkbox:checked').length == $('.checkbox').length) {
+                $('.checked_all').prop('checked', true);
+            } else {
+                $('.checked_all').prop('checked', false);
+            }
+        });
+    </script>
+}

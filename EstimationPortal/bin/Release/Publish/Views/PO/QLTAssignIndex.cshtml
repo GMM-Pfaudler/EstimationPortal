@@ -1,0 +1,213 @@
+﻿@using DocManagement.Models;
+@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    ViewBag.Title = "Bulk Assign Inspection Call";
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div align="right">
+            <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                @Html.ActionLink("Back to List", "QLTInspIndex", null, new { @class = "text-primary" })
+            </p>
+        </div>
+        <table border="0" cellspacing="2" cellpadding="2" class="mx-auto w-auto">
+            <tbody>
+                <tr>
+                    <td>QC Remarks</td>
+                    <td>@Html.TextArea("QLT_Remarks", null, new { @id = "QLT_Remarks", @class = "form-control form-control-sm", @autocomplete = "off", @style = "height:32px;" })</td>
+                    <td>@Html.DropDownList("EngId", ViewBag.EngList as SelectList, "-Select IEng-", new { @id = "EngId", @class = "form-control form-control-sm" })</td>
+                    <td>@Html.TextBox("InspPlannedDate", "-Select Planned Date-", new { @id = "InspPlannedDate", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "background-color: #FFF;" })</td>
+                    <td>
+                        <input type="button" id="BulkAssign" value="Submit All" class="btn btn-sm  btn-outline-primary  " />
+                        <input type="button" id="BulkWaiver" value="Waiver All" class="btn btn-sm  btn-outline-warning  " />
+                    </td>
+                </tr>
+            </tbody>
+        </table><br /> 
+       
+        <div class="card shadow mb-4  border-0"> 
+            <div class="card-body bg-white"> 
+                @{Html.RenderPartial("_Loading");}   
+                <div id="myPartialDash">
+                    @{Html.RenderPartial("_POSummry1", Model);}
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function ()
+        {
+            Summarydata();
+
+            $('#CBox1').click(function () {
+                debugger
+                $('.checkBox').prop('checked', this.checked)
+            });
+            var currentDate = new Date();
+            $('#InspPlannedDate').datepicker({
+                dateFormat: 'dd-mm-yy',
+                timeFormat: 'hh:mm:ss',
+                minDate: currentDate,
+                changeYear: true,
+                changeMonth: true
+            }).attr('readonly', 'readonly');
+
+            $('#btn_search').click(function ()
+            {
+                let PONumbr = $("#search_PONumbr").val();
+                $.ajax({
+                    traditional: true,
+                    url: "@Url.Action("GetPOTableData", "PO")",
+                    data: { 'PONumbr': PONumbr},
+                    type: "Get",
+                    dataType: "html",
+                    success: function (data) {
+                        $("#myPartialDash").html(data);
+                        Summarydata();
+                    }
+                })
+            })
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+        });
+        function Summarydata() {
+            $.fn.dataTable.moment('DD-MMM-YYYY');
+            var table = $('#dataTable2').DataTable({
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+                ],
+                "order": [[20, "asc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'SupplierOfferList_' + d;
+                        }
+                    }
+                ]
+            });
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+
+            $("body").on("click", "#BulkAssign", function () {
+           
+                UpdateRecord();
+            });
+            $("body").on("click", "#BulkWaiver", function () { 
+                WaiverRecords();
+            });
+
+            function WaiverRecords() {
+                $("#imgLoading").show();
+                $("#BulkAssign").hide();
+                $("#BulkWaiver").hide();
+                debugger
+                var oTable = $('#dataTable2').dataTable();
+                let QLT_Remarks = $('#QLT_Remarks').val();
+                var selectedIDs = new Array();
+                oTable.$('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val());
+                        selectedIDs.push(QLT_Remarks);
+                    }
+                });
+                var options = {};
+                options.url = "/PO/BulkWaiver";
+                options.type = "POST";
+                options.data = JSON.stringify(selectedIDs);
+                options.contentType = "application/json";
+                options.dataType = "json";
+                options.success = function (data) {
+                    $("#imgLoading").hide();
+                    $("#BulkAssign").show();
+                    $("#BulkWaiver").show();
+                    alert(data.msg);
+                    location.reload();
+                };
+                options.error = function () {
+                    $("#imgLoading").hide();
+                    $("#BulkAssign").show();
+                    $("#BulkWaiver").show();
+                    alert("Error or Select record first!");
+                    location.reload();
+                };
+                $.ajax(options);
+              
+            }
+
+            function UpdateRecord() {
+                debugger
+                $("#imgLoading").show();
+                $("#BulkAssign").hide();
+                $("#BulkWaiver").hide();
+                var oTable = $('#dataTable2').dataTable();
+                let QLT_Remarks = $('#QLT_Remarks').val();
+                let EngId = $('#EngId').val().toString();
+                let InspPLDate = $('#InspPlannedDate').val();
+                var options = {};
+                if (EngId == "" || InspPLDate == "-Select Planned Date-") {
+                    alert("Select QC Engineer or Select Inspection Planned Date first!");
+                    $("#imgLoading").hide();
+                    $("#BulkAssign").show();
+                    $("#BulkWaiver").show();
+                }
+                else {
+                    var selectedIDs = new Array();
+                    oTable.$('input:checkbox.checkBox').each(function () {
+                        if ($(this).prop('checked')) {
+                            selectedIDs.push($(this).val());
+                            selectedIDs.push(QLT_Remarks);
+                            selectedIDs.push(EngId);
+                            selectedIDs.push(InspPLDate);
+                        }
+                    });
+                        options.url = "/PO/BulkAssign";
+                        options.type = "POST";
+                        options.data = JSON.stringify(selectedIDs);
+                        options.contentType = "application/json";
+                        options.dataType = "json";
+                        options.success = function (data) {
+                            $("#imgLoading").hide();
+                            $("#BulkAssign").show();
+                            $("#BulkWaiver").show();
+                            alert("Selected Record " + data.msg);
+                            location.reload();
+                        };
+                    }
+
+
+                options.error = function () {
+                        $("#imgLoading").hide();
+                        $("#BulkAssign").show();
+                        $("#BulkWaiver").show();
+                        alert("Error or Select record first!");
+                        location.reload();
+                    };
+                    $.ajax(options); 
+                }
+
+            }
+        </script>
+}
+
+
+
+

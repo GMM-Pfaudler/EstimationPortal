@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    ViewBag.Title = "Quality Inspection List";
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example --> 
+        <div class="card shadow mb-8 border-0"> 
+            <div class="card-body bg-white"> 
+                <p class="col-sm-2 border-left-primary bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                    @Html.ActionLink("Bulk Inspection", "QLTAssignIndex", null, new { @class = "text-primary" })
+                </p>  
+                <div id="myPartialView">
+                    @{Html.RenderPartial("_QLTOffrSumry", Model);}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+
+@section scripts
+{
+    <script>
+        $(document).ready(function ()
+        {
+            Summarydata(); 
+        });
+        function Summarydata() {
+            $.fn.dataTable.moment('DD-MMM-YYYY');
+            var table = $('#dataTable2').DataTable({
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+                ],
+                "order": [[20, "asc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17,18,19,20,21,22,23]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'SupplierOfferList_' + d;
+                        }
+                    }
+                ]
+            }); 
+
+             
+
+            }
+    </script>
+}
+
+
+
+

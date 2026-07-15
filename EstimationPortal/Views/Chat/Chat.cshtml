@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+    Layout = null;
+}
+
+<input type="text" id="po-no-input" placeholder="Enter PO No" />
+<input type="text" id="chat-input" placeholder="Ask me anything..." />
+<button id="send-btn">Send</button>
+<div id="chat-messages"></div>
+<script>
+    document.getElementById('send-btn').addEventListener('click', function () {
+        let message = document.getElementById('chat-input').value;
+        let poNo = document.getElementById('po-no-input').value;
+
+        if (!poNo) {
+            alert("Please enter a PO No before sending a message.");
+            return;
+        }
+
+        document.getElementById('chat-input').value = '';
+
+        fetch('/Chat/GetResponse', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message, PONo: poNo })
+        })
+            .then(response => response.json())
+            .then(data => {
+                let chatMessages = document.getElementById('chat-messages');
+                chatMessages.innerHTML += `<div>User: ${message}</div>`;
+                chatMessages.innerHTML += `<div>Bot: ${data.response}</div>`;
+            });
+    });
+</script>

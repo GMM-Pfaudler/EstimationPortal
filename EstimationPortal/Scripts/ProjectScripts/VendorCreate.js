@@ -1,0 +1,1095 @@
+﻿let counter = 0;
+let counterMD = 0;
+$(document).ready(function () {
+    debugger
+    $("#ERPState1").hide();
+    $("#ERPState2").hide();
+    $("#ERPState3").hide();
+    $("#StateName").hide();
+    var currentDate = new Date();
+    $('#ESTdate').datepicker({
+        dateFormat: 'dd-mm-yy',
+        timeFormat: 'hh:mm:ss',
+        maxDate: currentDate,
+        changeYear: true,
+        changeMonth: true
+    }).attr('readonly', 'readonly');
+    $('#btn_Nxt1').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().next('li').find('a').trigger('click');
+    });
+    $('#btn_Nxt2').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().next('li').find('a').trigger('click');
+    });
+    $('#btn_Nxt3').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().next('li').find('a').trigger('click');
+    });
+    $('#btn_Nxt4').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().next('li').find('a').trigger('click');
+    });
+    $('#btn_PreV1').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().prev('li').find('a').trigger('click');
+    });
+    $('#btn_PreV2').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().prev('li').find('a').trigger('click');
+    });
+    $('#btn_PreV3').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().prev('li').find('a').trigger('click');
+    });
+    $('#btn_PreV4').click(function () {
+        $('.nav-tabs > .nav-item > .active').parent().prev('li').find('a').trigger('click');
+    });
+    $("#MSMEdiv").hide();
+    $("#MSMEdivHead").hide();
+    $("#CodeList").select2().show();
+    $("#MsMECBMI1").click(function () {
+        $("#MsMECBMI2").prop("checked", false);
+    });
+    $("#MsMECBMI2").click(function () {
+        $("#MsMECBMI1").prop("checked", false);
+    });
+    $("#ERPCountry1Temp").change(function () {
+        debugger 
+        let ctr = $("#ERPCountry1Temp option:selected").text(); 
+        $("#ERPCountry1").val(ctr);
+        //set state
+        DropBindingStateD1()
+        let ctrVal = $("#ERPCountry1Temp option:selected").val();
+        if (ctrVal == 2) {
+            $("#ERPMobNo1").prop("disabled", true);
+            $("#ERPEmailId1").prop("disabled", true);
+            $("#ERPPinCode1").prop("disabled", true);
+            $("#ERPMobNo1").val("");
+            $("#ERPEmailId1").val("");
+            $("#ERPPinCode1").val("");
+            $("#ERPState1Temp").show();
+            $("#ERPState1").hide();
+        }
+        else {
+            $("#ERPMobNo1").prop("disabled", false);
+            $("#ERPEmailId1").prop("disabled", false);
+            $("#ERPPinCode1").prop("disabled", false);
+            $("#ERPState1").val("");
+            $("#ERPState1Temp").hide();
+            $("#ERPState1").show();
+        }
+
+    });
+    $("#ERPState1Temp").change(function () {
+        let st = $("#ERPState1Temp option:selected").text();
+        $("#ERPState1").val(st);
+    });
+    function DropBindingStateD1() {
+        let CounTID = $("#ERPCountry1Temp option:selected").val();
+        $.get("/VendorMaster/GetStateListData", { CounTID: CounTID },
+            function (result) {
+                $("#ERPState1Temp").empty().append('<option selected="selected" value="0">-Select-</option>');
+                $.each(result, function (index, row) {
+                    $("#ERPState1Temp").append("<option value='" + row.Text + "'>" + row.Text + "</option>");
+                });
+            });
+        $("#ERPState1Temp").ready();
+    };
+
+    $("#ERPCountry2Temp").change(function () {
+        debugger
+        let ctr = $("#ERPCountry2Temp option:selected").text();
+        $("#ERPCountry2").val(ctr);
+        //set state
+        DropBindingStateD2()
+        let ctrVal = $("#ERPCountry2Temp option:selected").val();
+        if (ctrVal == 2) {
+            $("#ERPMobNo2").prop("disabled", true);
+            $("#ERPEmailId2").prop("disabled", true);
+            $("#ERPPinCode2").prop("disabled", true);
+            $("#ERPMobNo2").val("");
+            $("#ERPEmailId2").val("");
+            $("#ERPPinCode2").val("");
+            $("#ERPState2Temp").show();
+            $("#ERPState2").hide();
+        }
+        else {
+            $("#ERPMobNo2").prop("disabled", false);
+            $("#ERPEmailId2").prop("disabled", false);
+            $("#ERPPinCode2").prop("disabled", false);
+            $("#ERPState2").val("");
+            $("#ERPState2Temp").hide();
+            $("#ERPState2").show();
+        }
+
+    });
+    $("#ERPState2Temp").change(function () {
+        let st = $("#ERPState2Temp option:selected").text();
+        $("#ERPState2").val(st);
+    });
+    function DropBindingStateD2() {
+        let CounTID = $("#ERPCountry2Temp option:selected").val();
+        $.get("/VendorMaster/GetStateListData", { CounTID: CounTID },
+            function (result) {
+                $("#ERPState2Temp").empty().append('<option selected="selected" value="0">-Select-</option>');
+                $.each(result, function (index, row) {
+                    $("#ERPState2Temp").append("<option value='" + row.Text + "'>" + row.Text + "</option>");
+                });
+            });
+        $("#ERPState2Temp").ready();
+    };
+
+    $("#ERPCountry3Temp").change(function () {
+        debugger
+        let ctr = $("#ERPCountry3Temp option:selected").text();
+        $("#ERPCountry3").val(ctr);
+        //set state
+        DropBindingStateD3()
+        let ctrVal = $("#ERPCountry3Temp option:selected").val();
+        if (ctrVal == 2) {
+            $("#ERPMobNo3").prop("disabled", true);
+            $("#ERPEmailId3").prop("disabled", true);
+            $("#ERPPinCode3").prop("disabled", true);
+            $("#ERPMobNo3").val("");
+            $("#ERPEmailId3").val("");
+            $("#ERPPinCode3").val("");
+            $("#ERPState3Temp").show();
+            $("#ERPState3").hide();
+        }
+        else {
+            $("#ERPMobNo3").prop("disabled", false);
+            $("#ERPEmailId3").prop("disabled", false);
+            $("#ERPPinCode3").prop("disabled", false);
+            $("#ERPState3").val("");
+            $("#ERPState3Temp").hide();
+            $("#ERPState3").show();
+        }
+
+    });
+    $("#ERPState3Temp").change(function () {
+        let st = $("#ERPState3Temp option:selected").text();
+        $("#ERPState3").val(st);
+    });
+    function DropBindingStateD3() {
+        let CounTID = $("#ERPCountry3Temp option:selected").val();
+        $.get("/VendorMaster/GetStateListData", { CounTID: CounTID },
+            function (result) {
+                $("#ERPState3Temp").empty().append('<option selected="selected" value="0">-Select-</option>');
+                $.each(result, function (index, row) {
+                    $("#ERPState3Temp").append("<option value='" + row.Text + "'>" + row.Text + "</option>");
+                });
+            });
+        $("#ERPState3Temp").ready();
+    };
+    
+    $("#CountryMaster_Id").change(function () {
+        DropBindingStateList();
+        let CTID = $("#CountryMaster_Id option:selected").val();
+        var StateMaster_Id = document.getElementById("StateMaster_Id");
+        var StateMaster_IdManual = document.getElementById("StateMaster_IdManual");
+        if (parseInt(CTID) == 2) {
+            //india selected
+            $("#MSMEdiv").show();
+            $("#MSMEdivHead").show();
+            //Enable
+            $("#PAN").prop("disabled", false);
+            $("#GST").prop("disabled", false);
+            $("#PinCode").prop("disabled", false);
+            $("#MobileNo").prop("disabled", false);
+            $("#MobileNo2").prop("disabled", false);
+            $("#StateMaster_Id").show();
+            $("#StateName").hide();
+
+        }
+        else {
+
+            $("#MSMEdiv").hide();
+            $("#MSMEdivHead").hide();
+            $("#StateMaster_Id").hide();
+            $("#StateName").show();
+            $('#PAN').siblings('span.error').css('visibility', 'hidden');
+            $('#PAN').siblings('span.valid').css('visibility', 'hidden');
+            $('#GST').siblings('span.error').css('visibility', 'hidden');
+            $('#GST').siblings('span.valid').css('visibility', 'hidden');
+            $('#PinCode').siblings('span.error').css('visibility', 'hidden');
+            $('#PinCode').siblings('span.valid').css('visibility', 'hidden');
+            $('#MobileNo').siblings('span.error').css('visibility', 'hidden');
+            $('#MobileNo').siblings('span.valid').css('visibility', 'hidden');
+            $('#MobileNo2').siblings('span.error').css('visibility', 'hidden');
+            $('#MobileNo2').siblings('span.valid').css('visibility', 'hidden');
+            $('#ContactNoMD').siblings('span.error').css('visibility', 'hidden');
+            $('#ContactNoMD').siblings('span.valid').css('visibility', 'hidden');
+            $('#ContactNoQT').siblings('span.error').css('visibility', 'hidden');
+            $('#ContactNoQT').siblings('span.valid').css('visibility', 'hidden');
+
+            //Disable
+            $("#PAN").prop("disabled", true);
+            $("#GST").prop("disabled", true);
+            $("#PinCode").prop("disabled", true);
+            $("#MobileNo").prop("disabled", true);
+            $("#MobileNo2").prop("disabled", true);
+            
+        }
+    });
+    $("#TypeBusCB6").click(function () {
+        debugger
+        var TypeCBVal = $('#TypeBusCB6:checked').val();
+        if (TypeCBVal == "true") {
+            $("#OthrText").prop("disabled", false);
+        }
+        else {
+            $("#OthrText").prop("disabled", true);
+        }
+    });
+
+    $("#CDShpFrm1").click(function () {
+        debugger
+        var CDShpVal = $('#CDShpFrm1:checked').val();
+        if (CDShpVal == "true") {
+            let ERpAddVal = $("#ERPAdd1").val();
+            let ERPCityVal = $("#ERPCity1").val();
+            let ERPStateVal = $("#ERPState1").val();
+            let ERPState1Temp = $("#ERPState1Temp").val();
+            let ERPCountryVal = $("#ERPCountry1").val();
+            let ERPCountry1Temp = $("#ERPCountry1Temp").val();
+            let ERPPinCodeVal = $("#ERPPinCode1").val();
+            let ERPPhoneNoVal = $("#ERPPhoneNo1").val();
+            let ERPFaxNoVal = $("#ERPFaxNo1").val();
+            let ERPMobNoVal = $("#ERPMobNo1").val();
+            let ERPEmailIdVal = $("#ERPEmailId1").val();
+            let ERPGSTVal = $("#ERPGST1").val();
+          
+            $("#ERPCountry2Temp").val(ERPCountry1Temp).attr('selected', 'selected');
+            $("#ERPState2").show();
+            $("#ERPState2Temp").hide(); 
+            $("#ERPAdd2").val(ERpAddVal);
+            $("#ERPCity2").val(ERPCityVal);
+            $("#ERPState2").val(ERPStateVal);
+            $("#ERPCountry2").val(ERPCountryVal);
+            $("#ERPPinCode2").val(ERPPinCodeVal);
+            $("#ERPPhoneNo2").val(ERPPhoneNoVal);
+            $("#ERPFaxNo2").val(ERPFaxNoVal);
+            $("#ERPMobNo2").val(ERPMobNoVal);
+            $("#ERPEmailId2").val(ERPEmailIdVal);
+            $("#ERPGST2").val(ERPGSTVal);
+
+            $("#ERPCountry3Temp").val(ERPCountry1Temp).attr('selected', 'selected');
+            $("#ERPState3").show();
+            $("#ERPState3Temp").hide();
+            $("#ERPAdd3").val(ERpAddVal);
+            $("#ERPCity3").val(ERPCityVal);
+            $("#ERPState3").val(ERPStateVal);
+            $("#ERPCountry3").val(ERPCountryVal);
+            $("#ERPPinCode3").val(ERPPinCodeVal);
+            $("#ERPPhoneNo3").val(ERPPhoneNoVal);
+            $("#ERPFaxNo3").val(ERPFaxNoVal);
+            $("#ERPMobNo3").val(ERPMobNoVal);
+            $("#ERPEmailId3").val(ERPEmailIdVal);
+            $("#ERPGST3").val(ERPGSTVal);
+
+            if (ERPCountry1Temp == 2) { 
+                $("#ERPMobNo2").prop("disabled", true);
+                $("#ERPEmailId2").prop("disabled", true);
+                $("#ERPPinCode2").prop("disabled", true);
+                $("#ERPMobNo2").val("");
+                $("#ERPEmailId2").val("");
+                $("#ERPPinCode2").val(""); 
+
+                $("#ERPMobNo3").prop("disabled", true);
+                $("#ERPEmailId3").prop("disabled", true);
+                $("#ERPPinCode3").prop("disabled", true);
+                $("#ERPMobNo3").val("");
+                $("#ERPEmailId3").val("");
+                $("#ERPPinCode3").val(""); 
+            }
+            else {
+                $("#ERPMobNo2").prop("disabled", false);
+                $("#ERPEmailId2").prop("disabled", false);
+                $("#ERPPinCode2").prop("disabled", false);
+                $("#ERPState2").val(""); 
+
+                $("#ERPMobNo3").prop("disabled", false);
+                $("#ERPEmailId3").prop("disabled", false);
+                $("#ERPPinCode3").prop("disabled", false);
+                $("#ERPState3").val(""); 
+            }
+        }
+        else {
+            $("#ERPAdd2").val("");
+            $("#ERPCity2").val("");
+            $("#ERPState2").val("");
+            $("#ERPCountry2").val("");
+            $("#ERPPinCode2").val("");
+            $("#ERPPhoneNo2").val("");
+            $("#ERPFaxNo2").val("");
+            $("#ERPMobNo2").val("");
+            $("#ERPEmailId2").val("");
+            $("#ERPGST2").val("");
+            $("#ERPAdd3").val("");
+            $("#ERPCity3").val("");
+            $("#ERPState3").val("");
+            $("#ERPCountry3").val("");
+            $("#ERPPinCode3").val("");
+            $("#ERPPhoneNo3").val("");
+            $("#ERPFaxNo3").val("");
+            $("#ERPMobNo3").val("");
+            $("#ERPEmailId3").val("");
+            $("#ERPGST3").val("");
+        }
+    });
+
+    //On input change event
+    $('#EmailId1').on('input', function (e) {
+        debugger
+        let email1 = $('#EmailId1').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (email1.length > 0) {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(email1)) {
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'visible');
+                    $('#EmailId1').siblings('span.error').css('visibility', 'hidden');
+                }
+                else {
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+            else {
+                $('#EmailId1').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+        else {
+            if (email1.length > 0) {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(email1)) {
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'visible');
+                    $('#EmailId1').siblings('span.error').css('visibility', 'hidden');
+                }
+                else {
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+            else {
+                $('#EmailId1').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    });
+    $('#EmailId').on('input', function (e) {
+        debugger
+        let email1 = $('#EmailId').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (email1.length > 0) {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(email1)) {
+                    $('#EmailId').siblings('span.valid').css('visibility', 'visible');
+                    $('#EmailId').siblings('span.error').css('visibility', 'hidden');
+                }
+                else {
+                    $('#EmailId').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+            else {
+                $('#EmailId').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+        else {
+            if (email1.length > 0) {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(email1)) {
+                    $('#EmailId').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#EmailId').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+            else {
+                $('#EmailId').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    });
+    $('#PAN').on('input', function (e) {
+        debugger
+        let PAN = $('#PAN').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (PAN.length > 10 || PAN.length < 10) {
+                $('#PAN').siblings('span.valid').css('visibility', 'visible');
+                $('#PAN').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#PAN').siblings('span.error').css('visibility', 'hidden');
+                $('#PAN').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+
+
+
+    })
+    $('#GST').on('input', function (e) {
+        debugger
+        let GST = $('#GST').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (GST.length > 15 || GST.length < 15) {
+                $('#GST').siblings('span.valid').css('visibility', 'visible');
+                $('#GST').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#GST').siblings('span.error').css('visibility', 'hidden');
+                $('#GST').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+
+
+
+    })
+    $('#PinCode').on('input', function (e) {
+        debugger
+        let PinCode = $('#PinCode').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (PinCode.length > 6 || PinCode.length < 6) {
+                $('#PinCode').siblings('span.valid').css('visibility', 'visible');
+                $('#PinCode').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#PinCode').siblings('span.error').css('visibility', 'hidden');
+                $('#PinCode').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    })
+    $('#MobileNo').on('input', function (e) {
+        debugger
+        let MobileNo = $('#MobileNo').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (MobileNo.length > 10 || MobileNo.length < 10) {
+                $('#MobileNo').siblings('span.valid').css('visibility', 'visible');
+                $('#MobileNo').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#MobileNo').siblings('span.error').css('visibility', 'hidden');
+                $('#MobileNo').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    })
+    $('#MobileNo2').on('input', function (e) {
+        debugger
+        let MobileNo2 = $('#MobileNo2').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (MobileNo2.length > 10 || MobileNo2.length < 10) {
+                $('#MobileNo2').siblings('span.valid').css('visibility', 'visible');
+                $('#MobileNo2').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#MobileNo2').siblings('span.error').css('visibility', 'hidden');
+                $('#MobileNo2').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    })
+    $('#ContactNoQT').on('input', function (e) {
+        debugger
+        let ContactNoQT = $('#ContactNoQT').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (ContactNoQT.length > 10 || ContactNoQT.length < 10) {
+                $('#ContactNoQT').siblings('span.valid').css('visibility', 'visible');
+                $('#ContactNoQT').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#ContactNoQT').siblings('span.error').css('visibility', 'hidden');
+                $('#ContactNoQT').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    })
+    $('#ContactNoMD').on('input', function (e) {
+        debugger
+        let ContactNoMD = $('#ContactNoMD').val();
+        let country = $("#CountryMaster_Id option:selected").val();
+        if (country == parseInt(2)) {
+            //india selected
+            if (ContactNoMD.length > 10 || ContactNoMD.length < 10) {
+                $('#ContactNoMD').siblings('span.valid').css('visibility', 'visible');
+                $('#ContactNoMD').siblings('span.error').css('visibility', 'hidden');
+            }
+            else {
+                $('#ContactNoMD').siblings('span.error').css('visibility', 'hidden');
+                $('#ContactNoMD').siblings('span.valid').css('visibility', 'hidden');
+            }
+        }
+    })
+
+   
+    $('#btnSubmit').click(function () {
+        let erList = "";
+
+        debugger 
+        let isAllValid = true;
+        let CountryVal = $("#CountryMaster_Id option:selected").val();
+        let StateMaster_Id = $("#StateMaster_Id option:selected").val();
+        if (CountryVal == parseInt(2))
+        {
+            if ($("#TypeFirmCB1").get(0).checked || $("#TypeFirmCB2").get(0).checked || $("#TypeFirmCB3").get(0).checked || $("#TypeFirmCB4").get(0).checked || $("#TypeFirmCB5").get(0).checked)
+            {
+                $('#lblChk').siblings('span.error').css('visibility', 'hidden');
+            }
+            else
+            {
+                isAllValid = false;
+                $('#lblChk').siblings('span.error').css('visibility', 'visible');
+                erList = "Please select atleast one type of firm. \n";
+            }
+
+            if ($('#PinCode').val() == "") {
+                isAllValid = false;
+                $('#PinCode').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var pat1 = /^\d{6}$/;
+                var PinCode = $('#PinCode').val();
+                if (!pat1.test(PinCode)) {
+                    isAllValid = false;
+                    $('#PinCode').siblings('span.error').css('visibility', 'hidden');
+                    $('#PinCode').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+
+                    $('#PinCode').siblings('span.error').css('visibility', 'hidden');
+                    $('#PinCode').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#MobileNo2').val() == "") {
+                isAllValid = false;
+                $('#MobileNo2').siblings('span.error').css('visibility', 'visible'); 
+            }
+            else {
+
+                var MnVal = $('#MobileNo2').val().length;
+                if (MnVal != 10) {
+                    isAllValid = false;
+                    $('#MobileNo2').siblings('span.error').css('visibility', 'hidden');
+                    $('#MobileNo2').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#MobileNo2').siblings('span.error').css('visibility', 'hidden');
+                    $('#MobileNo2').siblings('span.valid').css('visibility', 'hidden');
+                }
+
+            }
+
+            if ($('#MobileNo').val() == "") {
+                isAllValid = false;
+                $('#MobileNo').siblings('span.error').css('visibility', 'visible'); 
+            }
+            else {
+                var MnVal = $('#MobileNo').val().length;
+                if (MnVal != 10) {
+                    isAllValid = false;
+                    $('#MobileNo').siblings('span.error').css('visibility', 'hidden');
+                    $('#MobileNo').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#MobileNo').siblings('span.error').css('visibility', 'hidden');
+                    $('#MobileNo').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            //qt and md check
+            if ($('#ContactNoQT').val() == "") {
+                isAllValid = false;
+                $('#ContactNoQT').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var MnVal = $('#ContactNoQT').val().length;
+                if (MnVal != 10) {
+                    isAllValid = false;
+                    $('#ContactNoQT').siblings('span.error').css('visibility', 'hidden');
+                    $('#ContactNoQT').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#ContactNoQT').siblings('span.error').css('visibility', 'hidden');
+                    $('#ContactNoQT').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#ContactNoMD').val() == "") {
+                isAllValid = false;
+                $('#ContactNoMD').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var MnVal = $('#ContactNoMD').val().length;
+                if (MnVal != 10) {
+                    isAllValid = false;
+                    $('#ContactNoMD').siblings('span.error').css('visibility', 'hidden');
+                    $('#ContactNoMD').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#ContactNoMD').siblings('span.error').css('visibility', 'hidden');
+                    $('#ContactNoMD').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+            if ($('#BEmail').val() == "") {
+                isAllValid = false;
+                $('#BEmail').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var EmIVl = $('#BEmail').val();
+                if (!filter.test(EmIVl)) {
+                    isAllValid = false;
+                    $('#BEmail').siblings('span.error').css('visibility', 'hidden');
+                    $('#BEmail').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#BEmail').siblings('span.error').css('visibility', 'hidden');
+                    $('#BEmail').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#EmailId1').val() == "") {
+                isAllValid = false;
+                $('#EmailId1').siblings('span.error').css('visibility', 'visible');
+            }
+            else
+            {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var EmIVl = $('#EmailId1').val();
+                if (!filter.test(EmIVl)) {
+                    isAllValid = false;
+                    $('#EmailId1').siblings('span.error').css('visibility', 'hidden');
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#EmailId1').siblings('span.error').css('visibility', 'hidden');
+                    $('#EmailId1').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#EmailId').val() == "") {
+                isAllValid = false;
+                $('#EmailId').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var EmIVl = $('#EmailId').val();
+                if (!filter.test(EmIVl)) {
+                    isAllValid = false;
+                    $('#EmailId').siblings('span.error').css('visibility', 'hidden');
+                    $('#EmailId').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#EmailId').siblings('span.error').css('visibility', 'hidden');
+                    $('#EmailId').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#PAN').val() == "") {
+                isAllValid = false;
+                $('#PAN').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var panVal = $('#PAN').val();
+                var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+                if (!regpan.test(panVal)) {
+                    isAllValid = false;
+                    $('#PAN').siblings('span.error').css('visibility', 'hidden');
+                    $('#PAN').siblings('span.valid').css('visibility', 'visible');
+                } else {
+                    $('#PAN').siblings('span.error').css('visibility', 'hidden');
+                    $('#PAN').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#GST').val() == "") {
+                isAllValid = false;
+                $('#GST').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var gstVal = $('#GST').val();
+                var pan = $('#PAN').val()
+                var reggst = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+                if (!reggst.test(gstVal)) {
+                    isAllValid = false;
+                    $('#GST').siblings('span.valid').css('visibility', 'visible');
+                    $('#GST').siblings('span.error').css('visibility', 'hidden');
+                }
+                else {
+                    $('#GST').siblings('span.error').css('visibility', 'hidden');
+                    $('#GST').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+
+            if ($('#FileUpload8').val() == "") {
+                isAllValid = false;
+                $('#FileUpload8').siblings('span.error').css('visibility', 'visible');
+                erList = erList + "Please upload bank details doc(PAN). \n";
+            }
+            else {
+                $('#FileUpload8').siblings('span.error').css('visibility', 'hidden');
+            }
+
+            if ($('#FileUpload9').val() == "") {
+                isAllValid = false;
+                $('#FileUpload9').siblings('span.error').css('visibility', 'visible');
+                erList = erList + "Please upload bank details doc(GST). \n";
+
+            }
+            else {
+                $('#FileUpload9').siblings('span.error').css('visibility', 'hidden');
+            }
+
+            if ($('#FileUpload10').val() == "") {
+                isAllValid = false;
+                $('#FileUpload10').siblings('span.error').css('visibility', 'visible');
+                erList = erList + "Please upload bank details doc. \n";
+            }
+            else {
+                $('#FileUpload10').siblings('span.error').css('visibility', 'hidden');
+            }
+
+            if ($('#FileUpload11').val() == "") {
+                isAllValid = false;
+                $('#FileUpload11').siblings('span.error').css('visibility', 'visible');
+                erList = erList + "Please upload bank details doc(Cancelled Cheque). \n";
+            }
+            else {
+                $('#FileUpload11').siblings('span.error').css('visibility', 'hidden');
+            }
+
+            if ($("#MsMECBMI1").get(0).checked || $("#MsMECBMI2").get(0).checked)
+            {
+                let Chk1 = $("#MsMECBMI1").get(0).checked;
+                let Chk2 = $("#MsMECBMI2").get(0).checked;
+                if (Chk1 == true && Chk2 == false)
+                {
+                    if ($('#MSMEDoc').val() == "")
+                    {
+                        isAllValid = false;
+                        $('#MSMEDoc').siblings('span.error').css('visibility', 'visible');
+                        $('#lblMsME').siblings('span.error').css('visibility', 'hidden');
+                        $('#MSMEDoc').show();
+
+                    }
+                    else {
+                        $('#MSMEDoc').siblings('span.error').css('visibility', 'hidden');
+                        $('#MSMEDoc').show();
+                        //$('#lblMsME').siblings('span.error').css('visibility', 'visible');
+                    }
+                }
+                else
+                {
+                    $('#MSMEDoc').siblings('span.error').css('visibility', 'hidden');
+                    $('#lblMsME').siblings('span.error').css('visibility', 'hidden');
+                    $('#MSMEDoc').hide();
+                }
+            }
+            else
+            {
+                isAllValid = false;
+                $('#lblMsME').siblings('span.error').css('visibility', 'visible');
+                $('#MSMEDoc').siblings('span.error').css('visibility', 'hidden');
+            }
+        }
+        else {
+            if ($("#TypeFirmCB1").get(0).checked || $("#TypeFirmCB2").get(0).checked || $("#TypeFirmCB3").get(0).checked || $("#TypeFirmCB4").get(0).checked || $("#TypeFirmCB5").get(0).checked) {
+                $('#lblChk').siblings('span.error').css('visibility', 'hidden');
+                isAllValid = true;
+            }
+            else {
+                isAllValid = false;
+                $('#lblChk').siblings('span.error').css('visibility', 'visible');
+            }
+
+            if ($('#BEmail').val() == "") {
+                isAllValid = false;
+                $('#BEmail').siblings('span.error').css('visibility', 'visible');
+            }
+            else {
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var EmIVl = $('#BEmail').val();
+                if (!filter.test(EmIVl)) {
+                    isAllValid = false;
+                    $('#BEmail').siblings('span.error').css('visibility', 'hidden');
+                    $('#BEmail').siblings('span.valid').css('visibility', 'visible');
+                }
+                else {
+                    $('#BEmail').siblings('span.error').css('visibility', 'hidden');
+                    $('#BEmail').siblings('span.valid').css('visibility', 'hidden');
+                }
+            }
+          
+        }
+
+        if (isAllValid) {
+            $('#Vendform').submit();
+        }
+        else {
+            if (erList != "") {
+                alert(erList);
+            }
+            else
+            {
+                erList = "Something missing! Please check.";
+                alert(erList);
+            }
+            
+            return false;
+        }
+
+    });
+    $("#Vendform").on("submit", function (event) {
+        event.preventDefault();
+        $('#btnSubmit').attr('disabled', 'disabled');
+        var url = $(this).attr("action");
+        var formData = $(this).serialize();
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            success: function (response) {
+                alert('Success! ' + JSON.stringify(response));
+            },
+            error: function (response) {
+                alert('Error!');
+            },
+            complete: function () {
+                $('#btnSubmit').removeAttr('disabled');
+            }
+        })
+    });
+});
+
+function DropBindingStateList() {
+    let CounTID = $("#CountryMaster_Id option:selected").val();
+    $.get("/VendorMaster/GetStateListData", { CounTID: CounTID },
+        function (result) {
+            $("#StateMaster_Id").empty().append('<option selected="selected" value="0">-Select-</option>');
+            $.each(result, function (index, row) {
+                $("#StateMaster_Id").append("<option value='" + row.Text + "'>" + row.Text + "</option>");
+            });
+        });
+    $("#StateMaster_Id").ready();
+};
+function Add() {
+    //validation
+    var isAllValid = true;
+    if ($('#DocumentList').val() == "0" || $('#DocumentList').val() == "") {
+        isAllValid = false;
+        $('#DocumentList').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#DocumentList').siblings('span.error').css('visibility', 'hidden');
+    }
+    if ($('#UploadFile').val() == "0" || $('#UploadFile').val() == "") {
+        isAllValid = false;
+        $('#UploadFile').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#UploadFile').siblings('span.error').css('visibility', 'hidden');
+    }
+    if (isAllValid) {
+        var DocText = $("#DocumentList option:selected").text(),
+            DocVal = $("#DocumentList option:selected").val(),
+            DocPath = $("#FileUpload").val()
+
+        detailsTableBody = $("#tblDocSupp tbody");
+        var ListItem = '<tr id="' + counter + '"><td>' + (counter + 1) + '</td><td>' + DocText + '</td><td>' + DocPath + '</td><td><a data-itemId="0" href = "#" class="btn btn-sm btn-outline-danger deleteItem">Remove</a><input type="hidden" name="SuppDocRel[' + counter + '].DocName" value="' + DocVal + '" /><input type="hidden" name="SuppDocRel[' + counter + '].DocPath" value="' + DocPath + '" /><input type="hidden" name="SuppDocRel[' + counter + '].FileUpload" value="' + DocPath + '" /><input type="hidden" name="SuppDocRel[' + counter + '].IsDelete" value="false" id=SuppDocRel_' + counter + '_IsDeleteC /></td></tr>';
+        counter++;
+        ClearDSuppDoc();
+        detailsTableBody.append(ListItem);
+    }
+};
+function AddMD() {
+
+    //validation
+    var isAllValid = true;
+    if ($('#CodeList').val() == "0" || $('#CodeList').val() == "") {
+        isAllValid = false;
+        $('#CodeList').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#CodeList').siblings('span.error').css('visibility', 'hidden');
+    }
+    if ($('#PDI').val() == "0" || $('#PDI').val() == "") {
+        isAllValid = false;
+        $('#PDI').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#PDI').siblings('span.error').css('visibility', 'hidden');
+    }
+    if ($('#Size').val() == "0" || $('#Size').val() == "") {
+        isAllValid = false;
+        $('#Size').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#Size').siblings('span.error').css('visibility', 'hidden');
+    }
+    if ($('#Grade').val() == "0" || $('#Grade').val() == "") {
+        isAllValid = false;
+        $('#Grade').siblings('span.error').css('visibility', 'visible');
+    }
+    else {
+        $('#Grade').siblings('span.error').css('visibility', 'hidden');
+    }
+    if (isAllValid) {
+
+        let CodeListVal = $("#CodeList option:selected").val().trim(),
+            CodeListText = $("#CodeList option:selected").text().trim(),
+            PDIVal = $("#PDI").val(),
+            SizeVal = $("#Size").val(),
+            GradeVal = $("#Grade").val()
+        detailsTableBody = $("#tblSuppMD tbody");
+
+        let ListItem = '<tr id="' + counterMD + '"><td>' + (counterMD + 1) + '</td><td>' + CodeListText + '</td><td>' + PDIVal + '</td><td>' + SizeVal + '</td><td>' + GradeVal + '</td><td><a data-itemId="0" href="JavaScript:void(0);"  class="btn btn-sm btn-outline-danger deleteItem2" data-deleteId ="' + counterMD + '">Remove</a><input type="hidden" name="SupRelMDTrs[' + counterMD + '].CodeList" value="' + CodeListVal + '"  /><input type="hidden" name="SupRelMDTrs[' + counterMD + '].PDI" value="' + PDIVal + '"  /><input type="hidden" name="SupRelMDTrs[' + counterMD + '].Size" value="' + SizeVal + '"  /><input type="hidden" name="SupRelMDTrs[' + counterMD + '].Grade" value="' + GradeVal + '"  /><input type="hidden" name="SupRelMDTrs[' + counterMD + '].IsDelete" value="false" id=SupRelMDTrs_' + counterMD + '_IsDeleteC /></td></tr>';
+        counterMD++;
+        cleardata();
+        detailsTableBody.append(ListItem);
+    }
+};
+$(document).on('click', 'a.deleteItem2', function (e) {
+    if (confirm("Are you sure want to remove this record!")) {
+        let $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            let indexcount = $(this).attr('data-deleteId');
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).hide();
+                $("#SupRelMDTrs_" + indexcount + "_IsDeleteC").val(true);
+            });
+        }
+    }
+    else {
+        e.preventDefault();
+    }
+});
+$(document).on('click', 'a.deleteItem', function (e) {
+    if (confirm("Are you sure want to remove this record!")) {
+        let $self = $(this);
+        if ($(this).attr('data-itemId') == "0") {
+            let indexcount = $(this).attr('data-deleteId');
+            $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                $(this).hide();
+                $("#SuppDocRel_" + indexcount + "_IsDeleteC").val(true);
+            });
+        }
+    }
+    else {
+        e.preventDefault();
+    }
+});
+function cleardata() {
+    $("#PDI").val("");
+    $("#Size").val("");
+    $("#Grade").val("");
+    //$('#Line_Number')[0].selectedIndex = 0;
+    $("#CodeList").val(0).trigger("chosen:updated");
+}
+function ClearDSuppDoc() {
+    $("#UploadFile").val("");
+    $("#DocumentList").val(0).trigger("chosen:updated");
+}
+function ValidateSize(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize1(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize2(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize3(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize4(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize5(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize6(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+//Bank Details
+function ValidateSize8(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize9(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize10(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}
+function ValidateSize11(file) {
+    var FileSize = file.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        alert('File size exceeds 2MB');
+        $(file).val(''); //for clearing with Jquery
+    }
+    else {
+    }
+}

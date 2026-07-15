@@ -1,0 +1,683 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.btn {
+    color: white;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    background-image: url(../Images/buttonbg.PNG );
+    -webkit-border-radius: 27;
+    -moz-border-radius: 27;
+    border-radius: 27px;
+    background-color: #4176e5;
+    border: 1px solid #dadada;
+    cursor: pointer;
+}
+
+
+.Labelsmall {
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: bold;
+    color: #006129;
+}
+
+.Labellarge {
+    font-family: Trebuchet MS;
+    font-size: large;
+    font-weight: bold;
+    color: red;
+}
+
+.Labelbigger {
+    font-family: Trebuchet MS;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
+
+.Labelsmallwhite {
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: bold;
+    color: maroon;
+}
+
+.Labelsmallwhitea {
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.btnlgn {
+    color: green;
+    font-family: 'Trebuchet MS', arial, helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    background-image: url(../Images/background1.PNG );
+    -webkit-border-radius: 23;
+    -moz-border-radius: 23;
+    border-radius: 23px;
+    background-color: #4176e5;
+    border: 1px solid #dadada;
+    cursor: pointer;
+}
+
+body {
+    font-family: Tahoma, arial, helvetica,;
+    font-size: 12px;
+    color: #2B2B2B;
+    line-height: 18px;
+    background-color: #fff;
+}
+
+#main {
+    width: 990px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.headerLeft {
+    vertical-align: top;
+    height: 75px;
+    width: 200px;
+}
+
+.chdate {
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: normal;
+    font-family: verdana, arial, helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.form-3 {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 950px;
+    position: relative;
+    margin: 30px auto 30px;
+    padding: 10px;
+    overflow: hidden;
+    background-image: url(../Images/bg.PNG )
+}
+
+
+.background1 {
+    -moz-border-radius-bottomright: 17px;
+    -webkit-border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    background: rgb(235,241,246); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(235,241,246,1) 5%, rgba(171,211,238,1) 98%, rgba(213,235,251,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,rgba(235,241,246,1)), color-stop(98%,rgba(171,211,238,1)), color-stop(100%,rgba(213,235,251,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* IE10+ */
+    background: rgb(235,241,246); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #fff;
+    -webkit-border-radius: 27;
+    -moz-border-radius: 27;
+    border-radius: 27px;
+    box-shadow: inset 0 0 2px 1px rgba(255,255,255,0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
+    top: 10px;
+    left: 0px;
+    height: 66px;
+}
+
+.submitlit {
+    background-position: 0% 0%;
+    background-image: linear-gradient(to bottom, #055C29, #72D03C);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 0px 6px 0px 6px;
+    text-decoration: inherit;
+    background-color: #055C29;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.submitlithz {
+    background-position: 0% 0%;
+    background-image: linear-gradient(to right, #72D03C, #055C29);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 0px 6px 0px 6px;
+    text-decoration: none;
+    background-color: #000066;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.submit {
+    color: white;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    background-color: #055C29;
+    border: 1px solid #dadada;
+    cursor: pointer;
+}
+
+.submit1 {
+    color: #055C29;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.listbox {
+    font-size: 12px;
+    color: #000099;
+    font-style: normal;
+    font-family: Calibri,Verdana;
+    font-weight: bold;
+    background-color: #EBF0F7;
+}
+
+.white {
+    color: White;
+}
+
+.maroon {
+    color: Maroon;
+}
+
+.red {
+    color: Red;
+}
+
+.topLinks {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.newuser {
+    font-size: 12px;
+    color: Maroon;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.topLinks:hover {
+    font-size: 12px;
+    color: #FFFF00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.TextBoxAlignRight {
+    text-align: right;
+}
+
+.headerRight {
+    vertical-align: top;
+    height: 75px;
+    width: 790px;
+}
+
+.footerBg {
+    background: url(../images/footerbg.jpeg) repeat-x bottom;
+}
+/* Calander */
+.custom-calendar .ajax__calendar_container {
+    background-color: #ffc;
+    border: solid 2px #666;
+}
+
+.custom-calendar .ajax__calendar_title {
+    background-color: #055C29;
+    height: 20px;
+    color: white;
+}
+
+.custom-calendar .ajax__calendar_today {
+    background-color: #055C29;
+    height: 20px;
+    color: white;
+}
+
+.custom-calendar .ajax__calendar_days table thead tr td {
+    font-weight: bold;
+    color: Maroon
+}
+
+.custom-calendar .ajax__calendar_hover .ajax__calendar_day {
+    background-color: silver;
+    color: black;
+}
+
+.custom-calendar .ajax__calendar_day {
+    color: Black;
+}
+
+.custom-calendar .ajax__calendar_other .ajax__calendar_day {
+    color: #999999
+}
+
+.Textbox {
+    font-family: Trebuchet MS;
+    margin-left: 0px;
+}
+
+.WaterMarkedTextbox {
+    background-color: #F0F8FF;
+    font-family: Calibri;
+    margin-left: 0px;
+    color: Gray;
+}
+
+.Label {
+    font-family: Calibri;
+}
+
+.Textboxnew {
+    font-family: Calibri;
+}
+
+.TextboxnewBold {
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+.Textbox1 {
+    text-transform: uppercase;
+}
+
+.divround {
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+.myShdow {
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.myShdow_Table {
+    border: thin solid #000000;
+    /*box-shadow: 10px 10px 5px #888888;*/
+}
+
+.myShdow_Table_with_out {
+    border-left: thin solid #000000;
+    border-right: thin solid #000000;
+    border-top: thin none #000000;
+    border-bottom: thin solid #000000;
+    /*box-shadow: 10px 10px 5px #888888;*/
+    width: 790px;
+    height: 135px;
+}
+
+.myShdow_Table_with_outnew {
+    align-self: center;
+    border-left: thin solid #055C29;
+    border-right: thin solid #055C29;
+    border-top: thin none #055C29;
+    border-bottom: thin solid #055C29;
+    box-shadow: 10px 10px 5px #888888;
+    width: 100%;
+    height: 300px;
+    background-image: url(../Images/background1.PNG );
+    color: #000066;
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 100px
+}
+
+.rounded_corners_gridview {
+    border: 1px solid #A1DCF2;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rounded_corners td, .rounded_corners th {
+    border: 1px solid #A1DCF2;
+    font-family: Arial;
+    font-size: 10pt;
+    text-align: center;
+}
+
+.rounded_corners table table td {
+    border-style: none;
+}
+
+.Mdheadings {
+    font-family: Calibri;
+    font-weight: bold;
+    color: #3366CC;
+    font-size: medium;
+}
+
+.textShadow {
+    text-shadow: 2px 2px 8px #FF0000;
+}
+
+.Logpage {
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px#888;
+    box-shadow: 0 0 5px 5px #888;
+    border-radius: 10px;
+}
+
+.bordersradious {
+    -moz-border-radius-topleft: 11px;
+    -webkit-border-top-left-radius: 11px;
+    border-top-left-radius: 11px;
+    -moz-border-radius-topright: 13px;
+    -webkit-border-top-right-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+.bordersradiousmenu {
+    -moz-border-radius-topleft: 11px;
+    -webkit-border-top-left-radius: 11px;
+    border-top-left-radius: 11px;
+    -moz-border-radius-topright: 13px;
+    -webkit-border-top-right-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+.bordersradioushome {
+    -moz-border-radius-topleft: 11px;
+    -webkit-border-top-left-radius: 11px;
+    border-top-left-radius: 11px;
+    -moz-border-radius-topright: 13px;
+    -webkit-border-top-right-radius: 13px;
+    border-top-right-radius: 13px;
+    width: 100%;
+}
+
+.bordersradiousnew {
+    -moz-border-radius-topleft: 11px;
+    -webkit-border-top-left-radius: 11px;
+    border-top-left-radius: 11px;
+    -moz-border-radius-topright: 13px;
+    -webkit-border-top-right-radius: 13px;
+    border-top-right-radius: 13px;
+    background-color: #055C29;
+    color: white;
+    align-content: center;
+    margin-left: 100px;
+    width: 80%;
+}
+
+.bordersradiousdown {
+    -moz-border-radius-bottomright: 17px;
+    -webkit-border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    width: 96%;
+}
+
+.bordersradiousdownnew {
+    -moz-border-radius-bottomright: 17px;
+    -webkit-border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    background-color: #055C29;
+    margin-left: 100px;
+    color: white;
+    align-content: center;
+    width: 96%;
+}
+
+.bordersradiusallside {
+    -moz-border-radius-topleft: 11px;
+    -webkit-border-top-left-radius: 11px;
+    border-top-left-radius: 11px;
+    -moz-border-radius-topright: 13px;
+    -webkit-border-top-right-radius: 13px;
+    border-top-right-radius: 13px;
+    -moz-border-radius-bottomright: 17px;
+    -webkit-border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+.dcntmenuadmin {
+    margin-left: 2px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    background-color: #b1d4ea;
+}
+
+/* pop */
+
+.modalPopup {
+    background-color: #696969;
+    filter: alpha(opacity=40);
+    opacity: 0.7;
+    xindex: -1;
+}
+
+.modalPopup1 {
+    /*background-color: #696969;
+filter: alpha(opacity=40);
+opacity: 0.7;
+xindex:-1;*/
+    -moz-border-radius-bottomright: 17px;
+    -webkit-border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    background: rgb(235,241,246); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(235,241,246,1) 5%, rgba(171,211,238,1) 98%, rgba(213,235,251,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,rgba(235,241,246,1)), color-stop(98%,rgba(171,211,238,1)), color-stop(100%,rgba(213,235,251,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(235,241,246,1) 5%,rgba(171,211,238,1) 98%,rgba(213,235,251,1) 100%); /* IE10+ */
+    background: rgb(235,241,246); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
+    border: 5px solid #fff;
+    -webkit-border-radius: 27;
+    -moz-border-radius: 27;
+    border-radius: 27px;
+    box-shadow: inset 0 0 2px 1px rgba(255,255,255,0.08), 0 16px 10px -8px rgba(0, 0, 0, 0.6);
+    top: 10px;
+    left: 0px;
+}
+/* grid */
+.FooterStyle {
+    background-color: #6699FF;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-family: Calibri;
+}
+
+
+.btn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #f50505;
+    font-size: 23px;
+    background: #396126;
+    padding: 11px 17px 3px 20px;
+    text-decoration: none;
+}
+
+
+.tb6 {
+    border: 3px double #CCCCCC;
+    background-color: lightblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+
+
+.bebutton {
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+}
+
+.bebutton {
+    /* float:right; */
+    padding: 5px 25px 6px 25px;
+    font-family: 'Bree Serif', serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+    background: #006129;
+    border: 1px solid #006129;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    -webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+    margin-left: 0px;
+}
+
+    .bebutton:hover {
+        background: #72D03C;
+        border: 1px solid rgba(256,256,256,0.75);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .bebutton:focus {
+        position: relative;
+        bottom: -1px;
+        background: #006129;
+        box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+        -moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+        -webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+        color: #FFFFFF;
+    }
+
+/* calendar new*/
+.cal_Theme1 .ajax__calendar_container {
+    background-color: #006129;
+    border: solid 1px #cccccc;
+}
+
+.cal_Theme1 .ajax__calendar_header {
+    background-color: #006129;
+    margin-bottom: 4px;
+}
+
+.cal_Theme1 .ajax__calendar_title,
+.cal_Theme1 .ajax__calendar_next,
+.cal_Theme1 .ajax__calendar_prev {
+    color: #f7f9fb;
+    padding-top: 3px;
+}
+
+.cal_Theme1 .ajax__calendar_body {
+    background-color: #e9e9e9;
+    border: solid 1px #cccccc;
+}
+
+.cal_Theme1 .ajax__calendar_dayname {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+.cal_Theme1 .ajax__calendar_day {
+    text-align: center;
+}
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+.cal_Theme1 .ajax__calendar_active {
+    color: #004080;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.cal_Theme1 .ajax__calendar_today {
+    font-weight: bold;
+}
+
+.cal_Theme1 .ajax__calendar_other,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    color: #bbbbbb;
+}
+
+
+.txtnew {
+    border: 1px solid #549447;
+    font-family: Calibri;
+    font-size: 14px;
+    width: 70px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+
+.txtnewdate {
+    border: 1px solid #549447;
+    font-family: Calibri;
+    font-size: 14px;
+    width: 80px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+
+
+.txtnewbig {
+    border: 1px solid #549447;
+    font-family: Calibri;
+    font-size: 14px;
+    width: 200px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+
+.txtnewmed {
+    border: 1px solid #549447;
+    font-family: Calibri;
+    font-size: 14px;
+    width: 150px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+
+.txtnewbold {
+    font-family: Calibri;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 2px 5px;
+}

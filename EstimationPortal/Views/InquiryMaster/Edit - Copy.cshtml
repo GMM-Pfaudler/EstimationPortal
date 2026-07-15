@@ -1,0 +1,459 @@
+﻿@model SUP_CORE.EFModel.Tbl_InquiryMasters
+@{
+    ViewBag.Title = "Edit Inquiry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .required-label::after {
+        content: " *";
+        color: red;
+        font-size: 14px; /* adjust if needed */
+        font-weight: bold;
+    }
+
+    .field-icon {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        cursor: pointer;
+        color: #6c757d;
+    }
+    /* Container styling */
+    .order-form-container {
+        background-color: #f8fafc;
+        min-vh: 100vh;
+    }
+
+    /* Custom Input Styling to fix misalignment */
+    .custom-input {
+        border: none !important;
+        background-color: #f1f5f9 !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        color: #1e293b !important;
+        transition: all 0.2s ease;
+    }
+
+        .custom-input:focus {
+            background-color: #ffffff !important;
+            box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1) !important;
+            outline: 1px solid #00338d !important;
+        }
+
+    /* Checkbox Alignment */
+    .custom-checkbox .form-check-input {
+        width: 1.25em;
+        height: 1.25em;
+        margin-top: 0.15em;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .custom-checkbox .form-check-input:checked {
+            background-color: #00338d;
+            border-color: #00338d;
+        }
+
+    /* Label Styling */
+    .custom-field label {
+        letter-spacing: 0.5px;
+        font-size: 0.75rem;
+        display: block;
+    }
+
+    /* Button Hover */
+    .btn-primary:hover {
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center page-header-container mb-4">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: #00338d;">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Inquiry Master</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Edit Inquiry</li>
+                    </ol>
+                </nav>
+            </div>
+            <a href="@Url.Action("Index")" class="btn-animate-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to List</span>
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="border-radius:15px;">
+            @*<div class="card-header border-0 py-3" style="background: #00338d;">
+                    <h5 class="text-white mb-0 fw-bold"><i class="fas fa-clipboard-list me-2"></i> Update Information</h5>
+                </div>*@
+            <div class="card-header border-0 py-3 bg-transparent">
+                <span class="custom-tab">
+                    <i class="fas fa-clipboard-list me-2"></i> Update Information
+                </span>
+            </div>
+            <div class="card-body p-4 p-lg-5 bg-white">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id) @* Critical for Edit *@
+
+                    <div class="row g-4">
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase required-label">SF No.</label>
+                                @Html.TextBoxFor(m => m.SFNo, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off",
+                                    placeholder = "e.g. 70963"
+                                })
+
+                                @Html.ValidationMessageFor(m => m.SFNo, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Sales Person</label>
+                                @Html.DropDownListFor(m => m.SalesPerson,
+                                ViewBag.SalesPersonList as List<SelectListItem>,
+                                "-Select-",
+                                new { @id = "SalesPerson", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m => m.SalesPerson, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Inquiry Receipt Date</label>
+                                @Html.TextBoxFor(m => m.InqReceiptDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.InqReceiptDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Inquiry Type</label>
+                                @Html.DropDownListFor(m => m.InqType, ViewBag.InqTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.InqType, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Dom / Exp</label>
+                                @Html.DropDownListFor(m=>m.DomExp,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Domestic", Value = "Domestic" },
+                                    new SelectListItem { Text = "Export", Value = "Export" }
+                                },
+                                "-Select-",
+                                new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.DomExp, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Due Date</label>
+                                @Html.TextBoxFor(m=>m.DueDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.DueDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Actual Submission Date</label>
+                                @Html.TextBoxFor(m=>m.ActualSubDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input", @id = "ActualSubDate" })
+                                @Html.ValidationMessageFor(m=>m.ActualSubDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Sub Type</label>
+                                @Html.DropDownListFor(m=>m.SubType, ViewBag.SubTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.SubType, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Enquiry Status</label>
+                                @Html.DropDownListFor(m=>m.EnqStatus,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "In Process", Value = "In Process" },
+                                    new SelectListItem { Text = "Completed", Value = "Completed" },
+                                    new SelectListItem { Text = "Hold", Value = "Hold" },
+                                    new SelectListItem { Text = "Regret", Value = "Regret" },
+                                    new SelectListItem { Text = "Pending", Value = "Pending" },
+                                    new SelectListItem { Text = "Pre-Bid Q", Value = "Pre-Bid Q" }
+                                },
+                                "-Select-",
+                                new { @class = "form-control custom-input", @id = "EnqStatus" })
+                                @Html.ValidationMessageFor(m=>m.EnqStatus, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">End User / Client</label>
+                                @Html.TextBoxFor(m=>m.Client, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.Client, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">EPC / Licensor</label>
+                                @Html.TextBoxFor(m=>m.EPC, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.EPC, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Equipment Type</label>
+                                @Html.DropDownListFor(m=>m.EquipType, ViewBag.EquipTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.EquipType, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Tag Qty</label>
+                                @Html.TextBoxFor(m=>m.TagQty, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.TagQty, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Total Qty</label>
+                                @Html.TextBoxFor(m=>m.TotalQty, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.TotalQty, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Major MOC</label>
+                                @Html.TextBoxFor(m=>m.MajorMOC, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.MajorMOC, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Design Scope</label>
+                                @Html.DropDownListFor(m=>m.DesignScope,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "T", Value = "T" },
+                                    new SelectListItem { Text = "M", Value = "M" },
+                                    new SelectListItem { Text = "T & M", Value = "T & M" },
+                                    new SelectListItem { Text = "NA", Value = "NA" }
+                                },
+                                "-Select-",
+                                new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.DesignScope, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">TE</label>
+                                @Html.DropDownListFor(m=>m.TE, ViewBag.TEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.TE, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">PE</label>
+                                @Html.DropDownListFor(m=>m.PE, ViewBag.PEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.PE, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">EE</label>
+                                @Html.DropDownListFor(m=>m.EE, ViewBag.EEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.EE, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">TQ No</label>
+                                @Html.DropDownListFor(m=>m.TqNo,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "No TQ", Value = "No TQ" },
+                                    new SelectListItem { Text = "TQ 1", Value = "TQ 1" },
+                                    new SelectListItem { Text = "TQ 2", Value = "TQ 2" },
+                                    new SelectListItem { Text = "TQ 3", Value = "TQ 3" },
+                                    new SelectListItem { Text = "TQ 4", Value = "TQ 4" },
+                                    new SelectListItem { Text = "TQ 5", Value = "TQ 5" }
+                                },
+                                "-Select-",
+                                new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.TqNo, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">TQ Received Date</label>
+                                @Html.TextBoxFor(m=>m.TqReceivedDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.TqReceivedDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">TQ Due Date</label>
+                                @Html.TextBoxFor(m=>m.TqDueDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.TqDueDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">TQ Submission Date</label>
+                                @Html.TextBoxFor(m=>m.TqSubDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.TqSubDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Project No</label>
+                                @Html.TextBoxFor(m=>m.ProjectNo, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.ProjectNo, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Project Received Date</label>
+                                @Html.TextBoxFor(m=>m.ProjReceivedDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.ProjReceivedDate, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Project Status</label>
+
+                                @Html.DropDownListFor(m=>m.ProjStatus,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Won", Value = "Won" },
+                                    new SelectListItem { Text = "Lost", Value = "Lost" },
+                                    new SelectListItem { Text = "Closed", Value = "Closed" },
+                                    new SelectListItem { Text = "Unknown", Value = "Unknown" },
+                                    new SelectListItem { Text = "Live", Value = "Live" }
+                                },
+                                "-Select-",
+                                new { @class = "form-control custom-input" })
+                                @Html.ValidationMessageFor(m=>m.ProjStatus, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Value (in RS)</label>
+                                @Html.TextBoxFor(m=>m.RsValue, null, new
+                                {
+                                    @class = "form-control custom-input",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m=>m.RsValue, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Remarks</label>
+                                @Html.TextAreaFor(m => m.Remarks, new
+                                {
+                                    @class = "form-control custom-input",
+                                    rows = "2",
+                                    autocomplete = "off"
+                                })
+
+                                @Html.ValidationMessageFor(m => m.Remarks, "", new { @class = "text-danger small" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group custom-field">
+                                <label class="small fw-bold text-muted mb-1 text-uppercase">Status</label>
+                                @Html.DropDownListFor(m => m.IsDelete, new List<SelectListItem>
+                                {
+                                new SelectListItem
+                                {
+                                    Text = "Active",
+                                    Value = "false",
+                                    Selected = Model.IsDelete == false || Model.IsDelete == null
+                                },
+                                new SelectListItem
+                                {
+                                    Text = "Deactive",
+                                    Value = "true",
+                                    Selected = Model.IsDelete == true
+                                }
+                                }, new { @class = "form-control custom-input" })
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5 d-flex justify-content-end gap-2 pt-4 border-top">
+                            <a href="@Url.Action("Index")" class="btn btn-light rounded-pill px-4 fw-bold border" style="margin-right:10px;">Cancel</a>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" style="background: #00338d; border:none;">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#SalesPerson').select2({
+            //placeholder: "-Select-",
+            //allowClear: true,
+            //width: '100%'
+        });
+        $('#ActualSubDate').on('change', function () {
+
+            if ($(this).val()) {
+                $('#EnqStatus').val('Completed');
+            }
+            else {
+                $('#EnqStatus').val('');
+            }
+        });
+    });
+</script>

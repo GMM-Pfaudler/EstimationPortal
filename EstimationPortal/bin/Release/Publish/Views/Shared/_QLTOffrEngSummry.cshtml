@@ -1,0 +1,155 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    Layout = null;
+}
+
+ 
+
+<div class="table-responsive font">
+    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-wrap small">
+                <th>Action</th> 
+                <th>Status</th>
+                <th>IC No.</th>
+                <th>OrderNumber</th>
+                <th>LineNo</th>
+                <th>Item Code</th>
+                <th>Item Description</th>
+                <th>RevNo</th>
+                <th>Drawing Number</th>
+                <th>Drw Rev.</th>
+                <th>Qty</th>
+                <th>Supp Remarks</th>
+                <th>File</th>
+                <th>Rejection Reason</th>
+
+                <th>WH</th>
+                <th>SO</th>
+                <th>Buyer Code</th>
+                <th>Buyer Name</th>
+                <th>BP Code</th>
+                <th>BP Name</th>
+                <th>Purchase Office</th>
+                <th>Call Submited Date</th>
+                <th>Call Assigned Date</th>
+                <th>Inspection Planned Date</th>
+                <th>Call Attended Date</th>
+            </tr>
+        </thead>
+        <tbody class="text-nowrap">
+            @foreach (var item in Model)
+            {
+                int counter = 0;
+                if (item.Status == "Assigned" || item.Status == "Planned" || item.Status == "Rework")
+                {
+                    DateTime now = DateTime.Now;
+                    var styl = "";
+                    if (item.SuppOfferDate > now.AddHours(-72) && item.SuppOfferDate <= now || item.SuppOfferDate == null)
+                    {
+                        styl = " text-transform: uppercase;";
+                    }
+                    else
+                    {
+                        styl = " text-transform: uppercase; Background-color : Yellow;";
+                    }
+
+
+                    <tr class="nowrap small" style="@styl">
+
+                        @if (item.Status == "Assigned" || item.Status == "Planned")
+                        {
+                            <td class="text-nowrap">
+                                @Html.ActionLink("Edit", "QLTInspEngEdit", "PO", new { id = item.Id }, new { @class = "badge badge-primary" })
+                            </td>
+                        }
+                        else
+                        {
+                            <td></td>}
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CTNumbr)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Order_Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Line_Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Revision_Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Drawing_Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GMM_Drw_Rev)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Qty_Offered)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Supp_Remarks)
+                        </td>
+                        @if (item.GMM_Drw_Numbr != null)
+                    {
+                            <td>
+                                @Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })
+                            </td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RReason)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Warehouse)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sales_Order)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Buyer_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Buyer)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Supplier_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BP_Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Office)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SuppOfferDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.QAssignedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InspPlannedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EngAttendedDate)
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>

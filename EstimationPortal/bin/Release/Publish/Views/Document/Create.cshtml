@@ -1,0 +1,255 @@
+﻿@{
+    ViewBag.Title = "Create Project";
+}
+@using (Html.BeginForm("Create", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0 col-md-12">
+                <div class="card-body">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PO", "PO Number", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("PO", null, new { @id = "PO", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                @Html.ValidationMessage("PO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Client", "Client Name", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("Client", null, new { @id = "Client", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                @Html.ValidationMessage("Client", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("SO", "SO Number", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("SO", null, new { @id = "SO", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                @Html.ValidationMessage("SO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QTY", "Qty", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("QTY", null, new { @id = "QTY", @class = "form-control form-control-sm", @autocomplete = "off", @Type = "number" })
+                                                @Html.ValidationMessage("QTY", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Facility", "Facility", htmlAttributes: new { @class = "control-label" })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.DropDownList("Facility", new[]{
+                                                  new SelectListItem(){ Text = "Karamsad", Value ="P10" },
+                                                   new SelectListItem(){ Text = "Ahmedabad",Value ="P30" },
+                                                   new SelectListItem(){ Text = "Hydrabad",Value ="P40" },
+                                                }, null, new { @id = "Facility", @class = "form-control form-control-sm font padding-drop" })
+                                                @Html.ValidationMessage("Facility", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("StartDate", "Start Date", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("StartDate", null, new { @id = "StartDate", @class = "form-control form-control-sm", @autocomplete = "off", @Type = "date" })
+                                                @Html.ValidationMessage("StartDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("EndDate", "End Date", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("EndDate", null, new { @id = "EndDate", @class = "form-control form-control-sm", @autocomplete = "off", @Type = "date" })
+                                                @Html.ValidationMessage("EndDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("TurnAroundDays", "Doc Turnaround (Days)", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("TurnAroundDays", null, new { @id = "TurnAroundDays", @class = "form-control form-control-sm", @autocomplete = "off", @Type = "number" })
+                                                @Html.ValidationMessage("TurnAroundDays", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PMOUsers", "PMO Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("PMOUsers", null, new { @id = "PMOUsers", @class = "form-control form-control-sm", @autocomplete = "off"  })
+                                                @Html.ValidationMessage("PMOUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QLTUsers", "Quality Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("QLTUsers", null, new { @id = "QLTUsers", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                @Html.ValidationMessage("QLTUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("WLDUsers", "Welding Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("WLDUsers", null, new { @id = "WLDUsers", @class = "form-control form-control-sm", @autocomplete = "off"  })
+                                                @Html.ValidationMessage("WLDUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("ENGUsers", "Engineering Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBox("ENGUsers", null, new { @id = "ENGUsers", @class = "form-control form-control-sm", @autocomplete = "off"  })
+                                                @Html.ValidationMessage("ENGUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("DocID", "Documents List", htmlAttributes: new { @class = "control-label " })
+                                            </div>
+                                            <div class="col-md-12 row" style="margin-left:0px;">
+                                                <input type="file" id="file" name="file" class="form-control-file custom-file-input" accept=".xlsx,.xls">
+                                                <label for="file" class="custom-file-label">Choose file</label>
+                                                @Html.ValidationMessage("File", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-md-12">
+            <div class="col-md-offset-2 col-md-12" align="center">
+                <input type="submit" value="Create" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+            var fileName = document.getElementById("file").files[0].name;
+            var nextSibling = e.target.nextElementSibling
+            nextSibling.innerText = fileName;
+        });
+    </script>
+    <style>
+        .custom-file-input {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        /* Style the custom label */
+        .custom-file-label {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 0.8;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+            /* Hover effect */
+            .custom-file-label:hover {
+                background-color: #e9ecef;
+                border-color: #b3b3b3;
+            }
+
+        /* Show the filename in the label after a file is selected */
+        .custom-file-input:focus + .custom-file-label {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .custom-file-input + .custom-file-label::after {
+            content: "Browse";
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Adjust the look on hover */
+        .custom-file-label:hover::after {
+            background-color: #0056b3;
+        }
+    </style>
+
+}
+

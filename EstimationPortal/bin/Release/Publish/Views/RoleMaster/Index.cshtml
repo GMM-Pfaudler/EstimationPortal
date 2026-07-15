@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.RoleMasters>
+
+@{
+    ViewBag.Title = "Role List";
+}
+
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card border-0 mb-4">
+            <div class="card-body">
+                <p class="col-sm-2 border-left-primary bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                    @Html.ActionLink("Create New", "Create", null, new { @class = "text-primary" })
+                </p>
+
+                <div class="table-responsive font">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-nowrap" style="color:black">
+                                <th>Actions</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr class="nowrap small">
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", "RoleMaster", new { id = item.Id }, new { @class = "text-primary" }) |
+                                        @Html.ActionLink("Delete", "Delete", "RoleMaster", new { id = item.Id }, new { @class = "text-danger" })
+                                    </td>
+
+                                    <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#dataTable thead tr').clone(true).appendTo('#dataTable thead');
+            $('#dataTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+
+            var table = $('#dataTable').DataTable({
+                destroy: true,
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+
+                ],
+                "order": [[1, "desc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'RoleSummary_' + d;
+                        }
+                    }
+                ]
+
+
+            });
+        });
+    </script>
+}

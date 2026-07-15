@@ -1,0 +1,60 @@
+﻿@model List<SUP_CORE.EFModel.Tbl_SalesPersonMasters>
+@{
+    ViewBag.Title = "Sales Person Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link href="~/Content/css/listpage.css" rel="stylesheet">
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / Manage Sales Persons</div>
+        </div>
+        <a href="@Url.Action("Create", "SalesMaster")" class="btn-create shadow-sm">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+
+    <div class="table-card">
+        <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%">
+                <thead>
+                    <tr>
+                        <th>Actions</th>
+                        <th>Sales Person</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="@Url.Action("Edit", "SalesMaster", new { id = item.Id })" class="btn-edit-icon" title="Edit Sales Person">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            
+                            <td>@item.SalesPerson</td>
+                            <td>
+                                @if (item.IsDelete == false)
+                                {
+                                    <span class="badge-soft-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge-soft-danger">Deactive</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

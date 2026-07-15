@@ -1,0 +1,258 @@
+﻿@model SUP_CORE.EFModel.Tbl_TqRegisters
+@{
+    ViewBag.Title = "Edit TQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .select2-selection--single {
+        height: 38px !important;
+        padding-top: 4px;
+    }
+    .field-icon {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        cursor: pointer;
+        color: #6c757d;
+    }
+    /* Container styling */
+    .order-form-container {
+        background-color: #f8fafc;
+        min-vh: 100vh;
+    }
+
+    /* Custom Input Styling to fix misalignment */
+    .custom-input {
+        border: none !important;
+        background-color: #f1f5f9 !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        color: #1e293b !important;
+        transition: all 0.2s ease;
+    }
+
+        .custom-input:focus {
+            background-color: #ffffff !important;
+            box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1) !important;
+            outline: 1px solid #00338d !important;
+        }
+
+    /* Checkbox Alignment */
+    .custom-checkbox .form-check-input {
+        width: 1.25em;
+        height: 1.25em;
+        margin-top: 0.15em;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .custom-checkbox .form-check-input:checked {
+            background-color: #00338d;
+            border-color: #00338d;
+        }
+
+    /* Label Styling */
+    .custom-field label {
+        letter-spacing: 0.5px;
+        font-size: 0.75rem;
+        display: block;
+    }
+
+    /* Button Hover */
+    .btn-primary:hover {
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center page-header-container mb-4">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: #00338d;">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Tq Register</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Edit TQ</li>
+                    </ol>
+                </nav>
+            </div>
+            <a href="@Url.Action("Index")" class="btn-animate-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to List</span>
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="border-radius:15px;">
+            @*<div class="card-header border-0 py-3" style="background: #00338d;">
+                    <h5 class="text-white mb-0 fw-bold"><i class="fas fa-user-edit me-2"></i> Update Information</h5>
+                </div>*@
+            <div class="card-header border-0 py-3 bg-transparent">
+                <span class="custom-tab">
+                    <i class="fas fa-user-edit me-2"></i> Update Information
+                </span>
+            </div>
+            <div class="card-body p-4 p-lg-5 bg-white">
+                @using (Html.BeginForm("Edit", "TqRegister", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id) 
+
+                    
+                <div class="row g-4">
+
+                    <!-- Row 1 -->
+
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <label class="required-label">SF No</label>
+
+                        @Html.DropDownListFor(m => m.SFNo,
+                        ViewBag.SFNoList as List<SelectListItem>,
+                        "-Select-",
+                        new { @id = "SFNo", @class = "form-control custom-input" })
+
+                        @Html.ValidationMessage("SFNo", "", new { @class = "text-danger small" })
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <label class="required-label">TQ No</label>
+
+                        @Html.DropDownListFor(m => m.TqNo,
+                        new List<SelectListItem>
+                        {
+                            new SelectListItem { Text = "TQ 1", Value = "TQ 1" },
+                            new SelectListItem { Text = "TQ 2", Value = "TQ 2" },
+                            new SelectListItem { Text = "TQ 3", Value = "TQ 3" },
+                            new SelectListItem { Text = "TQ 4", Value = "TQ 4" },
+                            new SelectListItem { Text = "TQ 5", Value = "TQ 5" }
+                        },
+                        "-Select-",
+                        new { @class = "form-control custom-input" })
+
+                        @Html.ValidationMessage("TqNo", "", new { @class = "text-danger small" })
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <label class="required-label text-nowrap">TQ Received Date</label>
+
+                        @Html.TextBoxFor(m => m.TqReceivedDate,
+                        "{0:yyyy-MM-dd}",
+                        new { type = "date", @class = "form-control custom-input" })
+
+                        @Html.ValidationMessage("TqReceivedDate", "", new { @class = "text-danger small" })
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4">
+                        <label class="required-label text-nowrap">TQ Due Date</label>
+
+                        @Html.TextBoxFor(m => m.TqDueDate,
+                        "{0:yyyy-MM-dd}",
+                        new { type = "date", @class = "form-control custom-input" })
+
+                        @Html.ValidationMessage("TqDueDate", "", new { @class = "text-danger small" })
+                    </div>
+
+                    <!-- Row 2 -->
+
+                    <div class="col-xl-3 col-lg-3 col-md-4">
+                        <label class="required-label text-nowrap">TQ Submission Date</label>
+
+                        @Html.TextBoxFor(m => m.TqSubDate,
+                        "{0:yyyy-MM-dd}",
+                        new { type = "date", @class = "form-control custom-input" })
+
+                        @Html.ValidationMessage("TqSubDate", "", new { @class = "text-danger small" })
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-4 mt-3">
+                        <label>End User / Client</label>
+
+                        @Html.TextBoxFor(m => m.Client,
+                        new
+                        {
+                            @class = "form-control custom-input",
+                            @readonly = "readonly"
+                        })
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4 mt-3">
+                        <label>Status</label>
+
+                        @Html.DropDownListFor(m => m.IsDelete,
+                        new List<SelectListItem>
+                        {
+                            new SelectListItem
+                            {
+                                Text = "Active",
+                                Value = "false",
+                                Selected = Model.IsDelete == false || Model.IsDelete == null
+                            },
+
+                            new SelectListItem
+                            {
+                                Text = "Deactive",
+                                Value = "true",
+                                Selected = Model.IsDelete == true
+                            }
+
+                        },
+                        new { @class = "form-control custom-input" })
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 mt-3">
+                        <label>Update File</label>
+
+                        @Html.TextBoxFor(m => m.SelectedFile, null, new { @id = "SelectedFile", type = "file", @class = "form-control custom-input" })
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 mt-3">
+                        <label>Remarks</label>
+
+                        @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control custom-input", rows = 2 })
+                    </div>
+                    <!-- Buttons -->
+
+                    <div class="col-12 mt-5 d-flex justify-content-end gap-2 pt-4 border-top">
+
+                        <a href="@Url.Action("Index")"
+                           class="btn btn-light rounded-pill px-4 fw-bold border"
+                           style="margin-right:10px;">
+
+                            Cancel
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm"
+                                style="background: #00338d; border:none;">
+
+                            Update
+                        </button>
+
+                    </div>
+
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#SFNo').select2({
+            //placeholder: "-Select-",
+            //allowClear: true,
+            //width: '100%'
+        });
+
+    });
+</script>

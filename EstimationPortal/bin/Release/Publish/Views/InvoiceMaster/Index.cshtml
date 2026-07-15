@@ -1,0 +1,251 @@
+﻿@*@model IEnumerable<SUP_CORE.EFModel.InvoiceDetails>*@
+@{
+    ViewBag.Title = "Invoice Details List";
+
+}
+@*<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card border-0 mb-4">
+            <div class="card-body">
+                <div class="table-responsive font">
+                    <table border="0" cellspacing="2" cellpadding="2" class="mx-auto w-auto">
+                        <tbody>
+                            <tr>
+                                <td>From_Date:</td>
+                                <td>
+                                    <input name="mindate" id="mindate" type="text" style="width: 120px;" placeholder="DD-MMM-YYYY" autocomplete="off">
+                                </td>
+                                <td>To_Date:</td>
+                                <td>
+                                    <input name="maxdate" id="maxdate" type="text" style="width: 120px;" placeholder="DD-MMM-YYYY" autocomplete="off">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="myPartialView">
+                    @{Html.RenderPartial("_InvoiceTrIndex", Model);}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>*@
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label font-weight-bold">Filters :</label>
+                        <br />
+                        <input type='text' id='search_BPCode' placeholder='BPCode' class="m-1">
+                        <input type='text' id='search_BPName' placeholder='BPName' class="m-1">
+                        <input type='text' id='search_OrderNo' placeholder='Order No' class="m-1" autocomplete="off">
+                        <input type='text' id='search_InvoiceNo' placeholder='Invoice No' class="m-1">
+                        <input type='text' readonly id='search_Invoicedate' class="datepicker m-1" placeholder='Invoice date'>
+                        <input type='text' id='search_TransactionType' placeholder='Transaction Type' class="m-1">
+                        <input type='text' id='search_GMMRef' placeholder='GMM Reference' class="m-1">
+                        <input type='button' id="btn_search" value="Search" class="btn btn-sm btn-outline-primary m-1" />
+                        <input type='button' id="btn_clear" value="Clear" class="btn btn-sm btn-outline-secondary m-1">
+                    </div>
+                </div>
+                <div class="table-responsive font">
+                    <table id="demodata" class="table text-nowrap" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>BPCode</th>
+                                <th>BPName</th>
+                                <th>OrderNo</th>
+                                <th>Line</th>
+                                <th>InvoiceNo</th>
+                                <th>Invoice Date</th>
+                                <th>Amount (In Invoice Curr)</th>
+                                <th>Amount (INR)</th>
+                                <th>Transaction Type</th>
+                                <th>GMM Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+  <script>
+        $(document).ready(function () {
+            $(".datepicker").datepicker({
+                "dateFormat": "yy-mm-dd",
+                changeYear: true,
+                changeMonth: true
+            });
+
+            var table = $("#demodata").dataTable({
+                "language": {
+                    "emptyTable": "No record found(s)"
+                },
+                "searching": false,
+                "processing": true,
+                "serverSide": true,
+                "info": true,
+                "stateSave": true,
+                "lengthMenu": [[10, 20, 50, 100, 200], [10, 20, 50, 100, 200]],
+                "ajax": {
+                    "url": '/InvoiceMaster/GetINVTableData',
+                    "type": "POST",
+                    "data": function (data) {
+                        // Read values
+                        debugger
+                        var BPCode = $('#search_BPCode').val();
+                        var BPName = $('#search_BPName').val();
+                        var OrderNo = $('#search_OrderNo').val();
+                        var InvoiceNo = $('#search_InvoiceNo').val();
+                        var InvoiceDate = $('#search_Invoicedate').val();
+                        var TrType = $('#search_TransactionType').val();
+                        var GMMDocRefNo = $('#search_GMMRef').val();
+
+                        // Append to data
+                        data.search_BPCode = BPCode;
+                        data.search_BPName = BPName;
+                        data.search_OrderNo = OrderNo;
+                        data.search_InvoiceNo = InvoiceNo;
+                        data.search_Invoicedate = InvoiceDate;
+                        data.search_TransactionType = TrType;
+                        data.search_GMMRef = GMMDocRefNo;
+                    },
+                    "beforesend": function () {
+                        $("#loader").show();
+                    },
+                    "complete": function () {
+                        $("#loader").hide();
+                    }
+                },
+                "columns": [
+                  { "data": "BPCode", "Name": "BPCode", "autoWidth": true, "orderable": true }
+                , { "data": "BPName", "Name": "BPName", "autoWidth": true }
+                , { "data": "OrderNo", "Name": "OrderNo", "autoWidth": true }
+                , { "data": "Line", "Name": "Line", "autoWidth": true }
+                , { "data": "InvoiceNo", "Name": "InvoiceNo", "autoWidth": true }
+                , { "data": "InvoiceDate", "Name": "InvoiceDate", "autoWidth": true, "orderable": true }
+                , { "data": "AmtInvoiceCurrency", "Name": "AmtInvoiceCurrency", "autoWidth": true }
+                , { "data": "AmtHomeCurrency", "Name": "AmtHomeCurrency", "autoWidth": true }
+                , { "data": "TrType", "Name": "TrType", "autoWidth": true }
+                , { "data": "GMMDocRefNo", "Name": "GMMDocRefNo", "autoWidth": true }
+                ],
+                "columnDefs": [
+                     {
+
+                         "targets": [5],
+                         "data": "InvoiceDate", render: function (data, type, row) {
+                             var d = data.replace('/Date(', '').replace(')/', '');
+                             newDate = new Date(parseInt(d))
+                             return FromateDateToDDMMYYYY(newDate);
+                         },
+                         'orderable': true,
+                     }
+                ],
+                "order": [[5, "asc"]],
+                "dom": '<"row"<"col-md-12"<"pull-right"B>l>><"custom-spacer"f>rtip',
+                "buttons": [
+                    {
+                        "extend": 'excel',
+                        "action": newexportaction,
+                        filename: function () {
+                            header: false
+                            return 'InvoiceSummary';
+                        },
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+                        }
+                    }
+                ]
+
+            });
+            $('#btn_search').on('click', function () {
+                $(table).DataTable().draw();
+            });
+            $('#btn_clear').on('click', function () {
+                $('#search_BPCode').val("");
+                $('#search_BPName').val("");
+                $('#search_OrderNo').val("");
+                $('#search_InvoiceNo').val("");
+                $('#search_Invoicedate').val("");
+                $('#search_TransactionType').val("");
+                $('#search_GMMRef').val("");
+                $(table).DataTable().draw();
+            });
+        });
+        $.fn.dataTable.moment('DD/MM/YYYY HH:mm');
+        
+        function FromateDateToDDMMYYYY(datePar) {
+            var today = datePar;
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = dd + '-' + mm + '-' + yyyy;
+            var actdate = moment(today, 'DD/MM/YYYY').format("DD-MMM-YYYY")
+            return actdate;
+        }
+        function newexportaction(e, dt, button, config) {
+            debugger
+            var self = this;
+            var oldStart = dt.settings()[0]._iDisplayStart;
+            dt.one('preXhr', function (e, s, data) {
+                // Just this once, load all data from the server...
+                data.start = 0;
+                data.length = 500000000;
+                dt.one('preDraw', function (e, settings) {
+                    debugger
+                    // Call the original action function
+                    if (button[0].className.indexOf('buttons-copy') >= 0) {
+                        $.fn.dataTable.ext.buttons.copyHtml5.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-excel') >= 0) {
+                        $.fn.dataTable.ext.buttons.excelHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.excelFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-csv') >= 0) {
+                        $.fn.dataTable.ext.buttons.csvHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.csvHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.csvFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-pdf') >= 0) {
+                        $.fn.dataTable.ext.buttons.pdfHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.pdfHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.pdfFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-print') >= 0) {
+                        $.fn.dataTable.ext.buttons.print.action(e, dt, button, config);
+                    }
+                    dt.one('preXhr', function (e, s, data) {
+                        // DataTables thinks the first item displayed is index 0, but we're not drawing that.
+                        // Set the property to what it was before exporting.
+                        settings._iDisplayStart = oldStart;
+                        data.start = oldStart;
+                    });
+                    // Reload the grid with the original page. Otherwise, API functions like table.cell(this) don't work properly.
+                    setTimeout(dt.ajax.reload, 0);
+                    // Prevent rendering of the full data to the DOM
+                    return false;
+                });
+            });
+            // Requery the server with the new one-time export settings
+            dt.ajax.reload();
+        }
+
+</script>
+}
+
+

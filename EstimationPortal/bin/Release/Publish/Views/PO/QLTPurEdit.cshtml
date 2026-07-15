@@ -1,0 +1,155 @@
+﻿@model SUP_CORE.EFModel.QLT_PODetailsTrs
+@{
+    ViewBag.Title = "Edit Purchase Inspection Details";
+}
+
+@using (Html.BeginForm("QLTPurEdit", "PO", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "QLTPurIndex", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Order_Number", "Order Number", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Order_Number", null, new { @id = "Order_Number", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Order_Number", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Line_Number", "Line Number", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Line_Number", null, new { @id = "Line_Number", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Line_Number", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Item", "Item", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Item", null, new { @id = "Item", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Item", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Description", "Description", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Description", null, new { @id = "Description", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Description", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Drawing_Number", "Drawing No.", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Drawing_Number", null, new { @id = "Drawing_Number", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Drawing_Number", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("GMM_Drw_Rev", "Drw Rev", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("GMM_Drw_Rev", null, new { @id = "GMM_Drw_Rev", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("GMM_Drw_Rev", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Qty_Offered", "Qty Offered", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Qty_Offered", null, new { @id = "Qty_Offered", @class = "form-control form-control-sm", @autocomplete = "off", @type = "number", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Qty_Offered", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Supp_Remarks", "Supplier Remarks", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextArea("Supp_Remarks", null, new { @id = "Supp_Remarks", @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Supp_Remarks", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("GMM_Drw_Numbr", "File", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.EditorFor(model => model.GMM_Drw_Numbr, new { htmlAttributes = new { @class = "form-control form-control-sm", @readonly = "readonly" } })
+                                    @Html.ActionLink("DownLoadFile", "DownLoad", new { Doc = Model.GMM_Drw_Numbr })
+                                    @Html.ValidationMessage("GMM_Drw_Numbr", "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Purchase_Remarks", "Purchase Remarks", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextArea("Purchase_Remarks", null, new { @id = "Purchase_Remarks", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                    @Html.ValidationMessage("Purchase_Remarks", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-12 m-md-2" align="center">
+                <input type="submit" value="Update" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+

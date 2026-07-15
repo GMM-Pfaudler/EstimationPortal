@@ -1,0 +1,439 @@
+﻿@{
+    var pUserId = Convert.ToInt16(System.Web.HttpContext.Current.Session["ID"]);
+    var RoleId = System.Web.HttpContext.Current.Session["RoleID"].ToString();
+}
+
+<style>
+    :root {
+        --primary-theme-color: #002D72;
+        --profile-bg: rgba(255, 255, 255, 0.15);
+    }
+
+    #accordionSidebar {
+        z-index: 1050 !important; /* Higher than standard Bootstrap components */
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .flex-grow-1 {
+        flex-grow: 1 !important;
+    }
+
+    .sidebar-user-container {
+        margin-top: auto;
+        position: relative;
+
+    }
+
+    /* FIX: Open Upward and stay within sidebar width */
+    .profile-dropdown-menu {
+        position: absolute;
+        bottom: 100% !important;
+        top: auto !important;
+        /* Matches sidebar width minus margins */
+        width: calc(100% - 4px) !important;
+        left: 3px !important;
+        right: 10px !important;
+        transform: none !important;
+        margin-bottom: 10px !important;
+        border-radius: 12px !important;
+        padding: 10px 0;
+        border: none !important;
+        box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2) !important;
+        z-index: 1000;
+        animation: slideUp 0.2s ease-out;
+    }
+
+
+    .profile-card {
+        background: var(--profile-bg);
+        border-radius: 8px;
+        padding: 10px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background 0.3s ease;
+        color: white !important;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none !important;
+        animation: slideUp 1s ease-out;
+    }
+
+        .profile-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+    @@keyframes slideUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .profile-avatar-wrapper {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+        .profile-avatar-wrapper img {
+            width: 32px;
+            height: 32px; 
+        }
+
+    .online-status {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #1cc88a;
+        border: 2px solid var(--primary-theme-color);
+        border-radius: 50%;
+    }
+
+    .user-name-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 110px; /* Prevents long names from breaking the layout */
+    }
+
+    .arrow-icon {
+        font-size: 0.7rem;
+        opacity: 0.7;
+    }
+
+    .dropdown-header {
+        font-size: 0.65rem !important;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #b7b9cc !important;
+        padding: 0.5rem 1.25rem !important;
+    }
+
+    .profile-dropdown-menu .dropdown-item {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        color: #4e73df;
+        display: flex;
+        align-items: center;
+    }
+
+        .profile-dropdown-menu .dropdown-item:hover:not(.no-hover) {
+            background-color: #f8f9fc;
+            color: var(--primary-theme-color);
+        }
+
+    .theme-icon {
+        width: 16px;
+        margin-right: 12px;
+        color: var(--primary-theme-color);
+        text-align: center;
+    }
+
+    .time-text {
+        color: #5a5c69;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+     
+
+
+    .btn-logout {
+        background-color: var(--primary-theme-color) !important;
+        border-color: var(--primary-theme-color) !important;
+        font-weight: 600;
+        font-size: 0.85rem;
+        border-radius: 6px;
+        color: white !important;
+        margin-top: 5px;
+    }
+
+        .btn-logout:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    /* 4. Fix for graphs overlapping - apply to the container */
+    .sidebar-user-container {
+        margin-top: auto;
+        position: relative;
+        z-index: 1100 !important;
+    }
+
+    .bg-Blue {
+        background-color: #032980;
+        padding: 15px 10px 13px 10px;
+        text-align: center;
+    }
+
+    .logo-separator {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        margin: 5px 25px 15px 25px;
+    }
+
+    .nav-item .nav-link {
+        margin: 4px 12px !important; /* Creates space for the 'card' look */
+        padding: 12px 15px !important;
+        border-radius: 12px !important; /* Rounded corners for the card */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        display: flex;
+        align-items: center;
+        border: 1px solid transparent;
+    }
+
+        /* THE GLASS CARD HOVER EFFECT */
+        .nav-item .nav-link:hover {
+            background: rgba(255, 255, 255, 0.12) !important; /* Subtle glass tint */
+            backdrop-filter: blur(8px); /* Frosted effect */
+            color: #ffffff !important;
+            transform: translateX(5px); /* Subtle slide-out animation */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Lifted shadow */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Soft border highlight */
+        }
+
+            /* Icon Animation on Hover */
+            .nav-item .nav-link:hover i {
+                transform: scale(1.1);
+                color: #ffffff !important;
+            }
+
+    
+</style>
+<ul class="navbar-nav sidebar sidebar-dark accordion d-flex flex-column" id="accordionSidebar" style="background-color:#032980">
+    <li class="nav-item dropdown no-arrow active">
+
+        <div class="bg-Blue">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="~/Home/Index">
+                <img class="card-img-top" src="~/Images/logo-white.svg" alt="lgCmpny">
+            </a>
+        </div>
+    </li>
+    <hr class="logo-separator" />
+    <!-- start Super Admin / Admin -->
+    @if (RoleId == "1" || RoleId == "2")
+    {
+        <li class="nav-item active">
+            <a class="nav-link text-white" href="/Home/Index">
+                <i class="fas fa-tachometer-alt fa-sm fa-fw text-white"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <hr class="sidebar-divider" />
+        <!-- Nav Item - usermaster -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_2">
+                <i class="fas fa-sliders-h fa-sm fa-fw text-white"></i>
+                <span>Masters</span>
+            </a>
+
+            <div id="Menu_2" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="/UserMaster/Index">
+                        <i class="fas fa-user-plus fa-sm"></i>
+                        <span>User Master</span>
+                    </a>
+                    <a class="collapse-item" href="/EnqStatusMaster/Index">
+                        <i class="fas fa-tasks fa-sm"></i>
+                        <span>Enquiry Status Master</span>
+                    </a>
+                    <a class="collapse-item" href="/InqTypeMaster/Index">
+                        <i class="fas fa-tags fa-sm"></i>
+                        <span>Inquiry Type Master</span>
+                    </a>
+                    <a class="collapse-item" href="/SubTypeMaster/Index">
+                        <i class="fas fa-sitemap fa-sm"></i>
+                        <span>Sub Type Master</span>
+                    </a>
+
+                    <a class="collapse-item" href="/SalesMaster/Index">
+                        <i class="fas fa-user-tag fa-sm"></i>
+                        <span>Sales Person Master</span>
+                    </a>
+                    <a class="collapse-item" href="/EquipTypeMaster/Index">
+                        <i class="fas fa-tools fa-sm"></i>
+                        <span>Equipment Type Master</span>
+                    </a>
+                    <a class="collapse-item" href="/EngineerMaster/Index">
+                        <i class="fas fa-hard-hat fa-sm"></i>
+                        <span>Engineer Master</span>
+                    </a>
+                    <a class="collapse-item" href="/EmailMaster/Index">
+                        <i class="fas fa-hard-hat fa-sm"></i>
+                        <span>Email Master</span>
+                    </a>
+
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider" />
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_3">
+                <i class="fas fa-calculator fa-sm fa-fw text-white"></i>
+                <span>Estimation</span>
+            </a>
+
+            <div id="Menu_3" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="/InquiryMaster/Index">
+                        <i class="fas fa-clipboard-list fa-sm"></i>
+                        <span>Inquiry Register</span>
+                    </a>
+                    <a class="collapse-item" href="/TqRegister/Index">
+                        <i class="fas fa-clipboard-list fa-sm"></i>
+                        <span>TQ Register</span>
+                    </a>
+
+
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider" />
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_1">
+                <i class="fas fa-list-ol fa-sm fa-fw text-white"></i>
+                <span>Reports</span>
+            </a>
+
+            <div id="Menu_1" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="/Report/Index">
+                        <i class="fas fa-clipboard-check fa-sm"></i> Inquiry Summary
+                    </a>
+
+
+                </div>
+            </div>
+        </li>
+    }
+    <!-- end Super Admin / Admin-->
+    <!-- start User -->
+    @if (RoleId == "3")
+    {
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_3">
+                <i class="fas fa-calculator fa-sm fa-fw text-white"></i>
+                <span>Estimation</span>
+            </a>
+
+            <div id="Menu_3" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="/InquiryMaster/UIndex">
+                        <i class="fas fa-clipboard-list fa-sm"></i>
+                        <span>Inquiry Register</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider" />
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_1">
+                <i class="fas fa-list-ol fa-sm fa-fw text-white"></i>
+                <span>Reports</span>
+            </a>
+
+            <div id="Menu_1" class="collapse" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="/Report/Index">
+                        <i class="fas fa-clipboard-check fa-sm"></i> Inquiry Summary
+                    </a>
+
+
+                </div>
+            </div>
+        </li>
+    }
+    <!-- start User -->
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0 bg-Blue" id="sidebarToggle"></button>
+    </div>
+
+
+    <div class="sidebar-user-container mx-3 mb-4">
+        <div class="dropup">
+            <a class="nav-link profile-card d-flex align-items-center justify-content-between"
+               href="#" id="userProfileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <div class="d-flex align-items-center overflow-hidden">
+                    <div class="profile-avatar-wrapper">
+                        <img class="img-profile" src="~/Images/undraw_profile.svg" alt="Profile">
+                        <span class="online-status"></span>
+                    </div>
+                    <span class="ml-2 user-name-text text-truncate">@Session["UserName"].ToString()</span>
+                </div>
+                <i class="fas fa-chevron-up arrow-icon"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left profile-dropdown-menu shadow-lg border-0" aria-labelledby="userProfileDropdown">
+                <div class="dropdown-header text-uppercase">Account</div>
+
+                <div class="dropdown-item d-flex align-items-center no-hover">
+                    <i class="far fa-clock mr-3 theme-icon"></i>
+                    <span id="liveClock" class="time-text">@DateTime.Now.ToString("hh:mm:ss tt")</span>
+                </div>
+                <a class="dropdown-item d-flex align-items-center" href="@Url.Action("Index", "Home")">
+                    <i class="fas fa-columns mr-3 theme-icon"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+
+                @*<a class="dropdown-item d-flex align-items-center" href="#">
+                        <i class="fas fa-key mr-3 theme-icon"></i>
+                        <span>Change Password</span>
+                    </a>*@
+                <div class="px-3 py-2">
+                    <button type="button" onclick="document.getElementById('logoutForm').submit()" class="btn btn-primary btn-logout btn-block">
+                        Logout
+                    </button>
+                </div>
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "d-none" }))
+                {
+                    @Html.AntiForgeryToken()
+                }
+            </div>
+        </div>
+    </div>
+
+
+</ul>
+<script>
+    function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        // Convert to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        const strHours = String(hours).padStart(2, '0');
+
+        const timeString = `${strHours}:${minutes}:${seconds} ${ampm}`;
+
+        // Update the span text
+        const clockElement = document.getElementById('liveClock');
+        if (clockElement) {
+            clockElement.textContent = timeString;
+        }
+    }
+
+    // Run the clock immediately, then every 1 second
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>

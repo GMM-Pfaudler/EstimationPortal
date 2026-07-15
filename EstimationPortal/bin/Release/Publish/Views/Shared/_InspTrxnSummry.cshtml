@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_POTxnDTO>
+@{
+    Layout = null;
+}
+<div class="table-responsive font">
+    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-wrap small">
+                <th  style="display:none">ID</th> 
+                <th>Date</th>
+                <th>UserName</th>
+                <th>Role</th>
+                <th>Action Taken</th> 
+                <th>Accepted QTY</th>
+                <th>Rejected QTY</th>
+                <th>Rework QTY</th> 
+                <th>Reject/Rework Reason</th>
+            </tr>
+        </thead>
+        <tbody class="text-nowrap">
+            @foreach (var item in Model)
+            { 
+                    <tr class="nowrap small" style="text-transform: uppercase;"> 
+                        <td style="display:none">@Html.DisplayFor(modelItem => item.TrID)</td> 
+                        <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Role)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActionTaken)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AQTY)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RQTY)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RWQTY)</td> 
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td> 
+                    </tr>
+               
+               
+
+
+            }
+        </tbody>
+    </table>
+</div>

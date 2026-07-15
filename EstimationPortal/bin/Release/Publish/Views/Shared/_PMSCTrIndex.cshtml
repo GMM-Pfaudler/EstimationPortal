@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.PMSC>
+
+<div class="table-responsive font">
+    <table class="table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-nowrap" style="color:black">
+                <th>Ship From WH</th>
+                <th>PO</th>
+                <th>PO LN</th>
+                <th>Sequence</th>
+                <th>PO Date</th>
+                <th>Delivery Date</th>
+                <th>Parent Item Code</th>
+                <th>Parent Item Text</th>
+                <th>Unit Price</th>
+                <th>Order Qty</th>
+                <th>Received Qty</th>
+                <th>Pending Qty</th>
+                <th>Material Sequence</th>
+                <th>Child Item Code</th>
+                <th>Child Item Text</th>
+                <th>LN Satus</th>
+                <th>Required Qty</th>
+                <th>Unit</th>
+                <th>Qty to be Shipped</th>
+                <th>Delivered Qty</th>
+                <th>Pending Qty at Subcontractor</th>
+                <th>Transfer Type</th>
+                <th>Order Origin</th>
+                <th>TRF No</th>
+                <th>TRF LN</th>
+                <th>TRF Date</th>
+                <th>DC No</th>
+                <th>Shipment</th>
+                <th>Shipment LN</th>
+                <th>DC Date</th>
+                <th>No of days</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr class="nowrap small">
+                    <td>@Html.DisplayFor(modelItem => item.Ship_From_warehouse_description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Purchase_Order)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PO_line)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PO_Sequence)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PO_Date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Planned_receipt_date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Parent_Item_Code)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Parent_Item_Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Unit_Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Order_Qty)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Received_Qty)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pending_Qty_of_Parent_Item)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Material_Sequence)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Child_Item_Code)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Child_Item_Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Line_Satus)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Required_Qty)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Unit)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Qty_Pending_to_be_Shipped)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Delivered_Quantity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pending_Quantity_at_Subcontractor_site)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Transfer_Type)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Order_Origin)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Supply_Order_No)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Supply_Order_Line)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TRF_Date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DC_Number)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Shipment)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Shipment_line)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DC_Date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Number_of_days)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

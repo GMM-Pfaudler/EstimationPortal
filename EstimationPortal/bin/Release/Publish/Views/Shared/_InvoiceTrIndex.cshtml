@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.InvoiceDetails>
+
+<div class="table-responsive font">
+    <table class="table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-nowrap" style="color:black">
+                <th>OrderNo</th>
+                <th>InvoiceNo</th>
+                <th>Invoice Date</th>
+                <th>Amount (In Invoice Curr)</th>
+                <th>Amount (INR)</th>
+                <th>Transaction Type</th>
+                <th>GMM Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr class="nowrap small">
+                    <td>@Html.DisplayFor(modelItem => item.OrderNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.InvoiceNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.InvoiceDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.AmtInvoiceCurrency)</td>
+                    <td>@Html.DisplayFor(modelItem => item.AmtHomeCurrency)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TrType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.GMMDocRefNo)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

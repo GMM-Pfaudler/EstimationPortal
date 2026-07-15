@@ -1,0 +1,83 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.RoleMasters>
+@{
+    ViewBag.Title = "Role Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/NewDesignEffects.css" rel="stylesheet">
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2>@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / @ViewBag.Title</div>
+        </div>
+        <a href="@Url.Action("RoleCreate", "UserMaster")" class="btn-create shadow-sm">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="border-0 mb-4">
+            <div class="card-body">
+                <div class="table-responsive font">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-nowrap small">
+                                <th>Actions</th>
+                                <th>Role Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="nowrap small">
+                                    <td>
+                                        @Html.ActionLink("Edit", "RoleEdit", "UserMaster", new { id = item.Id }, new { @class = "badge badge-success" }) |
+                                        @Html.ActionLink("Delete", "RoleDelete", "UserMaster", new { id = item.Id }, new { @class = "badge badge-danger" })
+                                    </td>
+                                    <td> @Html.DisplayFor(modelItem => item.Role)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $('#dataTable').DataTable({
+                destroy: true,
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+
+                ],
+                //"order": [[1, "desc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'RoleMasterSummary_' + d;
+                        }
+                    }
+                ]
+
+
+            });
+        });
+    </script>
+}
+

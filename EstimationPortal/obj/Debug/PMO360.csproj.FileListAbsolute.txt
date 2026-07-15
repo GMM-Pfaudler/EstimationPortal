@@ -1,0 +1,440 @@
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\PMO360.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\PMO360.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\PMO360.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csi.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csi.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\csi.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.Managed.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.AppContext.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Collections.Immutable.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Console.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.IO.Compression.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.IO.FileSystem.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.IO.Pipes.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Reflection.Metadata.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Claims.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Xml.XmlDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Xml.XPath.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\vbc.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\vbc.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\vbc.rsp
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\VBCSCompiler.exe
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\roslyn\VBCSCompiler.exe.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlcese40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlceqp40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlceme40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlceer40EN.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlcecompact40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\sqlceca40.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Antlr3.Runtime.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\CaptchaMvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Facilities.Logging.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Services.Logging.Log4netIntegration.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Windsor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\DocumentFormat.OpenXml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\DocumentFormat.OpenXml.Framework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\dotless.AspNet.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\dotless.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.SqlServerCompact.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EPPlus.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EPPlus.Interfaces.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EPPlus.System.Drawing.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\log4net.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.WebUtilities.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.DependencyModel.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.ObjectPool.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Options.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Primitives.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.WebEncoders.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Net.Http.Headers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Web.Infrastructure.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Win32.Registry.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Newtonsoft.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Owin.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Buffers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Data.SqlServerCe.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Diagnostics.DiagnosticSource.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Diagnostics.EventLog.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.IO.Pipelines.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Memory.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Numerics.Vectors.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Runtime.Loader.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Security.AccessControl.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Security.Cryptography.Xml.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Security.Principal.Windows.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Text.Encodings.Web.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Text.Json.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Threading.Tasks.Extensions.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.ValueTuple.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Helpers.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Mvc.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Optimization.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Optimization.Less.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.Deployment.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.Razor.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\WebActivatorEx.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\WebGrease.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Antlr3.Runtime.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\CaptchaMvc.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\CaptchaMvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Facilities.Logging.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Services.Logging.Log4netIntegration.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Castle.Windsor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\DocumentFormat.OpenXml.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\DocumentFormat.OpenXml.Framework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EntityFramework.SqlServerCompact.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\EPPlus.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\log4net.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.AspNetCore.WebUtilities.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Diagnostics.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.ObjectPool.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Options.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.Primitives.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Extensions.WebEncoders.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Net.Http.Headers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.Owin.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Newtonsoft.Json.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Buffers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Diagnostics.DiagnosticSource.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Diagnostics.EventLog.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.IO.Pipelines.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Memory.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Numerics.Vectors.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Security.Cryptography.Xml.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Security.Principal.Windows.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Text.Encodings.Web.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Text.Json.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Threading.Tasks.Extensions.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.ValueTuple.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Optimization.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Optimization.Less.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.Deployment.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Webpages.Razor.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Helpers.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\System.Web.Mvc.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\obj\Debug\PMO360.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\obj\Debug\PMO360.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\obj\Debug\PMO360.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\obj\Debug\PMO360.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\PMO360\obj\Debug\PMO360.pdb
+D:\Latest Project\PMO360\PMO360\bin\PMO360.dll.config
+D:\Latest Project\PMO360\PMO360\bin\PMO360.dll
+D:\Latest Project\PMO360\PMO360\bin\PMO360.pdb
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csc.exe
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csc.exe.config
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csc.rsp
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csi.exe
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csi.exe.config
+D:\Latest Project\PMO360\PMO360\bin\roslyn\csi.rsp
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Latest Project\PMO360\PMO360\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.AppContext.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Collections.Immutable.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Console.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.IO.Compression.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.IO.FileSystem.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.IO.Pipes.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Reflection.Metadata.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.AccessControl.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Claims.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.ValueTuple.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Xml.XPath.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Latest Project\PMO360\PMO360\bin\roslyn\vbc.exe
+D:\Latest Project\PMO360\PMO360\bin\roslyn\vbc.exe.config
+D:\Latest Project\PMO360\PMO360\bin\roslyn\vbc.rsp
+D:\Latest Project\PMO360\PMO360\bin\roslyn\VBCSCompiler.exe
+D:\Latest Project\PMO360\PMO360\bin\roslyn\VBCSCompiler.exe.config
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlcese40.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlceqp40.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlceme40.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlceer40EN.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlcecompact40.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\sqlceca40.dll
+D:\Latest Project\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+D:\Latest Project\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlcese40.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlceqp40.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlceme40.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlceer40EN.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlcecompact40.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\sqlceca40.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+D:\Latest Project\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+D:\Latest Project\PMO360\PMO360\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\Latest Project\PMO360\PMO360\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+D:\Latest Project\PMO360\PMO360\bin\Antlr3.Runtime.dll
+D:\Latest Project\PMO360\PMO360\bin\CaptchaMvc.dll
+D:\Latest Project\PMO360\PMO360\bin\Castle.Core.dll
+D:\Latest Project\PMO360\PMO360\bin\Castle.Facilities.Logging.dll
+D:\Latest Project\PMO360\PMO360\bin\Castle.Services.Logging.Log4netIntegration.dll
+D:\Latest Project\PMO360\PMO360\bin\Castle.Windsor.dll
+D:\Latest Project\PMO360\PMO360\bin\DocumentFormat.OpenXml.dll
+D:\Latest Project\PMO360\PMO360\bin\DocumentFormat.OpenXml.Framework.dll
+D:\Latest Project\PMO360\PMO360\bin\dotless.AspNet.dll
+D:\Latest Project\PMO360\PMO360\bin\dotless.Core.dll
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.dll
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.SqlServer.dll
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.SqlServerCompact.dll
+D:\Latest Project\PMO360\PMO360\bin\EPPlus.dll
+D:\Latest Project\PMO360\PMO360\bin\EPPlus.Interfaces.dll
+D:\Latest Project\PMO360\PMO360\bin\EPPlus.System.Drawing.dll
+D:\Latest Project\PMO360\PMO360\bin\log4net.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.WebUtilities.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.DependencyModel.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.ObjectPool.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Options.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Primitives.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.WebEncoders.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Net.Http.Headers.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Owin.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Web.Infrastructure.dll
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Win32.Registry.dll
+D:\Latest Project\PMO360\PMO360\bin\Newtonsoft.Json.dll
+D:\Latest Project\PMO360\PMO360\bin\Owin.dll
+D:\Latest Project\PMO360\PMO360\bin\SUP_BAL.dll
+D:\Latest Project\PMO360\PMO360\bin\SUP_CORE.dll
+D:\Latest Project\PMO360\PMO360\bin\SUP_DAL.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Buffers.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Data.SqlServerCe.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Diagnostics.EventLog.dll
+D:\Latest Project\PMO360\PMO360\bin\System.IO.Pipelines.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Memory.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Numerics.Vectors.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Runtime.Loader.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Security.AccessControl.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Security.Cryptography.Xml.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Security.Principal.Windows.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Text.Encodings.Web.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Text.Json.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Threading.Tasks.Extensions.dll
+D:\Latest Project\PMO360\PMO360\bin\System.ValueTuple.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Helpers.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Mvc.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Optimization.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Optimization.Less.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Razor.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.Deployment.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.dll
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.Razor.dll
+D:\Latest Project\PMO360\PMO360\bin\WebActivatorEx.dll
+D:\Latest Project\PMO360\PMO360\bin\WebGrease.dll
+D:\Latest Project\PMO360\PMO360\bin\SUP_BAL.pdb
+D:\Latest Project\PMO360\PMO360\bin\SUP_BAL.dll.config
+D:\Latest Project\PMO360\PMO360\bin\SUP_CORE.pdb
+D:\Latest Project\PMO360\PMO360\bin\SUP_DAL.pdb
+D:\Latest Project\PMO360\PMO360\bin\Antlr3.Runtime.pdb
+D:\Latest Project\PMO360\PMO360\bin\CaptchaMvc.pdb
+D:\Latest Project\PMO360\PMO360\bin\CaptchaMvc.xml
+D:\Latest Project\PMO360\PMO360\bin\Castle.Core.xml
+D:\Latest Project\PMO360\PMO360\bin\Castle.Facilities.Logging.xml
+D:\Latest Project\PMO360\PMO360\bin\Castle.Services.Logging.Log4netIntegration.xml
+D:\Latest Project\PMO360\PMO360\bin\Castle.Windsor.xml
+D:\Latest Project\PMO360\PMO360\bin\DocumentFormat.OpenXml.xml
+D:\Latest Project\PMO360\PMO360\bin\DocumentFormat.OpenXml.Framework.xml
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.xml
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.SqlServer.xml
+D:\Latest Project\PMO360\PMO360\bin\EntityFramework.SqlServerCompact.xml
+D:\Latest Project\PMO360\PMO360\bin\EPPlus.xml
+D:\Latest Project\PMO360\PMO360\bin\log4net.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Authentication.Core.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.AspNetCore.WebUtilities.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Diagnostics.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.ObjectPool.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Options.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.Primitives.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Extensions.WebEncoders.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Net.Http.Headers.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.Owin.xml
+D:\Latest Project\PMO360\PMO360\bin\Newtonsoft.Json.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Buffers.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Diagnostics.EventLog.xml
+D:\Latest Project\PMO360\PMO360\bin\System.IO.Pipelines.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Memory.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Numerics.Vectors.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Security.Cryptography.Xml.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Security.Principal.Windows.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Text.Encodings.Web.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Text.Json.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Threading.Tasks.Extensions.xml
+D:\Latest Project\PMO360\PMO360\bin\System.ValueTuple.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Optimization.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Optimization.Less.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Razor.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.Deployment.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Webpages.Razor.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Helpers.xml
+D:\Latest Project\PMO360\PMO360\bin\System.Web.Mvc.xml
+D:\Latest Project\PMO360\PMO360\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Latest Project\PMO360\PMO360\obj\Debug\PMO360.csproj.AssemblyReference.cache
+D:\Latest Project\PMO360\PMO360\obj\Debug\PMO360.csproj.CoreCompileInputs.cache
+D:\Latest Project\PMO360\PMO360\obj\Debug\PMO360.csproj.Up2Date
+D:\Latest Project\PMO360\PMO360\obj\Debug\PMO360.dll
+D:\Latest Project\PMO360\PMO360\obj\Debug\PMO360.pdb

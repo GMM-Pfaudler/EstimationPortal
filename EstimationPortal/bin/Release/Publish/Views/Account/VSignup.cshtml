@@ -1,0 +1,108 @@
+﻿@using DocManagement.Models
+@model VSignupViewModel
+@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/Content/css/sb-admin-2.css" rel="stylesheet">
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+
+<body class="bg-gradient-primary" style="margin-top:50px;background-image:url(../../Images/bgimg_white_crystal.jpg)">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-md-around my-4">
+            <div class="col-xl-12 col-lg-5 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        @using (Html.BeginForm("VSignup", "Account", FormMethod.Post))
+                        {
+                        <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-7 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-5">
+                                    <div class="p-5">
+                                        <div class="row justify-content-center p-3"><img class="" src="~/Images/Logo_180X46.png" alt="lgCmpny"></div>
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <div class="form-group">
+                                            <div class="col-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-building"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control form-control-sm" id="Name" aria-describedby="UsrHelp" placeholder="Firm Name" name="Name" autocomplete="off" required>
+                                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger small  font-weight-bold" })
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+                                                    </div>
+                                                    <input type="email" class="form-control form-control-sm" id="EmailId1" aria-describedby="UsrHelp" placeholder="Official Email Address" name="EmailId1" autocomplete="off" required>
+                                                    @Html.ValidationMessageFor(m => m.EmailId1, "", new { @class = "text-danger small  font-weight-bold" })
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control form-control-sm" id="NameContact" aria-describedby="UsrHelp" placeholder="Contact Person Name" name="NameContact" autocomplete="off" required>
+                                                    @Html.ValidationMessageFor(m => m.NameContact, "", new { @class = "text-danger small  font-weight-bold" })
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile"></i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control form-control-sm" id="MobileNo" aria-describedby="UsrHelp" placeholder="Contact Person Mobile" name="MobileNo" autocomplete="off" required>
+                                                    @Html.ValidationMessageFor(m => m.MobileNo, "", new { @class = "text-danger small  font-weight-bold" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                                Signup
+                                            </button>
+                                        </div>
+                                        <hr>
+                                        <div class="text-center mb-1">
+                                            <a class="small text-success" href="/Account/Login">Already have an account? Login!</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <p class="small text-primary" href="#">For support contact in case any technical issue: <u>notification@gmmpfaudler.com</u></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

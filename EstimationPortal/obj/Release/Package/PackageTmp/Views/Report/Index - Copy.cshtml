@@ -1,0 +1,302 @@
+﻿@model List<SUP_CORE.EFModel.Tbl_InquiryMasters>
+@{
+    ViewBag.Title = "Inquiry Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .row-highlight {
+        background-color: #e9a9a9; /* light red */
+    }
+
+        .row-highlight:hover {
+            background-color: #e9a9a9 !important;
+        }
+
+    .custom-table_scroll {
+        max-height: 400px; /* vertical scrollbar */
+        overflow-y: auto;
+        overflow-x: auto; /* horizontal scrollbar */
+        white-space: nowrap; /* prevents wrapping */
+    }
+
+    .table-custom td {
+        font-size: 0.9rem;
+        color: #334155;
+        word-wrap: break-word; /* same as text-wrap */
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-4">
+        <div class="d-flex justify-content-between align-items-center page-header-container mb-4">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Reports</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Inquiry Register</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="d-flex gap-2">
+                <button onclick="exportToExcel()" class="btn btn-success shadow-sm rounded-pill px-4 fw-bold">
+                    <i class="fas fa-file-excel me-2"></i> DOWNLOAD EXCEL
+                </button>
+            </div>
+        </div>
+        <div class="row g-3 mb-4 no-print">
+        </div>
+        <div class="report-container p-4 mb-4 no-print">
+            <form method="get" class="row g-3 align-items-end" id="filterForm">
+                <div class="col-md-2">
+                    <label class="form-label small fw-bold">Project</label>
+                    <select id="ProjectNumber" name="ProjectNo" class="form-control form-control-custom">
+                        <option value="">All Projects</option>
+                        @foreach (var project in ViewBag.ProjectNoList)
+                        {
+                            <option value="@project.Value" selected="@(ViewBag.SelectedProjectNo == project.Value)">
+                                @project.Text
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small fw-bold">Sales Person</label>
+                    <select id="SalesPerson" name="SalesPersonId" class="form-control form-control-custom">
+                        <option value="">All</option>
+                        @foreach (var sp in ViewBag.SalesPersonList)
+                        {
+                            <option value="@sp.Value" selected="@(ViewBag.SelectedSalesPerson == sp.Value)">
+                                @sp.Text
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary w-100 fw-bold  rounded-pill shadow-sm">
+                        <i class="fas fa-filter me-2"></i> Apply Filter
+                    </button>
+                    <a href="@Url.Action("Index")" class="btn btn-light border w-100 fw-bold  rounded-pill shadow-sm" style="margin-left:15px;">
+                        <i class="fas fa-redo me-2"></i> Clear
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <div class="report-container overflow-hidden">
+            <div class="table-responsive custom-table_scroll">
+                <table class="table table-hover mb-0 table-custom" id="reportTable">
+                    <thead>
+                        <tr>
+                            <th>SF No</th>
+                            <th>Project No</th>
+                            <th>Sales Person</th>
+                            <th>Inquiry Receipt Date</th>
+                            <th>Inquiry Type</th>
+                            <th>Dom / Exp</th>
+                            <th>Due Date</th>
+                            <th>Actual Submission Date</th>
+                            <th>Sub Type</th>
+                            <th>Enquiry Status</th>
+                            <th>End User / Client</th>
+                            <th>EPC / Licensor</th>
+                            <th>Equipment Type</th>
+                            <th>Tag Qty</th>
+                            <th>Total Qty</th>
+                            <th>Major MOC</th>
+                            <th>Design Scope</th>
+                            <th>TE</th>
+                            <th>PE</th>
+                            <th>EE</th>
+                            <th>TQ No</th>
+                            <th>TQ Received Date</th>
+                            <th>TQ Due Date</th>
+                            <th>TQ Submission Date</th>
+                            <th>Project Received Date</th>
+                            <th>Project Status</th>
+                            <th>Value (in RS)</th>
+                            <th>Remarks</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                var highlight =
+                                (item.EnqStatus == "Pending"
+                                || item.EnqStatus == "In Process"
+                                || item.EnqStatus == "Pre-Bid Q")
+                                && item.DueDate != null
+                                && item.ActualSubDate == null;
+                                <tr class="@(highlight ? "row-highlight" : "")">
+                                    <td>@item.SFNo</td>
+                                    <td>@item.ProjectNo</td>
+                                    <td>@item.SalesPerson</td>
+                                    <td>
+                                        @(item.InqReceiptDate.HasValue
+                                        ? item.InqReceiptDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+                                    <td>@item.InqType</td>
+                                    <td>@item.DomExp</td>
+                                    <td>
+                                        @(item.DueDate.HasValue
+                                        ? item.DueDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+                                    <td>
+                                        @(item.ActualSubDate.HasValue
+                                            ? item.ActualSubDate.Value.ToString("dd-MMM-yyyy")
+                                            : "-")
+                                    </td>
+                                    <td>@item.SubType</td>
+                                    <td>@item.EnqStatus</td>
+                                    <td>@item.Client</td>
+                                    <td>@item.EPC</td>
+                                    <td>@item.EquipType</td>
+                                    <td>@item.TagQty</td>
+                                    <td>@item.TotalQty</td>
+                                    <td>@item.MajorMOC</td>
+                                    <td>@item.DesignScope</td>
+                                    <td>@item.TE</td>
+                                    <td>@item.PE</td>
+                                    <td>@item.EE</td>
+                                    <td>@item.TqNo</td>
+                                    <td>
+                                        @(item.TqReceivedDate.HasValue
+                                        ? item.TqReceivedDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+                                    <td>
+                                        @(item.TqDueDate.HasValue
+                                        ? item.TqDueDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+                                    <td>
+                                        @(item.TqSubDate.HasValue
+                                        ? item.TqSubDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+
+                                    <td>
+                                        @(item.ProjReceivedDate.HasValue
+                                        ? item.ProjReceivedDate.Value.ToString("dd-MMM-yyyy")
+                                        : "-")
+                                    </td>
+                                    <td>@item.ProjStatus</td>
+                                    <td>@item.RsValue</td>
+                                    <td>@item.Remarks</td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+@*<script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#ProjectNumber,#SalesPerson').select2({
+        }); 
+    });
+    async function exportToExcel() {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Deviations');
+
+        // 1. Define Column Widths (11 Columns: A to K)
+        worksheet.columns = [
+            { header: 'SF No', key: 'SFNo', width: 15 },
+            { header: 'Project No', key: 'pno', width: 20 },
+            { header: 'Sales Person', key: 'sp', width: 50 },
+            { header: 'Inquiry Receipt Date', key: 'ird', width: 15 },
+            { header: 'Inquiry Type', key: 'it', width: 15 },
+            { header: 'Dom / Exp', key: 'de', width: 15 },
+            { header: 'Due Date', key: 'dd', width: 15 },
+            { header: 'Actual Submission Date', key: 'asd', width: 15 },
+            { header: 'Sub Type', key: 'st', width: 15 },
+            { header: 'Enquiry Status', key: 'es', width: 15 },
+            { header: 'End User / Client', key: 'client', width: 50 },
+            { header: 'EPC / Licensor', key: 'el', width: 25 },
+            { header: 'Equipment Type', key: 'et', width: 20 },
+            { header: 'Tag Qty', key: 'tq', width: 10 },
+            { header: 'Total Qty', key: 'totq', width: 10 },
+            { header: 'Major MOC', key: 'moc', width: 25 },
+            { header: 'Design Scope', key: 'dc', width: 10 },
+            { header: 'TE', key: 'te', width: 10 },
+            { header: 'PE', key: 'pe', width: 10 },
+            { header: 'EE', key: 'ee', width: 10 },
+            { header: 'TQ No', key: 'tn', width: 15 },
+            { header: 'TQ Received Date', key: 'trd', width: 15 },
+            { header: 'TQ Due Date', key: 'tdd', width: 15 },
+            { header: 'TQ Submission Date', key: 'tsd', width: 15 },
+            
+            { header: 'Project Received Date', key: 'prd', width: 15 },
+            { header: 'Project Status', key: 'pst', width: 15 },
+            { header: 'Value (in RS)', key: 'rsval', width: 25 },
+            { header: 'Remarks', key: 'rm', width: 50 },
+
+
+        ];
+
+        // 2. Add Title Row at Row 1
+        worksheet.spliceRows(1, 0, ['Inquiry Register']);
+
+        // Merge across all 11 columns (A to K)
+        worksheet.mergeCells('A1:AB1');
+
+        // Style Title Row
+        const titleRow = worksheet.getRow(1);
+        titleRow.height = 30;
+        titleRow.getCell(1).font = { size: 16, bold: true };
+        titleRow.getCell(1).alignment = { vertical: 'middle', horizontal: 'center' };
+
+        // 3. Get Data from your HTML table
+        let table = document.getElementById("reportTable");
+        let rows = table.querySelectorAll("tbody tr");
+
+        rows.forEach(row => {
+            let rowData = [];
+            row.querySelectorAll("td").forEach(cell => {
+                rowData.push(cell.innerText.trim());
+            });
+            worksheet.addRow(rowData);
+        });
+
+        // 4. Style the Header Row (Now Row 2)
+        const headerRow = worksheet.getRow(2);
+        headerRow.font = { bold: true };
+        headerRow.eachCell((cell) => {
+            cell.fill = {
+                type: 'pattern',
+                pattern: 'solid',
+                fgColor: { argb: 'FFE0E0E0' } // Light Grey
+            };
+            cell.border = {
+                top: { style: 'thin' },
+                left: { style: 'thin' },
+                bottom: { style: 'thin' },
+                right: { style: 'thin' }
+            };
+            cell.alignment = { vertical: 'middle', wrapText: true };
+        });
+
+        // 5. Generate and Download
+        const buffer = await workbook.xlsx.writeBuffer();
+        const fileName = "Inquiry_Register_" + new Date().toISOString().slice(0, 10) + ".xlsx";
+        saveAs(new Blob([buffer]), fileName);
+    }
+</script>

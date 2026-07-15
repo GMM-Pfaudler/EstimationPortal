@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Inspection Details Report";
+}
+
+@using (Html.BeginForm("InspIndex", "Report", FormMethod.Post))
+{
+<div class="content-wrapper">
+    <div class="container-scroller">
+        <div align="right">
+            <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                @Html.ActionLink("Back to List", "InspIndex", null, new { @class = "text-primary" })
+            </p>
+        </div>
+        <div class="card shadow mb-2 border-0">
+            <div class="card-body bg-white" style="padding-bottom:0px;">
+                <div class="row">
+                    <table border="0" cellspacing="2" cellpadding="2" class="mx-auto w-auto">
+                        <tbody>
+                            <tr>
+                                <td>From_Date:</td>
+                                <td>
+                                    <input name="mindate" id="mindate" type="text" style="width: 130px;" placeholder="DD-MMM-YYYY" autocomplete="off">
+                                </td>
+                                <td>To_Date:</td>
+                                <td>
+                                    <input name="maxdate" id="maxdate" type="text" style="width: 130px;" placeholder="DD-MMM-YYYY" autocomplete="off">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="myPartialView">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@section scripts
+{
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Report/InspFiltr/",
+            type: "Get",
+            dataType: "html",
+            success: function (data) {
+                $("#myPartialView").html(data);
+                PageDesgin();
+            },
+            "beforeSend": function () {
+                $("#loader").show();
+            },
+            "complete": function () {
+                $("#loader").hide();
+            }
+        });
+
+        var currentDate = new Date();
+        currentDate.setDate(currentDate.getDate());
+        $('#mindate').datepicker({
+            dateFormat: 'dd-M-yy',
+            timeFormat: 'hh:mm:ss',
+            changeMonth: true,
+            changeYear: true,
+            maxDate: currentDate
+        });
+        $('#maxdate').datepicker({
+            dateFormat: 'dd-M-yy',
+            timeFormat: 'hh:mm:ss',
+            changeMonth: true,
+            changeYear: true,
+            maxDate: currentDate
+        });
+        $("#maxdate").change(function () {
+            var min = $("#mindate").val();
+            var max = $("#maxdate").val();
+            $.ajax({
+                url: "/Report/InspFiltrDateWise/",
+                data: { "min": min, "max": max },
+                type: "Get",
+                dataType: "html",
+                success: function (data) {
+                    $("#myPartialView").html(data);
+                    PageDesgin();
+
+                },
+                "beforeSend": function () {
+                    $("#loader").show();
+                },
+                "complete": function () {
+                    $("#loader").hide();
+                }
+            });
+        });
+    });
+    function PageDesgin() {
+        $('#dataTable2 thead tr').clone(true).appendTo('#dataTable2 thead');
+        // Setup - add a text input to each footer cell
+
+        $('#dataTable2 thead tr:eq(1) th').each(function (i) {
+            debugger
+            var title = $(this).text();
+            $(this).html('<input type="text" style="width:70px;"   placeholder="Search ' + title + '" />');
+
+            $('input', this).on('keyup change', function () {
+                if (table.column(i).search() !== this.value) {
+                    table
+                        .column(i)
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
+        var table = $('#dataTable2').DataTable({
+            destroy: true,
+            orderCellsTop: true,
+            scrollCollapse: true,
+            paging: true,
+            "order": [[1, "desc"]],
+            "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28]
+                    },
+                    filename: function () {
+                        var d = new Date().toISOString().split('T')[0];
+                        return 'InspSummary_' + d;
+                    }
+                }
+            ]
+        });
+    }
+</script>
+}

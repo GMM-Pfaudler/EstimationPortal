@@ -1,0 +1,197 @@
+﻿@model SUP_CORE.EFModel.ProjectMasters
+
+@{
+    ViewBag.Title = "Delete Project";
+    var pid = ViewBag.pid as int?;
+}
+@using (Html.BeginForm("Delete", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0 col-md-12">
+                <div class="card-body">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    @Html.HiddenFor(m => m.Id, new { @class = "form-control form-control-sm", @autocomplete = "off" })
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PO", "PO Number", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row"> 
+                                                @Html.TextBoxFor(m => m.PO, new { @class = "form-control form-control-sm", @readonly = "readonly" })
+                                                @Html.ValidationMessage("PO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Client", "Client Name", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.Client, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("Client", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("SO", "SO Number", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.SO, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("SO", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QTY", "Qty", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.QTY, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("QTY", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("Facility", "Facility", htmlAttributes: new { @class = "control-label" })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.DropDownListFor(m => m.Facility, new[]{
+                                                   new SelectListItem{ Text = "Karamsad", Value ="P10" },
+                                                   new SelectListItem{ Text = "Ahmedabad", Value ="P30" },
+                                                   new SelectListItem{ Text = "Hydrabad", Value ="P40" }
+                                               }, null, new { @class = "form-control form-control-sm font padding-drop" })
+                                                @Html.ValidationMessage("Facility", "", new { @class = "text-danger small font-weight-bold", @readonly = "readonly" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("StartDate", "Start Date", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "date", @readonly = "readonly" })
+                                                @Html.ValidationMessage("StartDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("EndDate", "End Date", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "date", @readonly = "readonly" })
+                                                @Html.ValidationMessage("EndDate", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("TurnAroundDays", "Doc Turnaround (Days)", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.TurnAroundDays, new { @class = "form-control form-control-sm", @autocomplete = "off", @type = "number", @readonly = "readonly" })
+                                                @Html.ValidationMessage("TurnAroundDays", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("PMOUsers", "PMO Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.PMOUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("PMOUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("QLTUsers", "Quality Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.QLTUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("QLTUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("WLDUsers", "Welding Users", htmlAttributes: new { @class = "control-label " })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.WLDUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("WLDUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="row  col-md-12">
+                                                @Html.Label("ENGUsers", "Engineering Users", htmlAttributes: new { @class = "control-label" })
+                                                <label class="text-danger control-label">*</label>
+                                            </div>
+                                            <div class="col-md-12 row">
+                                                @Html.TextBoxFor(m => m.ENGUsers, new { @class = "form-control form-control-sm", @autocomplete = "off", @readonly = "readonly" })
+                                                @Html.ValidationMessage("ENGUsers", "", new { @class = "text-danger small font-weight-bold" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-md-12">
+            <div class="col-md-offset-2 col-md-12" align="center">
+                <input type="submit" value="Delete" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+    
+
+}
+

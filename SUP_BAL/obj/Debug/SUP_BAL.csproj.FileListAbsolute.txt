@@ -1,0 +1,310 @@
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojResolveAssemblyReference.cache
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+C:\Users\SLP\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojResolveAssemblyReference.cache
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+C:\Users\10418\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojResolveAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Projects\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojResolveAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\New folder (2)\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojResolveAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\Development\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\SupplierPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocumentManagement\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\Backup\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Latest Project\DocManagement\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Latest Project\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.AssemblyReference.cache
+D:\Latest Project\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\Latest Project\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.csproj.Up2Date
+D:\Latest Project\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\Latest Project\DocManagement\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csproj.AssemblyReference.cache
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csproj.Up2Date
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\Nitin\New Projects 2025\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\NJoinee\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMTool\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csprojAssemblyReference.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csproj.CopyComplete
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\C backup sanny parmar\Documents\Visual Studio 2015\Nikhil Backup\DevelpmentTest\PMO360\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Latest Project\PMO360\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Latest Project\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csproj.AssemblyReference.cache
+D:\Latest Project\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\Latest Project\PMO360\SUP_BAL\obj\Debug\SUP_BAL.csproj.Up2Date
+D:\Latest Project\PMO360\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\Latest Project\PMO360\SUP_BAL\obj\Debug\SUP_BAL.pdb
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_BAL.dll.config
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_BAL.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_BAL.pdb
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\EntityFramework.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_CORE.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_DAL.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_CORE.pdb
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\SUP_DAL.pdb
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\EntityFramework.xml
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\obj\Debug\SUP_BAL.csproj.AssemblyReference.cache
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\obj\Debug\SUP_BAL.csproj.CoreCompileInputs.cache
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\obj\Debug\SUP_BAL.csproj.Up2Date
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\obj\Debug\SUP_BAL.dll
+D:\Nitin\New Projects 2025\EstimationPortal\SUP_BAL\obj\Debug\SUP_BAL.pdb

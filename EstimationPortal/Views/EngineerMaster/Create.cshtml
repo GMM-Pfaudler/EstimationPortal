@@ -1,0 +1,129 @@
+﻿@model SUP_CORE.EFModel.Tbl_EngineerMasters
+@{
+    ViewBag.Title = "Create Engineer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    /* Container styling */
+    .order-form-container {
+        background-color: #f8fafc;
+        min-vh: 100vh;
+    }
+
+    /* Custom Input Styling to fix misalignment */
+    /*.custom-input {
+        border: none !important;
+        background-color: #f1f5f9 !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        color: #1e293b !important;
+        transition: all 0.2s ease;
+    }*/
+
+        .custom-input:focus {
+            background-color: #ffffff !important;
+            box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1) !important;
+            outline: 1px solid #00338d !important;
+        }
+
+    /* Checkbox Alignment */
+    .custom-checkbox .form-check-input {
+        width: 1.25em;
+        height: 1.25em;
+        margin-top: 0.15em;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .custom-checkbox .form-check-input:checked {
+            background-color: #00338d;
+            border-color: #00338d;
+        }
+
+    /* Label Styling */
+    .custom-field label {
+        letter-spacing: 0.5px;
+        font-size: 0.75rem;
+        display: block;
+    }
+
+    /* Button Hover */
+    .btn-primary:hover {
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center page-header-container">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Engineer Master</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Create Engineer</li>
+                    </ol>
+                </nav>
+            </div>
+            <a href="@Url.Action("Index","EngineerMaster")" class="btn-animate-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to List</span>
+            </a>
+        </div>
+        <div class="card border-0 shadow-lg rounded-8 overflow-hidden" style="border-radius:15px;">
+            @*<div class="card-header border-0 py-3" style="background: #00338d;">
+                <h5 class="text-white mb-0 fw-bold"><i class="fas fa-tags me-2"></i> Tag Information</h5>
+            </div>*@
+            <div class="card-header border-0 py-3 bg-transparent">
+                <span class="custom-tab">
+                    <i class="fas fa-tags me-2"></i> Engineer Information
+                </span>
+            </div>
+            <div class="card-body p-4 p-lg-5 bg-white">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="form-group custom-field">
+                            <label class="small fw-bold text-muted mb-1 text-uppercase">Engineer Name</label>
+                            @Html.EditorFor(model => model.EngineerName, new { htmlAttributes = new { @class = "form-control custom-input", autocomplete = "off", @placeholder = "e.g. MPA" } })
+
+                        </div>
+                        @Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger small" })
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group custom-field">
+                            <label class="small fw-bold text-muted mb-1 text-uppercase">Email</label>
+                            @Html.TextBox("EnggEmail", "", new
+                            {
+                                @class = "form-control custom-input",
+                                autocomplete = "off",
+                                placeholder = "e.g. test@gmail.com"
+                            })
+
+                        </div>
+                        @Html.ValidationMessage("EnggEmail", "", new { @class = "text-danger small" })
+                    </div>
+                    <div class="col-12 mt-5 d-flex justify-content-end gap-2 pt-4 border-top">
+                        <button type="reset" class="btn btn-light rounded-pill px-4 fw-bold text-bg-primary border" style="margin-right:10px;">Reset</button>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" style="background: #00338d; border:none;">
+                            <i class="fas fa-save me-2"></i> Save
+                        </button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

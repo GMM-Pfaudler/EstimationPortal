@@ -1,0 +1,284 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\controllers\\inquirymastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\inquirymastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\controllers\\inqtypemastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\inqtypemastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\utility\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\utility\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\controllers\\usermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\usermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|d:\\nitin\\new projects 2025\\estimationportal\\estimationportal\\customeattribute\\dropdowncollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\customeattribute\\dropdowncollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\controllers\\tqregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\controllers\\tqregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\views\\inquirymaster\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\views\\inquirymaster\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\views\\tqregister\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\views\\tqregister\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|D:\\Nitin\\New Projects 2025\\EstimationPortal\\estimationportal\\content\\css\\listpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CFA6AE49-963B-4EC5-B8FA-01B626721D75}|EstimationPortal\\EstimationPortal.csproj|solutionrelative:estimationportal\\content\\css\\listpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InqTypeMasterController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\InqTypeMasterController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\InqTypeMasterController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\InqTypeMasterController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\InqTypeMasterController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:55:10.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserMasterController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\UserMasterController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\UserMasterController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\UserMasterController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\UserMasterController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAgwDkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:32:11.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DropDownCollection.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\CustomeAttribute\\DropDownCollection.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\CustomeAttribute\\DropDownCollection.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\CustomeAttribute\\DropDownCollection.cs",
+              "RelativeToolTip": "EstimationPortal\\CustomeAttribute\\DropDownCollection.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwCQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:31:10.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InquiryMasterController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\InquiryMasterController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\InquiryMasterController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\InquiryMasterController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\InquiryMasterController.cs",
+              "ViewState": "AgIAAFcCAAAAAAAAAAAawGkCAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:23:26.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\ReportController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:29:42.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Utility\\EmailService.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Utility\\EmailService.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Utility\\EmailService.cs",
+              "RelativeToolTip": "EstimationPortal\\Utility\\EmailService.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAowD0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T08:22:36.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Web.config",
+              "RelativeDocumentMoniker": "EstimationPortal\\Web.config",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Web.config",
+              "RelativeToolTip": "EstimationPortal\\Web.config",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-07-15T08:12:30.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\TqRegister\\Create.cshtml",
+              "RelativeDocumentMoniker": "EstimationPortal\\Views\\TqRegister\\Create.cshtml",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\TqRegister\\Create.cshtml",
+              "RelativeToolTip": "EstimationPortal\\Views\\TqRegister\\Create.cshtml",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAUwK4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-14T06:01:29.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TqRegisterController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\TqRegisterController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\TqRegisterController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\TqRegisterController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\TqRegisterController.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAvwM0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T05:54:50.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EstimationPortal\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EstimationPortal\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAHgCAAAAAAAAAAAQwIUCAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-14T05:25:49.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAIwHUBAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T05:25:45.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "EstimationPortal\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "EstimationPortal\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwEEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T05:24:39.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "listpage.css",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Content\\css\\listpage.css",
+              "RelativeDocumentMoniker": "EstimationPortal\\Content\\css\\listpage.css",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Content\\css\\listpage.css",
+              "RelativeToolTip": "EstimationPortal\\Content\\css\\listpage.css",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAgwNQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-14T04:03:03.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\InquiryMaster\\Index.cshtml",
+              "RelativeDocumentMoniker": "EstimationPortal\\Views\\InquiryMaster\\Index.cshtml",
+              "ToolTip": "D:\\Nitin\\New Projects 2025\\EstimationPortal\\EstimationPortal\\Views\\InquiryMaster\\Index.cshtml",
+              "RelativeToolTip": "EstimationPortal\\Views\\InquiryMaster\\Index.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAQwJoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-10T04:08:35.197Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1563,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+﻿@using DocManagement.Models;
+@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    ViewBag.Title = "Quality Inspection Details";
+}
+@using (Html.BeginForm("QLTInspBulk", "PO", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "QLTInspIndex", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4 border-0">
+                <div class="card-body bg-white">
+                    
+                    <table border="0" cellspacing="2" cellpadding="2" class="mx-auto w-auto">
+                        <tbody>
+                            <tr>
+                                <td>QC Remarks</td>
+                                <td>@Html.TextArea("QLT_Remarks", null, new { @id = "QLT_Remarks", @class = "form-control form-control-sm", @autocomplete = "off" })</td>
+                                <td>@Html.DropDownList("EngId", ViewBag.EngList as SelectList, "-Select IEng-", new { @id = "EngId", @class = "form-control form-control-sm" })</td>
+                                <td>Insp. Planned Date</td>
+                                <td>@Html.TextBox("InspPlannedDate", null, new { @id = "InspPlannedDate", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "background-color: #FFF;" })</td>
+                                <td>
+                                    <input type="button" id="BulkSubmit" value="Submit All" class="btn btn-sm  btn-outline-primary  " />
+                                    <input type="button" id="BulkWaiver" value="Waiver All" class="btn btn-sm  btn-outline-warning  " /> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="myPartialDash">
+                        @{Html.RenderPartial("_PObulkSummry", Model);}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <style>
+        span.error {
+            display: block;
+            visibility: hidden;
+            color: red;
+            font-size: 70%;
+        }
+
+        tr.error {
+            background-color: rgba(255,0,0,0.35);
+        }
+    </style>
+
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script>
+        $(document).ready(function ()
+        {
+           
+
+
+
+            $('#CBox1').click(function () {
+                debugger
+                $('.checkBox').prop('checked', this.checked)
+            });
+            var currentDate = new Date();
+            $('#InspPlannedDate').datepicker({
+                dateFormat: 'dd-mm-yy',
+                timeFormat: 'hh:mm:ss',
+                minDate: currentDate,
+                changeYear: true,
+                changeMonth: true
+            }).attr('readonly', 'readonly');
+            Summarydata();
+            $('#btn_search').click(function ()
+            {
+                let PONumbr = $("#search_PONumbr").val();
+                $.ajax({
+                    traditional: true,
+                    url: "@Url.Action("GetPOTableData", "PO")",
+                    data: { 'PONumbr': PONumbr},
+                    type: "Get",
+                    dataType: "html",
+                    success: function (data) {
+                        $("#myPartialDash").html(data);
+                        Summarydata();
+                    }
+                })
+            })
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+        });
+        function Summarydata()
+        {
+            $.fn.dataTable.moment('DD-MMM-YYYY');
+            var table = $('#dataTable2').DataTable({
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+                ],
+                "order": [[0, "desc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'SupplierOfferList_' + d;
+                        }
+                    }
+                ]
+            });
+            $('#btn_clear').on('click', function () {
+                $("#search_PONumbr").val("");
+                $("#search_VendorSite").val("");
+            });
+
+            $("body").on("click", "#BulkSubmit", function () {
+                UpdateRecord();
+            });
+            $("body").on("click", "#BulkDelete", function () {
+                DeleteRecord();
+            });
+
+            function UpdateRecord() {
+                debugger
+                var oTable = $('#dataTable2').dataTable();
+                let QLT_Remarks = $('#QLT_Remarks').val();
+                let EngId = $('#EngId').val();
+                let InspPlannedDate = $('#InspPlannedDate').val();
+                var selectedIDs = new Array();
+                oTable.$('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val());
+                    }
+                });
+                //var options = {};
+                //options.url = "/PO/BulkAssign";
+                //options.type = "POST";
+                //options.data = JSON.stringify(selectedIDs);
+                //options.contentType = "application/json";
+                //options.dataType = "json";
+                //options.success = function (data) {
+                //    alert("Selected Records " + data.msg);
+                //    location.reload();
+                //};
+                //options.error = function () {
+                //    alert("Error or Select record first!");
+                //};
+                //$.ajax(options);
+            }
+            function DeleteRecord() {
+                debugger
+                var oTable = $('#dataTable2').dataTable();
+                var selectedIDs = new Array();
+                oTable.$('input:checkbox.checkBox').each(function () {
+                    if ($(this).prop('checked')) {
+                        selectedIDs.push($(this).val());
+                    }
+                });
+                var options = {};
+                options.url = "/PO/BulkDelete";
+                options.type = "POST";
+                options.data = JSON.stringify(selectedIDs);
+                options.contentType = "application/json";
+                options.dataType = "json";
+                options.success = function (data) {
+                    alert("Selected Records " + data.msg);
+                    location.reload();
+                };
+                options.error = function () {
+                    alert("Error or Select record first!");
+                };
+                $.ajax(options);
+            }
+        }
+</script>
+}

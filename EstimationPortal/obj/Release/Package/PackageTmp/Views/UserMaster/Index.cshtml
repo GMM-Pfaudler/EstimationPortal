@@ -1,0 +1,79 @@
+﻿@model List<SUP_CORE.EFModel.Tbl_UserMasters>
+@{
+    ViewBag.Title = "User Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link href="~/Content/css/listpage.css" rel="stylesheet">
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / Manage User</div>
+        </div>
+        <a href="@Url.Action("Create", "UserMaster")" class="btn-create shadow-sm">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+
+    <div class="table-card">
+        <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">Actions</th>
+                        <th>User ID / Role</th>
+                        <th>Name</th>
+                        <th>Email</th> 
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", "UserMaster", new { id = item.Id })" class="btn-edit-icon" title="Edit User">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+
+                            <td>
+                                <div class="fw-bold text-dark">@item.UserID</div>
+                                @if (item.RoleId == 1)
+                                {
+                                    <div class="small text-muted">Super Admin</div>
+                                }
+                                else if (item.RoleId == 2)
+                                {
+                                    <div class="small text-muted">Admin</div>
+                                }
+                                else
+                                {
+                                    <div class="small text-muted">User</div>
+                                }
+
+                            </td>
+                            <td>@item.UserName</td>
+                            <td><span class="text-primary">@item.EmailID</span></td> 
+                            <td>
+                                @if (item.IsDelete == false)
+                                {
+                                    <span class="badge-soft-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge-soft-danger">Deactive</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

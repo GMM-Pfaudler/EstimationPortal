@@ -1,0 +1,1132 @@
+﻿@{
+    ViewBag.Title = "Create Vendor Registration";
+
+}
+<style>
+    .bs-example {
+        margin: 10px;
+    }
+</style>
+@using (Html.BeginForm("Create", "VendorMaster", FormMethod.Post, new { @class = "form-horizontal", role = "Vendform", enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
+    <div align="right">
+        <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+        </p>
+    </div>
+    <div class="bs-example">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item"><a href="#tabs-1" class="nav-link text-primary active" data-toggle="tab">1-Company Profile</a></li>
+            <li class="nav-item"><a href="#tabs-2" class="nav-link text-primary" data-toggle="tab">2-Financial Details</a></li>
+            <li class="nav-item"><a href="#tabs-3" class="nav-link text-primary" data-toggle="tab">3-Credentials and Address</a></li>
+            <li class="nav-item"><a href="#tabs-4" class="nav-link text-primary" data-toggle="tab">4-Manufacturing Detail</a></li>
+        </ul>
+        <fieldset>
+            <div class="tab-content">
+                <div id="tabs-1" class="tab-pane fade show active">
+                    <div class="content-wrapper">
+                        <div class="container-scroller">
+                            <div class="card border-0 col-md-12 mb-1">
+                                <div class="card-body">
+                                    <div class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        @Html.Label("Name", "Name of the Firm:", htmlAttributes: new { @class = "control-label " })
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("Name", null, new { @id = "Name", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("Name", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        @Html.Label("ESTdate", "Date of Establishment:", htmlAttributes: new { @class = "control-label " })
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("ESTdate", null, new { @id = "ESTdate",  @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                        @Html.ValidationMessage("ESTdate", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label">Name of Contact Person:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("NameContact", null, new { @id = "NameContact", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("NameContact", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Contact Details
+                                            </p>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label">Address</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextArea("Address", null, new { @id = "Address", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("Address", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label ">Country</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.DropDownList("CountryMaster_Id", ViewBag.CountryMaster_Id as SelectList, "-Country-", htmlAttributes: new { @id = "CountryMaster_Id", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                        @Html.ValidationMessage("CountryMaster_Id", "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label ">State</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.DropDownList("StateMaster_Id", ViewBag.StateMaster_Id as SelectList, "-Select-", new { @id = "StateMaster_Id", @class = "form-control form-control-sm" })
+                                                        <div id="StateName">@Html.TextBox("StateName", null, new { @id = "StateName", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</div>
+                                                        @Html.ValidationMessage("CountryMaster_Id", "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label">City</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("City", null, new { @id = "City", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("City", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">PinCode</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("PinCode", null, new { @id = "PinCode", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid PinCode</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Mobile No1</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("MobileNo", null, new { @id = "MobileNo", @class = "form-control form-control-sm", @type = "number", @autocomplete = "Off" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid Mobile No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Mobile No2</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("MobileNo2", null, new { @id = "MobileNo2", @class = "form-control form-control-sm", @type="number", @autocomplete = "Off" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid Mobile No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Office No</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("OfficeNo", null, new { @id = "OfficeNo", @class = "form-control form-control-sm", @type = "number", @autocomplete = "Off" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Email ID1</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("EmailId1", null, new { @id = "EmailId1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid email</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Email ID2</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("EmailId", null, new { @id = "EmailId", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid email</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">PAN No.</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("PAN", null, new { @id = "PAN", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter Valid PAN No.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">GST NO/W.E.F</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("GST", null, new { @id = "GST", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid GST No.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Type of the Firm:
+                                                <label class="text-danger control-label" id="lblChk">*</label>
+                                                <span class="error">Please select atleast one checkbox</span>
+                                            </p>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12 checkbox-wrapper">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeFirmCB1" id="TypeFirmCB1" value="true">
+                                                            <label class="form-check-label" for="TypeFirmCB1">1.Limited</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeFirmCB2" id="TypeFirmCB2" value="true">
+                                                            <label class="form-check-label" for="TypeFirmCB2">2.Private Limited</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeFirmCB3" id="TypeFirmCB3" value="true">
+                                                            <label class="form-check-label" for="TypeFirmCB3">3.Proprietory</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeFirmCB4" id="TypeFirmCB4" value="true">
+                                                            <label class="form-check-label" for="TypeFirmCB4">4.Partnership</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeFirmCB5" id="TypeFirmCB5" value="true">
+                                                            <label class="form-check-label" for="TypeFirmCB5">5.Govt. Org</label>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Type of Business:
+                                            </p>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12 checkbox-wrapper">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB1" id="TypeBusCB1" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB1">1.Auth. Dealer</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB2" id="TypeBusCB2" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB2">2.Trader</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB3" id="TypeBusCB3" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB3">3.Sub-Contractor (IH/OS)</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB4" id="TypeBusCB4" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB4">4.Service</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline m-2">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB5" id="TypeBusCB5" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB5">5.Manufacturing</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" name="TypeBusCB6" id="TypeBusCB6" value="true">
+                                                            <label class="form-check-label" for="TypeBusCB6">6.Others (Specify)</label>
+                                                            @Html.TextBox("OthrText", null, new { @id = "OthrText", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase", @disabled = "disabled" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Management Details:(CEO/MD)
+                                            </p>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Name:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("NameMD", null, new { @id = "NameMD", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("NameMD", "", new { @class = "text-danger small font-weight-bold" })
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Contact No:</label>
+                                                        <label class="text-danger control-label">*</label> 
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("ContactNoMD", null, new { @id = "ContactNoMD", @class = "form-control form-control-sm", @autocomplete = "Off", @type = "number" })
+                                                        @Html.ValidationMessage("ContactNoMD", "", new { @class = "text-danger small font-weight-bold" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid Contact No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">EMailID:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("EMailIDMD", null, new { @id = "EMailIDMD", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("EMailIDMD", "", new { @class = "text-danger small font-weight-bold" })
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Quality Head Details:
+                                            </p>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Name:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("NameQT", null, new { @id = "NameQT", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("NameQT", "", new { @class = "text-danger small font-weight-bold" })
+                                           
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="row col-md-12">
+                                                        <label class="control-label">Contact No:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("ContactNoQT", null, new { @id = "ContactNoQT", @class = "form-control form-control-sm", @autocomplete = "Off", @type = "number"})
+                                                        @Html.ValidationMessage("ContactNoQT", "", new { @class = "text-danger small font-weight-bold" })
+                                                        <span class="error">Required</span>
+                                                        <span class="valid">Enter valid Contact No</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label">EMailID:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.TextBox("EMailIDQT", null, new { @id = "EMailIDQT", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                        @Html.ValidationMessage("EMailIDQT", "", new { @class = "text-danger small font-weight-bold" })
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="col-md-offset-6 col-md-12" align="center">
+                                            <input type="button" id="btn_Nxt1" value="Next" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-2" class="tab-pane fade">
+                    <div class="content-wrapper">
+                        <div class="container-scroller">
+                            <div class="card border-0 col-md-12 mb-1">
+                                <div class="card-body">
+                                    <div class="form-horizontal">
+                                        <div class="row">
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Sales Turnover (Last three Financial Year)
+                                            </p>
+                                            <div class="table-responsive font m-2">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Year 1</th>
+                                                            <th>Year 2</th>
+                                                            <th>Year 3</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>@Html.TextBox("Year1", null, new { @id = "Year1", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td>@Html.TextBox("Year2", null, new { @id = "Year2", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td>@Html.TextBox("Year3", null, new { @id = "Year3", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <div class="row  col-md-12">
+                                                        <label class="control-label">Currency:</label>
+                                                        <label class="text-danger control-label">*</label>
+                                                    </div>
+                                                    <div class="col-md-12 row">
+                                                        @Html.DropDownList("CRMaster_Id", ViewBag.CRMaster_Id as SelectList, "-Select-", htmlAttributes: new { @id = "CRMaster_Id", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                        @Html.ValidationMessage("CRMaster_Id", "", new { @class = "text-danger small font-weight-bold" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;" id="MSMEdivHead">
+                                                MSME Industries:
+                                                <label class="text-danger control-label" id="lblMsME">*</label>
+                                                <span class="error">Please select Yes/No</span>
+                                            </p>
+                                            <div class="row" id="MSMEdiv">
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12 checkbox-wrapper">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" name="MsMECBMI1" id="MsMECBMI1" value="true">
+                                                                <label class="form-check-label" for="MsMECBMI1">Yes</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" name="MsMECBMI2" id="MsMECBMI2" value="true">
+                                                                <label class="form-check-label" for="MsMECBMI2">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            @Html.Label("AttachMents:", "MSME Doc:", htmlAttributes: new { @class = "control-label" })
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="file" id="MSMEDoc" name="SuppDocRel[0].MSMEDoc" class="form-control form-control-sm h-90" accept="application/pdf,image/png,image/jpeg" />
+                                                            <span class="error">Required</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Document:
+                                            </p>
+                                            <div class="table-responsive font">
+                                                <table class="table table-bordered" id="tblDocSupp" cellspacing="0">
+                                                    <thead>
+                                                        <tr class="text-nowrap">
+                                                            <th class="small font-weight-bold">Name of Document</th>
+                                                            <th class="small font-weight-bold">Upload</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-nowrap small"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc1", null, new { @id = "Doc1", @placeholder = "1.Details of Business activities and Product range", Value = "1.Details of Business activities and Product range", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload1" id="FileUpload1" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc2", null, new { @id = "Doc2", @placeholder = "2.Facilities – Plant and machinery list", Value = "2.Facilities – Plant and machinery list", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload2" id="FileUpload2" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize1(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc3", null, new { @id = "Doc3", @placeholder = "3.Testing equipments and measuring instruments.", Value = "3.Testing equipments and measuring instruments.", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload3" id="FileUpload3" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize2(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc4", null, new { @id = "Doc4", @placeholder = "4.Various approvals and Quality certificates", Value = "4.Various approvals and Quality certificates", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload4" id="FileUpload4" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize3(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc5", null, new { @id = "Doc5", @placeholder = "5.Organizational chart of the company.", Value = "5.Organizational chart of the company.", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload5" id="FileUpload5" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize4(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc6", null, new { @id = "Doc6", @placeholder = "6.ISO Certificte with any other QMS certification", Value = "6.ISO Certificte with any other QMS certification.", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload6" id="FileUpload6" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize5(this);" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc7", null, new { @id = "Doc7", @placeholder = "7.Customer list.", Value = "7.Customer list.", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload7" id="FileUpload7" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize6(this);" />
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                Bank Details Document:
+                                            </p>
+                                            <div class="table-responsive font">
+                                                <table class="table table-bordered" id="tblDocSupp" cellspacing="0">
+                                                    <thead>
+                                                        <tr class="text-nowrap">
+                                                            <th class="small font-weight-bold">Name of Document</th>
+                                                            <th class="small font-weight-bold">Upload</th>
+                                                            <th class="small font-weight-bold"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-nowrap small"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc8", null, new { @id = "Doc1", @placeholder = "8.PAN", Value = "8.PAN", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload8" id="FileUpload8" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize(this);" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc9", null, new { @id = "Doc2", @placeholder = "9.GST", Value = "9.GST", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload9" id="FileUpload9" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel,image/jpeg" onchange="ValidateSize1(this);" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc10", null, new { @id = "Doc3", @placeholder = "10.Bank Details", Value = "10.Bank Details.", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload10" id="FileUpload10" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/msword,application/pdf,image/png,image/jpeg" onchange="ValidateSize2(this);" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="col-md-8 border-left-primary bg-whiteDark">
+                                                                    <div class="form-group">
+                                                                        <div class="row" style="margin-top:5px;">
+                                                                            <div class="control-label col-md-5 font-weight-bold">Download Sample Word Format:</div>
+                                                                            <div class="col-md-7">
+                                                                                <div class="row">
+                                                                                    <a href="~/DocOfPO/Vendor Regstration - Bank Details.docx"><img src="~/Images/WordDoc.png" width="40" height="40" title="Download Word format" alt="word" /></a>
+                                                                                    <div class="text-primary m-md-2"> &larr;Download</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("SuppDocRel[0].Doc11", null, new { @id = "Doc4", @placeholder = "11.Cancelled cheque", Value = "11.Cancelled cheque", @class = "form-control form-control-sm", @autocomplete = "Off", @readonly = "readonly" })
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" name="SuppDocRel[0].FileUpload11" id="FileUpload11" placeholder="Select File" class="form-control form-control-sm h-50" accept="application/pdf,application/vnd.ms-excel" onchange="ValidateSize3(this);" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                      
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="col-md-offset-6 col-md-12" align="center">
+                                        <input type="button" id="btn_PreV2" value="Previous" class="btn btn-sm  btn-outline-info col-sm-1 font" />
+                                        <input type="button" id="btn_Nxt2" value="Next" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-3" class="tab-pane fade">
+                    <div class="content-wrapper">
+                        <div class="container-scroller">
+                            <div class="card border-0 col-md-12 mb-1">
+                                <div class="card-body">
+                                    <div class="form-horizontal">
+                                        <div class="row">
+                                            <div class="table-responsive font">
+                                                <p class="col-sm-12 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                    Customer Details ( Top Five customers ):
+                                                </p>
+                                                <table class="table table-bordered" id="tblDocSupp" cellspacing="0">
+                                                    <thead>
+                                                        <tr class="text-nowrap">
+                                                            <th class="small font-weight-bold">Customer Name</th>
+                                                            <th class="small font-weight-bold">Type of Industry</th>
+                                                            <th class="small font-weight-bold">Business association since years</th>
+                                                            <th class="small font-weight-bold">Business during Last FY</th>
+                                                            <th class="small font-weight-bold">Contact details of customer(Name of buyer, email id, tel no)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-nowrap small"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("CustName1", null, new { @id = "CustName1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("TypeOfInd1", null, new { @id = "TypeOfInd1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BSinY1", null, new { @id = "BSinY1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BFY1", null, new { @id = "BF1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("CustDet1", null, new { @id = "CustDet1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("CustName2", null, new { @id = "CustName2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("TypeOfInd2", null, new { @id = "TypeOfInd2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BSinY2", null, new { @id = "BSinY2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BFY2", null, new { @id = "BFY2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("CustDet2", null, new { @id = "CustDet2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("CustName3", null, new { @id = "CustName3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("TypeOfInd3", null, new { @id = "TypeOfInd3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BSinY3", null, new { @id = "BSinY3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BFY3", null, new { @id = "BFY3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("CustDet3", null, new { @id = "CustDet3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("CustName4", null, new { @id = "CustName4", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("TypeOfInd4", null, new { @id = "TypeOfInd4", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BSinY4", null, new { @id = "BSinY4", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BFY4", null, new { @id = "BFY4", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("CustDet4", null, new { @id = "CustDet4", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                @Html.TextBox("CustName5", null, new { @id = "CustName5", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("TypeOfInd5", null, new { @id = "TypeOfInd5", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BSinY5", null, new { @id = "BSinY5", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("BFY5", null, new { @id = "BFY5", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                            <td>
+                                                                @Html.TextBox("CustDet5", null, new { @id = "CustDet5", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive font">
+                                                <p class="col-sm-6 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                    Workforce Details :
+                                                </p>
+                                                <table class="table table-bordered" cellspacing="0">
+                                                    <thead>
+                                                        <tr class="text-nowrap">
+                                                            <th class="small font-weight-bold">No of Employees</th>
+                                                            <th class="small font-weight-bold">Works / Head office</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-nowrap small"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                Managers
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("NoEmp", null, new { @id = "NoEmp", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                Others
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("Othrs", null, new { @id = "Othrs", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive font">
+                                                <p class="col-sm-6 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                    Staff details
+                                                </p>
+                                                <table class="table table-bordered" cellspacing="0">
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                Sales
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("Sales", null, new { @id = "Sales", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                Engineering
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("Engineering", null, new { @id = "Engineering", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                Production
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("Production", null, new { @id = "Production", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="small font-weight-bold">
+                                                                QA / QC
+                                                            </td>
+                                                            <td class="small font-weight-bold">
+                                                                @Html.TextBox("QAQC", null, new { @id = "QAQC", @type = "number", @class = "form-control form-control-sm", @autocomplete = "Off" })
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <div class="table-responsive font">
+                                                <p class="col-sm-6 border-left-success bg-whiteDark" align="left" style="margin-top:10px;padding:5px;">
+                                                    Contact Details :
+                                                </p>
+                                                <table class="table table-bordered m-1 small" cellspacing="0">
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td rowspan="8">
+                                                                Contact Details(Shipping From):
+
+                                                            </td>
+                                                            <td colspan="6">
+                                                                @Html.TextBox("ERPAdd1", null, new { @id = "ERPAdd1", @class = "form-control form-control-sm", @autocomplete = "Off", @placeholder = "Address", @style = "text-transform:uppercase" })
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td>City: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPCity1", null, new { @id = "ERPCity1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+
+                                                            <td>State:</td>
+                                                            <td colspan="2">
+                                                            @Html.DropDownList("ERPState1Temp", ViewBag.StateMaster_Id as SelectList, "-Select-", new { @id = "ERPState1Temp", @class = "form-control form-control-sm" })
+                                                            @Html.TextBox("ERPState1", null, new { @id = "ERPState1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Country: </td>
+                                                            <td colspan="2">
+                                                            @Html.DropDownList("ERPCountry1Temp", ViewBag.CountryMaster_Id as SelectList, "-Country-", htmlAttributes: new { @id = "ERPCountry1Temp", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                            @Html.Hidden("ERPCountry1", null, new { @id = "ERPCountry1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td>Pin Code:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPPinCode1", null, new { @id = "ERPPinCode1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Phone No.1: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPPhoneNo1", null, new { @id = "ERPPhoneNo1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr style="display:none;">
+                                                            <td>Fax No.:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPFaxNo1", null, new { @id = "ERPFaxNo1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mobile No.: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPMobNo1", null, new { @id = "ERPMobNo1", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>E-mail: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPEmailId1", null, new { @id = "ERPEmailId1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GST No / W.E.F.</td>
+                                                            <td colspan="5">@Html.TextBox("ERPGST1", null, new { @id = "ERPGST1", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+
+                                                        </tr>
+
+                                                    </tfoot>
+                                                </table>
+                                                <p>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12 checkbox-wrapper">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" name="CDShpFrm1" id="CDShpFrm1" value="true">
+                                                                    <label class="form-check-label" for="CDShpFrm1">Same in Invoice From & Pay To</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </p>
+                                                <table class="table table-bordered m-1" cellspacing="0">
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td rowspan="8">
+                                                                Contact Details(Invoice From):
+                                                            </td>
+                                                            <td colspan="6">
+                                                                @Html.TextBox("ERPAdd2", null, new { @id = "ERPAdd2", @class = "form-control form-control-sm", @autocomplete = "Off", @placeholder = "Address", @style = "text-transform:uppercase" })
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>City: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPCity2", null, new { @id = "ERPCity2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+
+                                                            <td>State:</td>
+                                                            <td colspan="2">
+                                                                @Html.DropDownList("ERPState2Temp", ViewBag.StateMaster_Id as SelectList, "-Select-", new { @id = "ERPState2Temp", @class = "form-control form-control-sm" })
+                                                            @Html.TextBox("ERPState2", null, new { @id = "ERPState2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Country: </td>
+                                                            <td colspan="2">
+                                                            @Html.DropDownList("ERPCountry2Temp", ViewBag.CountryMaster_Id as SelectList, "-Country-", htmlAttributes: new { @id = "ERPCountry2Temp", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                            @Html.Hidden("ERPCountry2", null, new { @id = "ERPCountry2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td>Pin Code:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPPinCode2", null, new { @id = "ERPPinCode2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Phone No.1: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPPhoneNo2", null, new { @id = "ERPPhoneNo2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr style="display:none;">
+                                                            <td>Fax No.:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPFaxNo2", null, new { @id = "ERPFaxNo2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mobile No.: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPMobNo2", null, new { @id = "ERPMobNo2", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>E-mail: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPEmailId2", null, new { @id = "ERPEmailId2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GST No / W.E.F.</td>
+                                                            <td colspan="5">@Html.TextBox("ERPGST2", null, new { @id = "ERPGST2", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+
+                                                        </tr>
+
+                                                    </tfoot>
+                                                </table>
+                                                <table class="table table-bordered m-1" cellspacing="0">
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td rowspan="8">
+                                                                Contact Details(Pay To):
+                                                            </td>
+                                                            <td colspan="6">
+                                                                @Html.TextBox("ERPAdd3", null, new { @id = "ERPAdd3", @class = "form-control form-control-sm", @autocomplete = "Off", @placeholder = "Address", @style = "text-transform:uppercase" })
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td>City: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPCity3", null, new { @id = "ERPCity3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+
+                                                            <td>State:</td>
+                                                            <td colspan="2">
+                                                                @Html.DropDownList("ERPState3Temp", ViewBag.StateMaster_Id as SelectList, "-Select-", new { @id = "ERPState3Temp", @class = "form-control form-control-sm" })
+                                                            @Html.TextBox("ERPState3", null, new { @id = "ERPState3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Country: </td>
+                                                            <td colspan="2">
+                                                            @Html.DropDownList("ERPCountry3Temp", ViewBag.CountryMaster_Id as SelectList, "-Country-", htmlAttributes: new { @id = "ERPCountry3Temp", @class = "form-control form-control-sm", @autocomplete = "off" })
+                                                            @Html.Hidden("ERPCountry3", null, new { @id = "ERPCountry3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td>Pin Code:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPPinCode3", null, new { @id = "ERPPinCode3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Phone No.1:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPPhoneNo3", null, new { @id = "ERPPhoneNo3", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr style="display:none;">
+                                                            <td>Fax No.:</td>
+                                                            <td colspan="2">@Html.TextBox("ERPFaxNo3", null, new { @id = "ERPFaxNo3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mobile No.: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPMobNo3", null, new { @id = "ERPMobNo3", @class = "form-control form-control-sm", @autocomplete = "Off" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>E-mail: </td>
+                                                            <td colspan="2">@Html.TextBox("ERPEmailId3", null, new { @id = "ERPEmailId3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GST No / W.E.F.</td>
+                                                            <td colspan="5">@Html.TextBox("ERPGST3", null, new { @id = "ERPGST3", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })</td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="col-md-offset-6 col-md-12" align="center">
+                                        <input type="button" id="btn_PreV3" value="Previous" class="btn btn-sm  btn-outline-info col-sm-1 font" />
+                                        <input type="button" id="btn_Nxt3" value="Next" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-4" class="tab-pane fade">
+                    <div class="content-wrapper">
+                        <div class="container-scroller">
+                            <div class="card border-0 col-md-12 mb-1">
+                                <div class="card-body">
+                                    <div class="form-horizontal">
+                                        <div class="row">
+                                            <div class="table-responsive font m-2">
+                                                <table class="table table-bordered" id="tblSuppMD" cellspacing="0">
+                                                    <thead>
+                                                        <tr class="text-nowrap">
+                                                            <th class="small font-weight-bold">Sr_No</th>
+                                                            <th class="small font-weight-bold">Code(Type)</th>
+                                                            <th class="small font-weight-bold">Products Dealt In</th>
+                                                            <th class="small font-weight-bold">Max Size / Weight</th>
+                                                            <th class="small font-weight-bold">Grade/Make</th>
+                                                            <th class="small font-weight-bold">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-nowrap small"></tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td>
+                                                                @Html.DropDownList("CodeList", ViewBag.CodeType as SelectList, "-Select-", htmlAttributes: new { @class = "form-control form-control-md", @style = "width:180px" })
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" name="PDI" id="PDI" class="form-control form-control-sm h-50" style="text-transform:uppercase" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" name="Size" id="Size" class="form-control form-control-sm h-50" style="text-transform:uppercase" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" name="Grade" id="Grade" class="form-control form-control-sm h-50" style="text-transform:uppercase" />
+                                                                <span class="error">Required</span>
+                                                            </td>
+                                                            <td class="small"><input type="button" onclick="AddMD()" class="btn btn-success" style="height:40px; width:60px" value="Add" /></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="col-sm-12 border-left-success bg-whiteDark" aligBEmailn="left" style="margin-top:10px;padding:5px;">
+                                    Buyer Details:
+                                </p>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <div class="row col-md-12">
+                                            <label class="control-label">Email ID:</label>
+                                            <label class="text-danger control-label">*</label>
+                                        </div>
+                                        <div class="col-md-12 row">
+                                            @Html.TextBox("BEmail", null, new { @id = "BEmail", @class = "form-control form-control-sm", @autocomplete = "Off", @style = "text-transform:uppercase" })
+                                            <span class="error">Required</span>
+                                            <span class="valid">Enter valid email</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="col-md-offset-6 col-md-12" align="center">
+                                        <input type="button" id="btn_PreV4" value="Previous" class="btn btn-sm  btn-outline-info col-sm-1 font" />
+                                        <input type="submit" id="btnSubmit" value="Submit" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+}
+
+@section scripts
+{
+    <style>
+        span.error {
+            display: block;
+            visibility: hidden;
+            color: red;
+            font-size: 70%;
+        }
+        span.valid {
+            display: block;
+            visibility: hidden;
+            color: red;
+            font-size: 70%;
+        }
+        tr.error {
+            background-color: rgba(255,0,0,0.35);
+        }
+    </style>
+    <script src="~/Scripts/ProjectScripts/VendorCreate.js"></script>
+ 
+}

@@ -1,0 +1,326 @@
+﻿@model List<SUP_CORE.EFModelViews.InqListViewModel>
+@{
+    ViewBag.Title = "Inquiry Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var today = DateTime.Today;
+    var tomorrow = today.AddDays(1);
+}
+<style>
+    .dataTables_scrollBody table thead tr {
+        visibility: collapse !important;
+        height: 0 !important;
+        line-height: 0 !important;
+    }
+
+    .dataTables_scrollBody table thead th {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-top-width: 0 !important;
+        border-bottom-width: 0 !important;
+        height: 0 !important;
+        line-height: 0 !important;
+    }
+    .dataTables_scrollBody::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+    }
+
+    .dataTables_scrollBody::-webkit-scrollbar-track {
+        background: #f1f5f9;
+    }
+
+    .dataTables_scrollBody::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+    .row-highlight {
+        background-color: red; /* light red */
+    }
+        .row-highlight:hover {
+            background-color: red !important;
+        }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<link href="~/Content/css/listpage.css" rel="stylesheet">
+
+<div id="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h2 class="fw-bold mb-1" style="color: var(--text-main);">@ViewBag.Title</h2>
+            <div class="breadcrumb-custom">Masters / Manage Inquiry</div>
+        </div>
+        <a href="@Url.Action("Create", "InquiryMaster")" class="btn-create shadow-sm">
+            <i class="fas fa-plus"></i> Create New
+        </a>
+    </div>
+
+    <div class="table-card">
+        <table class="table" id="dataTable" width="100%">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>View File</th>
+                    <th>SF No</th>
+                    <th>Project No</th>
+                    <th>Sales Person</th>
+                    <th>Inquiry Receipt Date</th>
+                    <th>Inquiry Type</th>
+                    <th>Dom / Exp</th>
+                    <th>Due Date</th>
+                    <th>Actual Submission Date</th>
+                    <th>Sub Type</th>
+                    <th>Enquiry Status</th>
+                    <th>End User / Client</th>
+                    <th>EPC / Licensor</th>
+                    <th>Equipment Type</th>
+                    <th>Tag Qty</th>
+                    <th>Total Qty</th>
+                    <th>Major MOC</th>
+                    <th>Design Scope</th>
+                    <th>TE</th>
+                    <th>PE</th>
+                    <th>EE</th>
+                    <th>TQ No</th>
+                    <th>TQ Received Date</th>
+                    <th>TQ Due Date</th>
+                    <th>TQ Submission Date</th>
+                    <th>Project Received Date</th>
+                    <th>Project Status</th>
+                    <th>Value (in RS)</th>
+                    <th>Remarks</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var highlight = item.DueDate.HasValue
+                                && !item.ActualSubDate.HasValue
+                                && item.DueDate.Value.Date <= tomorrow;
+                    <tr>
+
+                        <td class="text-center">
+                            <div class="action-btn-container">
+                                <a href="@Url.Action("Edit", "InquiryMaster", new { id = item.Id })" class="btn-edit-icon" title="Edit Inquiry">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <a href="@Url.Action("Copy", "InquiryMaster", new { id = item.Id })" class="btn-copy-icon" title="Copy Inquiry">
+                                    <i class="fas fa-copy"></i>
+                                </a>
+
+                                <a href="@Url.Action("Delete", "InquiryMaster", new { id = item.Id })" class="btn-delete-icon" title="Delete Inquiry" onclick="return confirm('Are you sure you want to delete this inquiry?');">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+
+                            </div>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.FilePath))
+                            {
+                                <a href="@Url.Content(item.FilePath)"
+                                   title="View File"
+                                   target="_blank"
+                                   class="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-1">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                            }
+                        </td>
+                        <td>@item.SFNo</td>
+                        <td>@item.ProjectNo</td>
+                        <td>@item.SalesPerson</td>
+                        <td>
+                            @(item.InqReceiptDate.HasValue
+                    ? item.InqReceiptDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.InqReceiptDate.HasValue)
+                            {
+                                <span style="display:none;">@item.InqReceiptDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>@item.InqType</td>
+                        <td>@item.DomExp</td>
+                        <td>
+                            @(item.DueDate.HasValue
+                    ? item.DueDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.DueDate.HasValue)
+                            {
+                                <span style="display:none;">@item.DueDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>
+                            @(item.ActualSubDate.HasValue
+                        ? item.ActualSubDate.Value.ToString("dd-MM-yyyy")
+                        : "-")
+                            @if (item.ActualSubDate.HasValue)
+                            {
+                                <span style="display:none;">@item.ActualSubDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>@item.SubType</td>
+                        <td style="
+                            background-color:@(
+                                (item.DueDate.HasValue
+                                    && !item.ActualSubDate.HasValue
+                                    && item.DueDate.Value.Date <= tomorrow)
+                                    ? "red"
+                                    : item.EnqStatus == "Completed" ? "lightgreen"
+                                    : item.EnqStatus == "Hold" ? "#ff000080"
+                                    : item.EnqStatus == "Regret" ? "orange"
+                                    : item.EnqStatus == "Bid/No Bid decision pending" ? "#90ee9063"
+                                    : item.EnqStatus == "Query Res. Pending" ? "#e9595975"
+                                    : item.EnqStatus == "Revision" ? "#8080805e"
+                                    : item.EnqStatus == "Need to Discuss with sales" ? "yellow"
+                                    : "transparent"
+                            );
+                            color:@(
+                                (item.DueDate.HasValue
+                                    && !item.ActualSubDate.HasValue
+                                    && item.DueDate.Value.Date <= tomorrow)
+                                    ? "white !important"  /* Added !important here */
+                                    : "black"
+                            );
+                        ">
+                            @item.EnqStatus
+                        </td>
+                        <td>@item.Client</td>
+                        <td>@item.EPC</td>
+                        <td>@item.EquipType</td>
+                        <td>@item.TagQty</td>
+                        <td>@item.TotalQty</td>
+                        <td>@item.MajorMOC</td>
+                        <td>@item.DesignScope</td>
+                        <td>@item.TE</td>
+                        <td>@item.PE</td>
+                        <td>@item.EE</td>
+                        <td>@item.TqNo</td>
+                        <td>
+                            @(item.TqReceivedDate.HasValue
+                    ? item.TqReceivedDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.TqReceivedDate.HasValue)
+                            {
+                                <span style="display:none;">@item.TqReceivedDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>
+                            @(item.TqDueDate.HasValue
+                    ? item.TqDueDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.TqDueDate.HasValue)
+                            {
+                                <span style="display:none;">@item.TqDueDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>
+                            @(item.TqSubDate.HasValue
+                    ? item.TqSubDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.TqSubDate.HasValue)
+                            {
+                                <span style="display:none;">@item.TqSubDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>
+                            @(item.ProjReceivedDate.HasValue
+                    ? item.ProjReceivedDate.Value.ToString("dd-MM-yyyy")
+                    : "-")
+                            @if (item.ProjReceivedDate.HasValue)
+                            {
+                                <span style="display:none;">@item.ProjReceivedDate.Value.ToString("yyyy-MM-dd")</span>
+                            }
+                        </td>
+                        <td>@item.ProjStatus</td>
+                        <td>@item.RsValue</td>
+                        <td>@item.Remarks</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts {
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var table = $('#dataTable').DataTable({
+                pageLength: 15,
+                scrollY: "500px",     // Fixed table vertical height
+                scrollX: true,        // <-- ADD THIS to enable synchronized horizontal scrolling
+                scrollCollapse: false,
+                lengthMenu: [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]],
+                dom: '<"row px-4 pt-2"<"col-sm-12 col-md-6"B><"col-sm-12 col-md-6"f>>rt<"row px-4 pb-2"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Export',
+                        className: 'btn btn-success btn-sm',
+                        filename: function () {
+                            var d = new Date();
+                            var day = String(d.getDate()).padStart(2, '0');
+                            var month = String(d.getMonth() + 1).padStart(2, '0');
+                            var year = d.getFullYear();
+
+                            return 'InquiryMaster_' + day + '-' + month + '-' + year;
+                        },
+                        exportOptions: {
+                            columns: ':gt(1)',
+                            // This forces DataTables to strip HTML but leaves data intact
+                            format: {
+                                body: function (data, row, column, node) {
+                                    // Check if the cell contains a hidden ISO date span
+                                    var hasDate = $(node).find('span');
+                                    if (hasDate.length > 0) {
+                                        return hasDate.text(); // Returns 'yyyy-MM-dd'
+                                    }
+                                    return data;
+                                }
+                            }
+                        },
+                        // This tells Excel to format these columns as actual Dates
+                        customize: function (xlsx) {
+                            var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                            // Loop through the cells to find dates in yyyy-MM-dd format and apply Excel date formatting
+                            $('row c', sheet).each(function () {
+                                var cellText = $(this).text();
+
+                                // Regular expression to match yyyy-MM-dd
+                                if (window.RegExp(/^\d{4}-\d{2}-\d{2}$/).test(cellText)) {
+                                    $(this).attr('t', 'd'); // Set type to Date
+                                    // Optional: Apply an Excel date style index if needed, 
+                                    // but 't=d' is usually enough for Excel to activate its date filters.
+                                }
+                            });
+                        }
+                    }
+                ],
+                language: {
+                    search: "",
+                    searchPlaceholder: "Search...",
+                    lengthMenu: "_MENU_ per page"
+                },
+                ordering: true,
+                responsive: false
+            });
+
+            $('.dataTables_filter input').addClass('form-control shadow-sm border-0 bg-light').css({
+                borderRadius: '10px',
+                padding: '8px 15px',
+                width: '250px'
+            });
+
+            $('.dataTables_length select').addClass('form-select-sm border-0 bg-light shadow-sm').css({
+                borderRadius: '8px',
+                margin: '0 10px'
+            });
+        });
+    </script>
+}

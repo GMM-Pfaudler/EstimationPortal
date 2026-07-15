@@ -1,0 +1,464 @@
+﻿@{
+    ViewBag.Title = "Material SubContract List";
+}
+
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label font-weight-bold">Filters :</label>
+                        <br />
+                        <input type='text' id='search_wh' placeholder='WH' class="m-1">
+                        <input type='text' id='search_PO' placeholder='PO' class="m-1">
+                        <input type='text' id='search_POLN' placeholder='PO LN' class="m-1">
+                        <input type='text' readonly id='search_podate' class="datepicker m-1" placeholder='PO date'>
+                        <input type='text' readonly id='search_dlvrydate' class="datepicker m-1" placeholder='Delivery date'>
+                        <input type='text' id='search_pitemcode' placeholder='Parent Item Code' class="m-1">
+                        <input type='text' id='search_pitemtext' placeholder='Parent Item Text' class="m-1">
+                        <input type='text' id='search_citemcode' placeholder='Child Item Code' class="m-1">
+                        <input type='text' id='search_citemtext' placeholder='Child Item Text' class="m-1">
+                        <input type='text' id='search_trfnotext' placeholder='TRF No' class="m-1">
+                        <input type='text' id='search_dcnotext' placeholder='DC No' class="m-1">
+                        <input type='text' id='search_shipnotext' placeholder='Shipment No' class="m-1">
+                        <input type='text' id='search_bpcode' placeholder='BP Code' class="m-1">
+                        <input type='text' id='search_bpname' placeholder='BP Name' class="m-1">
+                        <input type='text' id='search_buyer' placeholder='Bayer Name' class="m-1">
+                        <input type='text' id='search_drawing' placeholder='Drawing' class="m-1">
+                        <input type='text' id='search_office' placeholder='Office' class="m-1">
+                        <input type='button' id="btn_search" value="Search" class="btn btn-sm btn-outline-primary m-1" />
+                        <input type='button' id="btn_clear" value="Clear" class="btn btn-sm btn-outline-secondary m-1">
+                    </div>
+                </div>
+                <div class="table-responsive font">
+                    <table id="demodata" class="table text-nowrap" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>WH</th>
+                                <th>PO</th>
+                                <th>LN</th> 
+                                <th>Sequence</th>
+                                <th>PO Date</th>
+                                <th>Delivery Date</th>
+                                <th>Parent Item Code</th>
+                                <th>Parent Item Text</th>
+                                <th>Unit Price</th>
+                                <th>TTL Pending Price</th> 
+                                <th>Order Qty</th>
+                                <th>Received Qty</th>
+                                <th>Pending Qty</th> 
+                                <th>Child Item Code</th>
+                                <th>Child Item Text</th>
+                                <th>LN Satus</th>
+                                <th>Required Qty</th>
+                                <th>Unit</th>
+                                <th>Qty to be Shipped</th>
+                                <th>Delivered Qty</th>
+                                <th>Pending Qty at Subcontractor</th>
+                                <th>Transfer Type</th>
+                                <th>Order Origin</th>
+                                <th>TRF No</th>
+                                <th>TRF LN</th>
+                                <th>TRF Date</th>
+                                <th>DC No</th>
+                                <th>Shipment</th>
+                                <th>Shipment LN</th>
+                                <th>DC Date</th>
+                                <th>No of days</th>
+                                <th>BP Code</th>
+                                <th>BP Name</th>
+                                <th>Buyer Name</th>
+                                <th>Office</th>
+                                <th>Drawing</th>
+                                <th>Rev</th>
+                                <th>Drawing Download</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".datepicker").datepicker({
+                "dateFormat": "yy-mm-dd",
+                 changeYear: true,
+                 changeMonth:true
+            });
+        });
+
+        $.fn.dataTable.moment('DD/MM/YYYY HH:mm');
+        var table = $('#demodata').dataTable({
+            "language": {
+                "emptyTable": "No record found(s)"
+            },
+            "searching": false,
+            "processing": true,
+            "serverSide": true,
+            "info": true,
+            "stateSave": true,
+            "lengthMenu": [[10, 20, 50, 100, 200], [10, 20, 50, 100, 200]],
+            "ajax": {
+                "url": '/PMSCMaster/GetPMSCTableData',
+                "type": "POST",
+                "data": function (data)
+                {
+                    // Read values
+                    var wh = $('#search_wh').val();
+                    var po = $('#search_PO').val();
+                    var poln = $('#search_POLN').val();
+                    var podate = $('#search_podate').val();
+                    var dlvrydate = $('#search_dlvrydate').val();
+                    var pitemcode = $('#search_pitemcode').val();
+                    var pitemtext = $('#search_pitemtext').val();
+                    var citemcode = $('#search_citemcode').val();
+                    var citemtext = $('#search_citemtext').val();
+                    var trfnotext = $('#search_trfnotext').val();
+                    var dcnotext = $('#search_dcnotext').val();
+                    var shipnotext = $('#search_shipnotext').val();
+                    var bpcode = $('#search_bpcode').val();
+                    var bpname = $('#search_bpname').val();
+                    var buyer = $('#search_buyer').val();
+                    var drawing = $('#search_drawing').val();
+                    var office = $('#search_office').val();
+
+                    // Append to data
+                    data.search_wh = wh;
+                    data.search_PO = po;
+                    data.search_POLN = poln;
+                    data.search_podate = podate;
+                    data.search_dlvrydate = dlvrydate;
+                    data.search_pitemcode = pitemcode;
+                    data.search_pitemtext = pitemtext;
+                    data.search_citemcode = citemcode;
+                    data.search_citemtext = citemtext;
+                    data.search_trfnotext = trfnotext;
+                    data.search_dcnotext = dcnotext;
+                    data.search_shipnotext = shipnotext;
+                    data.search_bpcode = bpcode;
+                    data.search_bpname = bpname;
+                    data.search_buyer = buyer;
+                    data.search_drawing = drawing;
+                    data.search_office = office;
+                },
+                "beforesend": function () {
+                    $("#loader").show();
+                },
+                "complete": function () {
+                    $("#loader").hide();
+                }
+            },
+            "columns": [
+              { "data": "Ship_From_Warehouse", "Name": "Ship_From_Warehouse", "orderable": true }
+            , { "data": "Purchase_Order", "Name": "Purchase_Order"}
+            , { "data": "PO_line", "Name": "PO_line" }
+            , { "data": "Material_Sequence", "Name": "Material_Sequence" }
+            , { "data": "PO_Date", "Name": "PO_Date", "autoWidth": true }
+            , { "data": "Planned_receipt_date", "Name": "Planned_receipt_date"}
+            , { "data": "Parent_Item_Code", "Name": "Parent_Item_Code" }
+            , { "data": "Parent_Item_Description", "Name": "Parent_Item_Description" }
+            , { "data": "Unit_Price", "Name": "Unit_Price" }
+            , { "data": "Total_Amount", "Name": "Total_Amount" }
+            , { "data": "Order_Qty", "Name": "Order_Qty" }
+            , { "data": "Received_Qty", "Name": "Received_Qty"}
+            , { "data": "Pending_Qty_of_Parent_Item", "Name": "Pending_Qty_of_Parent_Item"}
+            , { "data": "Child_Item_Code", "Name": "Child_Item_Code"}
+            , { "data": "Child_Item_Description", "Name": "Child_Item_Description"}
+            , { "data": "Line_Satus", "Name": "Line_Satus"}
+            , { "data": "Required_Qty", "Name": "Required_Qty"}
+            , { "data": "Unit", "Name": "Unit", "autoWidth": true }
+            , { "data": "Qty_Pending_to_be_Shipped", "Name": "Qty_Pending_to_be_Shipped", "autoWidth": true }
+            , { "data": "Delivered_Quantity", "Name": "Delivered_Quantity", "autoWidth": true }
+            , { "data": "Pending_Quantity_at_Subcontractor_site", "Name": "Pending_Quantity_at_Subcontractor_site", "autoWidth": true }
+            , { "data": "Transfer_Type", "Name": "Transfer_Type", "autoWidth": true }
+            , { "data": "Order_Origin", "Name": "Order_Origin", "autoWidth": true }
+            , { "data": "Supply_Order_No", "Name": "Supply_Order_No", "autoWidth": true }
+            , { "data": "Supply_Order_Line", "Name": "Supply_Order_Line", "autoWidth": true }
+            , { "data": "TRF_Date", "Name": "TRF_Date", "autoWidth": true}
+            , { "data": "DC_Number", "Name": "DC_Number", "autoWidth": true }
+            , { "data": "Shipment", "Name": "Shipment", "autoWidth": true }
+            , { "data": "Shipment_line", "Name": "Required_Qty", "autoWidth": true }
+            , { "data": "DC_Date", "Name": "DC_Date", "autoWidth": true }
+            , { "data": "Number_of_days", "Name": "Number_of_days", "autoWidth": true }
+            , { "data": "BP_Code", "Name": "BP_Code", "autoWidth": true }
+            , { "data": "BP_Name", "Name": "BP_Name", "autoWidth": true }
+            , { "data": "Buyer_Name", "Name": "Buyer_Name", "autoWidth": true }
+            , { "data": "Office", "Name": "Office", "autoWidth": true }
+            , { "data": "Drawing", "Name": "Drawing", "autoWidth": true }
+            , { "data": "Rev", "Name": "Rev", "autoWidth": true }
+            , { "data": null, "Name": "GMM_Drw_Numbr" }
+            ],
+            "columnDefs": [
+               {
+                   "targets": [4],
+                   "data": "PO_Date", render: function (data, type, row) {
+                       var d = data.replace('/Date(', '').replace(')/', '');
+                       newDate = new Date(parseInt(d))
+                       return FromateDateToDDMMYYYY(newDate);
+                   },
+                   'orderable': true,
+               },
+               {
+                     "targets": [5],
+                     "data": "Planned_receipt_date", render: function (data, type, row) {
+                         var d = data.replace('/Date(', '').replace(')/', '');
+                         newDate = new Date(parseInt(d))
+                         return FromateDateToDDMMYYYY(newDate);
+                     },
+                     'orderable': true,
+                 },
+                 {
+                           "targets": [25],
+                           "data": "TRF_Date", render: function (data, type, row) {
+                               var d = data.replace('/Date(', '').replace(')/', '');
+                               newDate = new Date(parseInt(d))
+                               return FromateDateToDDMMYYYY(newDate);
+                           },
+                           'orderable': true,
+                       },
+                 {
+                       "targets": [29],
+                       "data": "DC_Date", render: function (data, type, row)
+                       {
+                           if (data != null) {
+                               var d = data.replace('/Date(', '').replace(')/', '');
+                               newDate = new Date(parseInt(d))
+                               return FromateDateToDDMMYYYY(newDate);
+                           }
+                           else
+                           {
+                               return null;
+                           }
+                       },
+                       'orderable': true,
+                   },
+                        {
+                           "targets": [37],
+                           "data": null, render: function (data, type, row)
+                           {
+                               if (data.GMM_Drw_Numbr != null)
+                               {
+                                   //var d1=data.GMM_Drw_Numbr.substring(39, 62);
+                                   return '<a class="d-inline" href="@Url.Action("DownLoadPMSCPDF", "PMSCMaster")/?DrawingPOPath=' + data.Id + '">Download</a>'
+                               }
+                               else {
+                                   return null;
+                               }
+                           },
+                           'orderable': false,
+                       }
+            ],
+            "order": [[4, "asc"]],
+            "dom": '<"row"<"col-md-12"<"pull-right"B>l>><"custom-spacer"f>rtip',
+            "buttons": [
+                {
+                    "extend": 'excel',
+                    "action": newexportaction,
+                    filename: function () {
+                        header: false
+                        return 'MaterialSubContractSummary';
+                    },
+                    exportOptions: {
+                        columns: [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,31,32,33,34,35,36]
+                    }
+                }
+            ]
+         });
+
+        $('#btn_search').on('click', function () {
+            $(table).DataTable().draw();
+        });
+
+        $('#btn_clear').on('click', function () {
+            $('#search_wh').val("");
+            $('#search_PO').val("");
+            $('#search_POLN').val("");
+            $('#search_podate').val("");
+            $('#search_dlvrydate').val("");
+            $('#search_pitemcode').val("");
+            $('#search_pitemtext').val("");
+            $('#search_citemcode').val("");
+            $('#search_citemtext').val("");
+            $('#search_trfnotext').val("");
+            $('#search_dcnotext').val("");
+            $('#search_shipnotext').val("");
+            $('#search_bpcode').val("");
+            $('#search_bpname').val("");
+            $('#search_buyer').val("");
+            $('#search_drawing').val("");
+            $('#search_office').val("");
+            $(table).DataTable().draw();
+        });
+        function FromateDateToDDMMYYYY(datePar) {
+            var today = datePar;
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = dd + '-' + mm + '-' + yyyy;
+            var actdate = moment(today, 'DD/MM/YYYY').format("DD-MMM-YYYY")
+            return actdate;
+        }
+        function newexportaction(e, dt, button, config) {
+            debugger
+            var self = this;
+            var oldStart = dt.settings()[0]._iDisplayStart;
+            dt.one('preXhr', function (e, s, data) {
+                // Just this once, load all data from the server...
+                data.start = 0;
+                data.length = 500000000;
+                dt.one('preDraw', function (e, settings) {
+                    debugger
+                    // Call the original action function
+                    if (button[0].className.indexOf('buttons-copy') >= 0) {
+                        $.fn.dataTable.ext.buttons.copyHtml5.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-excel') >= 0) {
+                        $.fn.dataTable.ext.buttons.excelHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.excelFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-csv') >= 0) {
+                        $.fn.dataTable.ext.buttons.csvHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.csvHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.csvFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-pdf') >= 0) {
+                        $.fn.dataTable.ext.buttons.pdfHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.pdfHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.pdfFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-print') >= 0) {
+                        $.fn.dataTable.ext.buttons.print.action(e, dt, button, config);
+                    }
+                    dt.one('preXhr', function (e, s, data) {
+                        settings._iDisplayStart = oldStart;
+                        data.start = oldStart;
+                    });
+                    // Reload the grid with the original page. Otherwise, API functions like table.cell(this) don't work properly.
+                    setTimeout(dt.ajax.reload, 0);
+                    return false;
+                });
+            });
+            dt.ajax.reload();
+        }
+
+
+        //$(document).ready(function () {
+        //    $('#dataTable thead tr').clone(true).appendTo('#dataTable thead');
+        //    $('#dataTable thead tr:eq(1) th').each(function (i) {
+        //        var title = $(this).text();
+        //        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+        //        $('input', this).on('keyup change', function () {
+        //            if (table.column(i).search() !== this.value) {
+        //                table
+        //                    .column(i)
+        //                    .search(this.value)
+        //                    .draw();
+        //            }
+        //        });
+        //    });
+        //    var table = $('#dataTable').DataTable({
+        //        orderCellsTop: true,
+        //        scrollY: "300px",
+        //        scrollX: true,
+        //        scrollCollapse: true,
+        //        paging: true,
+        //        "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+        //        dom: 'Bfrtip',
+        //        buttons: [
+        //            {
+        //                extend: 'excelHtml5',
+        //                exportOptions: {
+        //                    columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+        //                },
+        //                filename: function () {
+        //                    var d = new Date().toISOString().split('T')[0];
+        //                    return 'MaterialSubContractSummary__' + d;
+        //                }
+        //            }
+        //        ]
+        //    });
+        //    var currentDate = new Date();
+        //    currentDate.setDate(currentDate.getDate());
+        //    $('#mindate').datepicker({
+        //        changeMonth: true,
+        //        changeYear: true,
+        //        dateFormat: 'dd-M-yy',
+        //        timeFormat: 'hh:mm:ss',
+        //        maxDate: currentDate
+        //    });
+        //    $('#maxdate').datepicker({
+        //        changeMonth: true,
+        //        changeYear: true,
+        //        dateFormat: 'dd-M-yy',
+        //        timeFormat: 'hh:mm:ss',
+        //        maxDate: currentDate
+        //    });
+        //    $("#maxdate").change(function () {
+        //        var min = $("#mindate").val();
+        //        var max = $("#maxdate").val();
+        //        $.ajax({
+        //            url: "/PMSCMaster/FiltrDateWise/",
+        //            data: { "min": min, "max": max },
+        //            type: "Get",
+        //            dataType: "html",
+        //            success: function (data) {
+        //                $("#myPartialView").html(data);
+        //                PageDesgin();
+
+        //            }
+        //        });
+        //    });
+        //});
+        //function PageDesgin() {
+        //    $('#dataTable thead tr').clone(true).appendTo('#dataTable thead');
+        //    $('#dataTable thead tr:eq(1) th').each(function (i) {
+        //        var title = $(this).text();
+        //        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+        //        $('input', this).on('keyup change', function () {
+        //            if (table.column(i).search() !== this.value) {
+        //                table
+        //                    .column(i)
+        //                    .search(this.value)
+        //                    .draw();
+        //            }
+        //        });
+        //    });
+        //    var table = $('#dataTable').DataTable({
+        //        orderCellsTop: true,
+        //        scrollY: "300px",
+        //        scrollX: true,
+        //        scrollCollapse: true,
+        //        paging: true,
+        //        "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+        //        dom: 'Bfrtip',
+        //        buttons: [
+        //            {
+        //                extend: 'excelHtml5',
+        //                exportOptions: {
+        //                    columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+        //                },
+        //                filename: function () {
+        //                    var d = new Date().toISOString().split('T')[0];
+        //                    return 'MaterialSubContractSummary_' + d;
+        //                }
+        //            }
+        //        ]
+        //    });
+        //}
+    </script>
+}
+
+

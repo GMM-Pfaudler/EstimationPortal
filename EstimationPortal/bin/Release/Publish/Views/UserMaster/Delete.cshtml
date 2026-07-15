@@ -1,0 +1,111 @@
+﻿@model SUP_CORE.EFModel.UserMasters
+@{
+    ViewBag.Title = "Delete User";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("RoleId", "Role", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.DropDownList("RoleId", ViewBag.RoleType as SelectList, "-Select-", new { @id = "RoleId", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                    @Html.ValidationMessage("RoleId", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("UserID", "Buyer ID", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("UserID", null, new { @id = "UserID", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                    @Html.ValidationMessage("UserID", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("UserName", "Buyer Name", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("UserName", null, new { @id = "UserName", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                    @Html.ValidationMessage("UserName", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Password", "Password", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("Password", null, new { @id = "Password", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                    @Html.ValidationMessage("Password", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("EmailID", "EmailID", htmlAttributes: new { @class = "control-label " })
+                                    <label class="text-danger control-label">*</label>
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBox("EmailID", null, new { @id = "EmailID", @class = "form-control form-control-sm", @autocomplete = "off",@readonly="readonly" })
+                                    @Html.ValidationMessage("EmailID", "", new { @class = "text-danger small font-weight-bold" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Active", "Active", htmlAttributes: new { @class = "control-label" })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.DropDownList("Active", new[]{
+                                           new SelectListItem(){ Text = "True", Selected = (Model.Active == false ? true:false) },
+                                           new SelectListItem(){ Text = "False", Selected = (Model.Active == true ? true:false) },
+
+                                        }, null, new { @id = "Active", @class = "form-control form-control-sm font padding-drop", @readonly = "readonly" })
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-12 m-md-2" align="center">
+                <input type="submit" value="Delete" class="btn btn-sm  btn-outline-danger col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+}
+
+

@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .welcome-container {
+        min-height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-card {
+        max-width: 700px;
+        width: 100%;
+        background: #fff;
+        border-radius: 15px;
+        padding: 50px 40px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0,0,0,.08);
+        border-top: 5px solid #4e73df;
+    }
+
+    .welcome-icon {
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        margin: auto;
+        border-radius: 50%;
+        background: #eef4ff;
+        color: #4e73df;
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .welcome-title {
+        font-size: 34px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .welcome-text {
+        font-size: 18px;
+        color: #6c757d;
+        line-height: 1.8;
+    }
+
+    .portal-name {
+        color: #4e73df;
+        font-weight: 700;
+    }
+
+    .footer-text {
+        margin-top: 35px;
+        color: #999;
+        font-size: 14px;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="welcome-container">
+        <div class="welcome-card">
+
+            <div class="welcome-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+
+            <h1 class="welcome-title">
+                Welcome
+            </h1>
+
+            <p class="welcome-text">
+                Welcome to the <span class="portal-name">Inquiry Register Portal</span>.
+            </p>
+
+            <p class="welcome-text">
+                Use the navigation menu on the left to access the available modules.
+            </p>
+
+            <hr />
+
+           
+
+        </div>
+    </div>
+</div>

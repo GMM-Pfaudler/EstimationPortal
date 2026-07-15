@@ -1,0 +1,90 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.MainMenuMaster>
+@using SUP_CORE.EFModel;
+@{
+    List<UserAccessMaster> userAccessMastersDetails = ViewBag.userAccessDetails;
+    var pUserId = Convert.ToInt16(System.Web.HttpContext.Current.Session["ID"]);
+}
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#032980">
+    <li class="nav-item dropdown no-arrow active">
+
+        <div class="sidebar-brand-icon bg-white">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <img class="card-img-top" src="~/Images/GMM-22-Corporate Logo_230x59.png" alt="lgCmpny">
+            </a>
+        </div>
+    </li>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link text-white" href="/Home/Index">
+            <i class="fas fa-tachometer-alt fa-sm fa-fw text-white"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+    @if (userAccessMastersDetails.FirstOrDefault().UserMaster_Id == 1 || userAccessMastersDetails.Count == 0)
+    {
+        foreach (var mainMenu in Model.OrderBy(t => t.MenuSequence))
+        {
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_@mainMenu.Id" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="@mainMenu.MenuIcon"></i>
+                    <span>@mainMenu.MenuName</span>
+                </a>
+                <div id="Menu_@mainMenu.Id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        @foreach (var subMenu in mainMenu.SubMenuMaster.OrderBy(t => t.SubMenuLevel))
+                        {
+                            <a class="collapse-item" href="@subMenu.SubMenuURL">
+                                <i class="@subMenu.SubMenuIcon pr-2"></i>@subMenu.SubMenuNameDisp
+                            </a>
+                        }
+                    </div>
+                </div>
+            </li>
+        }
+    }
+
+    else    if (userAccessMastersDetails.FirstOrDefault().UserMaster_Id == pUserId)
+    {
+        foreach (var mainMenu in Model.OrderBy(t => t.MenuSequence))
+        {
+            if (userAccessMastersDetails.Any(t => t.MainMenuMaster_Id == mainMenu.Id))
+            {
+                <!-- Divider -->
+                <hr class="sidebar-divider" />
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Menu_@mainMenu.Id" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="@mainMenu.MenuIcon"></i>
+                        <span>@mainMenu.MenuName</span>
+                    </a>
+                    <div id="Menu_@mainMenu.Id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            @*<h6 class="collapse-header">Custom Components:</h6>*@
+                            @foreach (var subMenu in mainMenu.SubMenuMaster.OrderBy(t => t.SubMenuLevel))
+                            {
+                                if (userAccessMastersDetails.Any(t => t.MainMenuMaster_Id == mainMenu.Id && t.SubMenuMaster_Id == subMenu.Id))
+                                {
+                                    <a class="collapse-item " href="@subMenu.SubMenuURL">
+                                        <i class="@subMenu.SubMenuIcon pr-2"></i>@subMenu.SubMenuName
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    }
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block" />
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0 bg-Blue" id="sidebarToggle"></button>
+    </div>
+ 
+</ul>

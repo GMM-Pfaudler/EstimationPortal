@@ -1,0 +1,327 @@
+﻿@using EstimationPortal.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Authorized Access | @ViewBag.Title</title>
+
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="~/Content/css/sb-admin-2.css" rel="stylesheet">
+
+    <style>
+        .btn-portal:hover {
+            background-color: #002d72b8; /* Bootstrap info color */
+            color: #fff;
+        }
+        :root {
+            --primary: #002D72;
+            --glass: rgba(255, 255, 255, 0.85);
+            --input-bg: rgba(244, 247, 252, 0.8);
+        }
+
+        body {
+            background: url('../../Images/gmmbackground2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* The Main Portal Card */
+        .portal-card {
+            display: flex;
+            width: 950px;
+            height: 550px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: transform 0.4s ease; 
+        }
+
+        /* Branding Section (Left) */
+        .brand-section {
+            flex: 1.2;
+            background: linear-gradient(135deg, var(--primary) 0%, #004fb6 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #002D72;
+            position: relative;
+        }
+
+        .brand-section::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .brand-logo { 
+            max-width: 180px;
+        }
+
+        .brand-content h2 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        /* Form Section (Right) */
+        .form-section {
+            background-color:#fdfdfd;
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header h4 {
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .form-header p {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 35px;
+        }
+
+        /* Modern Floating Input Style */
+        .input-group-modern {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group-modern i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            z-index: 5;
+            transition: color 0.3s;
+        }
+
+        .form-control-modern {
+            width: 100%;
+            padding: 16px 16px 16px 50px;
+            background: var(--input-bg);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            font-weight: 600;
+            color: #2d3748;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-modern:focus {
+            background: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 45, 114, 0.1);
+            outline: none;
+        }
+
+        .form-control-modern:focus + i {
+            color: var(--primary);
+        }
+
+        /* Password Toggle Positioning */
+        .pass-toggle {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #a0aec0;
+            z-index: 5;
+        }
+
+        /* Signature Login Button */
+        .btn-portal {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0, 45, 114, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-portal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0, 45, 114, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .btn-portal:active {
+            transform: translateY(0);
+        }
+
+        /* Error Message Styling */
+        .validation-summary {
+            background: #fff5f5;
+            color: #c53030;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #c53030;
+        }
+
+        /* Responsive Adjustments */
+        @@media (max-width: 992px) {
+            .portal-card { width: 90%; height: auto; flex-direction: column; }
+            .brand-section { padding: 40px; text-align: center; }
+            .brand-logo { margin: 0 auto 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="portal-card">
+        <div class="brand-section" style="background-image: url('../../Images/LoginSide.jpg')">
+            <img src="~/Images/Logo_180X46.png" class="brand-logo" alt="Company Logo">
+            <div class="brand-content" style="margin-top:-120px;">
+                <h2>Inquiry Register</h2>
+                @*<p class="text-black-50">360° Insight into Project Excellence.</p>*@
+            </div>
+            <div class="brand-footer">
+                <small><strong>System Version 1.0</strong></small>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-header">
+                <h4>Sign In</h4>
+                @*<p>Use your corporate credentials to continue.</p>*@
+            </div>
+
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="validation-summary">
+                        @Html.ValidationSummary(true, "")
+                    </div>
+                }
+                <div class="input-group-modern">
+                    <i class="fas fa-calendar-alt"></i>
+                    <select name="FinancialYear" id="FinancialYear" class="form-control-modern" required>
+                    </select>
+                </div>
+
+                <div class="input-group-modern">
+                    <i class="fas fa-user-circle"></i>
+                    <input type="text" name="UserID" id="UserID" class="form-control-modern" placeholder="Username / Email" required autocomplete="off">
+                </div>
+
+                <div class="input-group-modern">
+                    <i class="fas fa-key"></i>
+                    <input type="password" name="Password" id="password" class="form-control-modern" placeholder="Secure Password" required>
+                    <div class="pass-toggle" onclick="togglePass()">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-portal mt-2" id="loginBtn">
+                    Sign In <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+
+                <div class="text-center mt-5">
+                    <p style="font-size: 0.7rem; color: #a0aec0; line-height: 1.5;">
+                        Estimatation Personnel Only.<br>
+                        For support contact in case any technical issue: servicedesk@gmmpfaudler.com
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        function togglePass() {
+            const passField = document.getElementById("password");
+            const icon = document.getElementById("eye-icon");
+
+            if (passField.type === "password") {
+                passField.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                passField.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+
+        // Loading animation on click
+        $('#loginForm').on('submit', function () {
+            const btn = $('#loginBtn');
+            btn.html('<i class="fas fa-spinner fa-spin mr-2"></i> Authenticating...');
+            btn.css('opacity', '0.7');
+            btn.prop('disabled', true);
+        });
+        // Finanacial Year start
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const ddl = document.getElementById("FinancialYear");
+
+            const baseYear = 2026;
+
+            const today = new Date();
+
+            // Financial year starts from April
+            const currentFY = (today.getMonth() >= 3)
+                ? today.getFullYear()
+                : today.getFullYear() - 1;
+
+            for (let year = baseYear; year <= currentFY; year++) {
+
+                const option = document.createElement("option");
+
+                // Value: 26, 27, 28, ..., 30, 31...
+                option.value = year.toString().slice(-2);
+
+                // Text: 2026-27, 2027-28...
+                option.text = `${year}-${(year + 1).toString().slice(-2)}`;
+
+                if (year === currentFY) {
+                    option.selected = true;
+                }
+
+                ddl.appendChild(option);
+            }
+
+        });
+        // Finanacial Year end
+    </script>
+</body>
+</html>

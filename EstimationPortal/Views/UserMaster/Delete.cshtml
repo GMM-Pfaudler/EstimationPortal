@@ -1,0 +1,83 @@
+﻿@model SUP_CORE.EFModel.UserMasters
+@{
+    ViewBag.Title = "Delete User";
+}
+
+@using (Html.BeginForm("Delete", "UserMaster", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+
+    <div class="content-wrapper">
+        <div class="container-scroller">
+            <div align="right">
+                <p class="col-sm-2 border-left-primary bg-white" align="left" style="margin-right:5px;padding:5px;">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "text-primary" })
+                </p>
+            </div>
+            <div class="card border-0">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("UserName", "UserName", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBoxFor(model => model.UserName, new { @id = "UserName", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Email", "Email", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBoxFor(model => model.EmailAddress, new { @id = "EmailAddress", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Employee Code", "Employee Code", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.TextBoxFor(model => model.EmployeeCode, new { @id = "EmployeeCode", @class = "form-control form-control-sm", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="row  col-md-12">
+                                    @Html.Label("Role", "Role", htmlAttributes: new { @class = "control-label " })
+                                </div>
+                                <div class="col-md-12 row">
+                                    @Html.DropDownListFor(
+                                        model => model.RoleId,
+                                        ViewBag.RoleList as SelectList,
+                                        "-Select-",
+                                        new { @id = "Role", @class = "form-control form-control-sm", @disabled = "disabled" }
+                                    )
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="form-group col-sm-12 m-md-2" align="center">
+                <input type="submit" value="Delete" class="btn btn-sm  btn-outline-primary col-sm-1 font" />
+            </div>
+        </div>
+    </div>
+
+}
+
+

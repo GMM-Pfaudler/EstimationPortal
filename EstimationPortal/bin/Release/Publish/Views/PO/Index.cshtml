@@ -1,0 +1,318 @@
+﻿@{
+    ViewBag.Title = "Pending PO Order List";
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4  border-0">
+            <div class="card-body bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label font-weight-bold">Filters :</label>
+                        <br />
+                        <input type='text' id='search_Item' placeholder='Item' class="m-1">
+                        <input type='text' id='search_Desc' placeholder='Description' class="m-1">
+                        <input type='text' id='search_OrderNumbr' placeholder='PO Number' class="m-1" autocomplete="off">
+                        <input type='text' readonly id='search_orderdate' class="datepicker m-1" placeholder='Order date'>
+                        <input type='text' readonly id='search_dlvrydate' class="datepicker m-1" placeholder='Delivery date'> 
+                        <input type='text' id='search_salesordr' placeholder='Sales Order' class="m-1">
+                        <input type='text' id='search_warehouse' placeholder='Warehouse' class="m-1">
+                        <input type='text' id='search_buyercode' placeholder='Buyer Code' class="m-1">
+                        <input type='text' id='search_buyername' placeholder='Buyer Name' class="m-1">
+                        <input type='text' id='search_office' placeholder='Office' class="m-1">
+                        <input type='text' id='search_bpcode' placeholder='BP Code' class="m-1">
+                        <input type='text' id='search_bpname' placeholder='BP Name' class="m-1">
+                        <input type='button' id="btn_search" value="Search" class="btn btn-sm btn-outline-primary m-1" />
+                        <input type='button' id="btn_clear" value="Clear" class="btn btn-sm btn-outline-secondary m-1">
+                    </div>
+                </div>
+                <div class="table-responsive font">
+                    <table class="table text-nowrap" id="demodata" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Ordered Qty</th>
+                                <th>Pending Qty</th>
+                                <th>Unit</th>
+                                <th>Unit Price</th>
+                                <th>TTL Pending Price</th>
+                                <th>Currency</th>
+                                <th>PO</th>
+                                <th>LN</th>
+                                <th>Sequence</th>   
+                                <th>Order Date</th>
+                                <th>Delivery Date</th>
+                                <th>Size</th>
+                                <th>Drawing No</th>
+                                <th>Revision</th>
+                                <th>Warehouse</th>
+                                <th>SalesOrder</th>
+                                <th>Buyer Code</th> 
+                                <th>Buyer</th> 
+                                <th>Office</th> 
+                                <th>BP Code</th>
+                                <th>BP Name</th> 
+                                <th>Drawing Download</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            // Datapicker
+            $(".datepicker").datepicker({
+                "dateFormat": "yy-mm-dd",
+                changeYear: true,
+                changeMonth: true
+            });
+            $.fn.dataTable.moment('DD/MM/YYYY HH:mm');
+            var table = $('#demodata').dataTable({
+                "language": {
+                    "emptyTable": "No record found(s)"
+                },
+                "searching": false,
+                "processing": true,
+                "serverSide": true, 
+                "info": true,
+                "stateSave": true,
+                "lengthMenu": [[10, 20, 50, 100, 200], [10, 20, 50, 100, 200]],
+                "ajax": {
+                    "url": "@Url.Action("GetPOTableData", "PO")",
+                    "type": "POST",
+                    "data": function (data) {
+                        // Read values
+                        var order_date = $('#search_orderdate').val();
+                        var order_number = $('#search_OrderNumbr').val();
+                        var Item = $('#search_Item').val();
+                        var Desc = $('#search_Desc').val();
+                        var dlvrydate = $('#search_dlvrydate').val();
+                        var salordr = $('#search_salesordr').val(); 
+                        var warehouse = $('#search_warehouse').val();
+                        var buyercode = $('#search_buyercode').val();
+                        var buyername = $('#search_buyername').val();
+                        var bpcode = $('#search_bpcode').val();
+                        var bpname = $('#search_bpname').val();
+                        var office = $('#search_office').val();
+
+                        // Append to data
+                        data.search_orderdate = order_date;
+                        data.search_OrderNumbr = order_number;
+                        data.search_Item = Item;
+                        data.search_Desc = Desc;
+                        data.search_dlvrydate = dlvrydate;
+                        data.search_salesordr = salordr;
+
+                        data.search_warehouse = warehouse;
+                        data.search_buyercode = buyercode;
+                        data.search_buyername = buyername;
+                        data.search_bpcode = bpcode;
+                        data.search_bpname = bpname;
+                        data.search_office = office;
+                    },
+                    "beforesend": function () {
+                        $("#loader").show();
+                    },
+                    "complete": function () {
+                        $("#loader").hide();
+                    }
+                },
+                "columns": [
+                      { "data": "Item", "Name": "Item", "orderable": true }
+                    , { "data": "Description", "Name": "Description", "orderable": true }
+                    , { "data": "Ordered_Quantity", "Name": "Ordered_Quantity", "orderable": true }
+                    , { "data": "Pending_Quantity", "Name": "Pending_Quantity", "orderable": true }
+                    , { "data": "Unit", "Name": "Unit", "orderable": true }
+                    , { "data": "Purchase_Price", "Name": "Purchase_Price", "orderable": true }
+                    , { "data": "Total_Pending_Price", "Name": "Total_Pending_Price", "orderable": true }
+                    , { "data": "Currency", "Name": "Currency", "orderable": true }
+                    , { "data": "Order_Number", "Name": "Order_Number", "orderable": true }
+                    , { "data": "Line_Number", "Name": "Line_Number", "orderable": true }
+                    , { "data": "Sequence", "Name": "Sequence", "orderable": true }
+                    , { "data": "Order_Date", "Name": "Order_Date", "orderable": true }
+                    , { "data": "Planned_RC_DateLine", "Name": "Planned_RC_DateLine", "orderable": true }
+                    , { "data": "Size", "Name": "Size", "orderable": true }
+                    , { "data": "Drawing_Number", "Name": "Drawing_Number", "orderable": true }
+                    , { "data": "Revision_Number", "Name": "Revision_Number", "orderable": true }
+                    , { "data": "Warehouse", "Name": "Warehouse", "orderable": true }
+                    , { "data": "Sales_Order", "Name": "Sales_Order", "orderable": true }
+                     , { "data": "Buyer_Code", "Name": "Buyer_Code", "orderable": true }
+                   , { "data": "Buyer", "Name": "Buyer", "orderable": true }
+                    , { "data": "Office", "Name": "Office", "orderable": true }
+                    , { "data": "BP_Code", "Name": "BP_Code", "orderable": true }
+                    , { "data": "BP_Name", "Name": "BP_Name", "orderable": true }
+                    , { "data": null, "Name": "GMM_Drw_Numbr" }
+
+                ],
+                "order": [[10, "asc"]],
+                "columnDefs": [
+                       {
+                           "targets": [2],
+                           "data": null, render: function (data, type, row) {
+                               return parseFloat(data).toFixed(2);
+                           },
+                           'orderable': false,
+                       },
+                       {
+                           "targets": [5],
+                           "data": null, render: function (data, type, row) {
+                               return parseFloat(data).toFixed(2);
+                           },
+                           'orderable': false,
+                       },
+                       {
+                           "targets": [6],
+                           "data": null, render: function (data, type, row) {
+                               return parseFloat(data).toFixed(2);
+                           },
+                           'orderable': false,
+                       },
+                       {
+
+                           "targets": [3],
+                           "data": null, render: function (data, type, row) {
+                               return parseFloat(data).toFixed(2);
+                           },
+                           'orderable': false,
+                       },
+                       {
+                           "targets": [23],
+                           "data": null, render: function (data, type, row)
+                            {
+                               if (data.GMM_Drw_Numbr != null)
+                               {
+                                   return '<a class="d-inline" href="@Url.Action("DownLoadPOPDF", "PO")/?DrawingPOPath=' + data.GMM_Drw_Numbr + '">Download</a>'
+                               }
+                               else
+                               {
+                                   return null;
+                               }
+                            },
+                            'orderable': false,
+                       },
+                       {
+                         "targets": [11],
+                         "data": "Order_Date", render: function (data, type, row) {
+                          var d = data.replace('/Date(', '').replace(')/', '');
+                          newDate = new Date(parseInt(d))
+                          return FromateDateToDDMMYYYY(newDate);
+                      },
+                         'orderable': false,
+                      },
+                      {
+                           "targets": [12],
+                           "data": "Planned_RC_DateLine", render: function (data, type, row) {
+                            var d = data.replace('/Date(', '').replace(')/', '');
+                            newDate = new Date(parseInt(d))
+                            return FromateDateToDDMMYYYY(newDate);
+                      },
+                         'orderable': false,
+                     }
+                ],
+                "dom": '<"row"<"col-md-12"<"pull-right"B>l>><"custom-spacer"f>rtip',
+                "buttons": [
+                    {
+                        "extend": 'excel',
+                        "action": newexportaction,
+                        filename: function () {
+                            header: false
+                            return 'POSummary';
+                        },
+                        exportOptions: {
+                            columns: [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,17,18,19,20,21,22]
+
+                        }
+                    }
+                ]
+            });
+            $('#btn_search').on('click', function () {
+                $(table).DataTable().draw();
+            });
+            $('#btn_clear').on('click', function () {
+                $('#search_orderdate').val("");
+                $('#search_OrderNumbr').val("");
+                $('#search_Item').val("");
+                $('#search_Desc').val("");
+                $('#search_dlvrydate').val("");
+                $('#search_salesordr').val(""); 
+                $('#search_warehouse').val("");
+                $('#search_buyercode').val("");
+                $('#search_buyername').val("");
+                $('#search_bpcode').val("");
+                $('#search_bpname').val("");
+                $('#search_office').val("");
+                $(table).DataTable().draw();
+            });
+        });
+        function FromateDateToDDMMYYYY(datePar) {
+            var today = datePar;
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            if (dd < 10)
+            {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            today = dd + '-' + mm + '-' + yyyy;
+            var actdate = moment(today, 'DD/MM/YYYY').format("DD-MMM-YYYY")
+            return actdate;
+        }
+        function newexportaction(e, dt, button, config) {
+            var self = this;
+            var oldStart = dt.settings()[0]._iDisplayStart;
+            dt.one('preXhr', function (e, s, data) {
+                // Just this once, load all data from the server...
+                data.start = 0;
+                data.length = 500000000;
+                dt.one('preDraw', function (e, settings) {
+                    debugger
+                    // Call the original action function
+                    if (button[0].className.indexOf('buttons-copy') >= 0) {
+                        $.fn.dataTable.ext.buttons.copyHtml5.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-excel') >= 0) {
+                        $.fn.dataTable.ext.buttons.excelHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.excelFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-csv') >= 0) {
+                        $.fn.dataTable.ext.buttons.csvHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.csvHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.csvFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-pdf') >= 0) {
+                        $.fn.dataTable.ext.buttons.pdfHtml5.available(dt, config) ?
+                            $.fn.dataTable.ext.buttons.pdfHtml5.action.call(self, e, dt, button, config) :
+                            $.fn.dataTable.ext.buttons.pdfFlash.action.call(self, e, dt, button, config);
+                    } else if (button[0].className.indexOf('buttons-print') >= 0) {
+                        $.fn.dataTable.ext.buttons.print.action(e, dt, button, config);
+                    }
+                    dt.one('preXhr', function (e, s, data) {
+                        // DataTables thinks the first item displayed is index 0, but we're not drawing that.
+                        // Set the property to what it was before exporting.
+                        settings._iDisplayStart = oldStart;
+                        data.start = oldStart;
+                    });
+                    // Reload the grid with the original page. Otherwise, API functions like table.cell(this) don't work properly.
+                    setTimeout(dt.ajax.reload, 0);
+                    // Prevent rendering of the full data to the DOM
+                    return false;
+                });
+            });
+            dt.ajax.reload();
+        }
+    </script>
+
+}
+
+
+
+

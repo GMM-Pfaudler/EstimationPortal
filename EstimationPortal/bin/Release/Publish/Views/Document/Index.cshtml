@@ -1,0 +1,168 @@
+﻿@model IEnumerable<SUP_CORE.DTO.ProjectsListViewModel>
+@{
+    ViewBag.Title = "Document Master";
+   
+}
+<div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card border-0 mb-4">
+            <div class="card-body"> 
+                <div class="table-responsive font">
+                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-nowrap small">
+                                <th>Actions</th>
+                                <th>PO Number</th>
+                                <th>Client</th>
+                                <th>SO Number</th>
+                                <th>Facility</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr class="nowrap small">
+
+
+
+                                @if (item.SID == 2 && ViewBag.FacilityUser == "Welding" && item.WLDSubmit == false)
+                                {
+                                <td>
+                                    @Html.ActionLink("View", "ViewP", "Document", new { id = item.Id }, new { @class = "text-success" }) |
+                                    @Html.ActionLink("Submit", "Submit", "Document", new { id = item.Id }, new { @class = "text-primary" })
+                                </td>
+                                } 
+                                else if (item.SID == 2 && ViewBag.FacilityUser == "PMO" && item.PMOSubmit == false)
+                                {
+                                <td>
+                                    @Html.ActionLink("View", "ViewP", "Document", new { id = item.Id }, new { @class = "text-success" }) |
+                                    @Html.ActionLink("Submit", "Submit", "Document", new { id = item.Id }, new { @class = "text-primary" })
+                                </td>
+                                }
+                                else if (item.SID == 2 && ViewBag.FacilityUser == "Quality" && item.QLTSubmit == false)
+                                {
+                                    <td>
+                                        @Html.ActionLink("View", "ViewP", "Document", new { id = item.Id }, new { @class = "text-success" }) |
+                                        @Html.ActionLink("Submit", "Submit", "Document", new { id = item.Id }, new { @class = "text-primary" })
+                                    </td>
+                                }
+                                else if (item.SID == 2 && ViewBag.FacilityUser == "Engineering" && item.ENGSubmit == false)
+                                {
+                                    <td>
+                                        @Html.ActionLink("View", "ViewP", "Document", new { id = item.Id }, new { @class = "text-success" }) |
+                                        @Html.ActionLink("Submit", "Submit", "Document", new { id = item.Id }, new { @class = "text-primary" })
+                                    </td>
+                                }
+                                else 
+                                {
+                                    <td>
+                                        @Html.ActionLink("View", "ViewP", "Document", new { id = item.Id }, new { @class = "text-success" }) 
+                                    </td>
+                                }
+
+
+                                <td>@Html.DisplayFor(modelItem => item.PO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Client)</td>
+                                <td>@Html.DisplayFor(modelItem => item.SO)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Facility)</td>
+                                <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#dataTable thead tr').clone(true).appendTo('#dataTable thead');
+            $('#dataTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+
+            var table = $('#dataTable').DataTable({
+                destroy: true,
+                orderCellsTop: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 1 }
+
+                ],
+                "order": [[1, "desc"]],
+                "lengthMenu": [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "All"]],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5, 6]
+                        },
+                        filename: function () {
+                            var d = new Date().toISOString().split('T')[0];
+                            return 'BuyerLoginSummary_' + d;
+                        }
+                    }
+                ]
+
+
+            });
+        });
+    </script>
+    <style>
+        #Approvedstatus {
+            border-radius: 25px;
+            background: #7ac745;
+            padding: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+
+        #Primarystatus {
+            border-radius: 25px;
+            background: #032980;
+            padding: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+
+        #Pendingstatus {
+            border-radius: 25px;
+            background: #ffeb00;
+            padding: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: #707070;
+        }
+
+        #Rejectstatus {
+            border-radius: 25px;
+            background: #e74a3b;
+            padding: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+    </style>
+}
+

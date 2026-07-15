@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SUP_CORE.EFModel.PODetailsTr>
+
+
+<div class="table-responsive font">
+    <table class="table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-nowrap" style="color:black">
+                <th>Item</th>
+                <th>Description</th>
+                <th>Ordered Qty</th>
+                <th>Pending Qty</th>
+                <th>Unit</th>
+                <th>Unit Price</th>
+                <th>Currency</th>
+                <th>PO</th>
+                <th>LN</th>
+                <th>Sequence</th>
+                <th>PO Date</th>
+                <th>Delivery Date</th>
+                <th>Size</th>
+                <th>Drawing</th>
+                <th>Revision</th>
+                <th>Warehouse</th>
+                <th>SalesOrder</th>
+                <th>Buyer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr class="nowrap small">
+                    <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ordered_Quantity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pending_Quantity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Unit)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Purchase_Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Currency)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Sequence)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Order_Date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Planned_RC_DateLine)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Size)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

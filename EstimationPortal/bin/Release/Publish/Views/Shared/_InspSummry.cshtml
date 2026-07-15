@@ -1,0 +1,421 @@
+﻿@model IEnumerable<SUP_CORE.DTO.QLT_PODTO>
+@{
+    Layout = null;
+}
+<div class="table-responsive font">
+    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+        <thead>
+            <tr class="text-wrap small">
+                <th>Status</th>
+                <th>IC No.</th>
+                <th>Office</th>
+                <th>WH</th>
+                <th>SO</th>
+                <th>BP Code</th>
+                <th>BP Name</th>
+                <th>PO</th>
+                <th>LN</th>
+                <th>Item Code</th>
+                <th>Item Description</th>
+                <th>Offered Qty</th>
+                <th>Buyer Code</th>
+                <th>Buyer Name</th>
+                <th>Drawing</th>
+                <th>Drw Rev.</th>
+                <th>QI Engineer Name</th>
+                <th>IC Rev.</th>
+                <th>Call Submited Date</th>
+                <th>Call Assigned Date</th>
+                <th>Inspection Planned Date</th>
+                <th>Call Attended Date</th>
+                <th>Total Hrs</th>
+                <th>Rejection Reason</th>
+                <th>Supplier File</th>
+                <th>Inspection File</th>
+                <th>Supplier Remarks</th>
+                <th>QC Manager Remarks</th>
+                <th>QC Engineer Remarks</th>
+                <th>Logs</th>
+            </tr>
+        </thead>
+        <tbody class="text-nowrap">
+            @foreach (var item in Model)
+            {
+                var Dif = "NA";
+                var Hours = "0";
+                var Days = "0";
+
+                if (Session["RoleID"].ToString() == "3" && item.Supplier_ID == Session["UserID"].ToString())
+                {//supplier
+                    if (item.SuppOfferDate != null && item.EngAttendedDate != null)
+                    {
+                        DateTime date1 = item.SuppOfferDate ?? DateTime.Now;
+                        DateTime date2 = item.EngAttendedDate ?? DateTime.Now;
+                        TimeSpan ts = date2 - date1;
+
+                        Days = ts.Days.ToString();
+                        Hours = ts.Hours.ToString();
+                        Dif = Days + " Days  " + Hours + " Hrs";
+                    }
+                    <tr class="nowrap small" style="text-transform: uppercase;">
+                        <td>
+                            @if (item.Status == "Accepted")
+                            {
+                                <b id="Accepted">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Waiver")
+                            {
+                                <b id="Waiver">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Rejected")
+                            {
+                                <b id="Rejected">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CTNumbr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Supplier_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BP_Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualQty)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer_Code)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GMM_Drw_Rev)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QIEngineer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SuppOfferDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QAssignedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InspPlannedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EngAttendedDate)</td>
+                        <td>@Dif</td>
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td>
+                        @if (item.GMM_Drw_Numbr != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })</td>}
+                        else
+                        {
+                            <td></td>}
+                        @if (item.GMM_Insp_File != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFileInsp", new { Doc2 = item.GMM_Insp_File })</td>}
+                        else
+                        {
+                            <td></td>}
+                        <td>@Html.DisplayFor(modelItem => item.Supp_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QLT_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td>@Html.ActionLink("View", "QLTInspTrxn", "Report", new { id1 = item.CTNumbr }, new { @class = " " })   </td>
+                    </tr>
+                }
+                else if (Session["RoleID"].ToString() == "4" || Session["RoleID"].ToString() == "34")
+                { //buyer && Planning
+                    if (item.SuppOfferDate != null && item.EngAttendedDate != null)
+                    {
+                        DateTime date1 = item.SuppOfferDate ?? DateTime.Now;
+                        DateTime date2 = item.EngAttendedDate ?? DateTime.Now;
+                        TimeSpan ts = date2 - date1;
+
+                        Days = ts.Days.ToString();
+                        Hours = ts.Hours.ToString();
+                        Dif = Days + " Days  " + Hours + " Hrs";
+                    }
+                    <tr class="nowrap small" style="text-transform: uppercase;">
+                        <td> 
+                            @if (item.Status == "Accepted")
+                            {
+                                <b id="Accepted">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Waiver")
+                            {
+                                <b id="Waiver">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Rejected")
+                            {
+                                <b id="Rejected">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CTNumbr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Supplier_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BP_Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualQty)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer_Code)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GMM_Drw_Rev)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QIEngineer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SuppOfferDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QAssignedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InspPlannedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EngAttendedDate)</td>
+                        <td>@Dif</td>
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td>
+                        @if (item.GMM_Drw_Numbr != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })</td>}
+                        else
+                        {
+                            <td></td>}
+                        @if (item.GMM_Insp_File != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFileInsp", new { Doc2 = item.GMM_Insp_File })</td>}
+                        else
+                        {
+                            <td></td>}
+                        <td>@Html.DisplayFor(modelItem => item.Supp_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QLT_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td>@Html.ActionLink("View", "QLTInspTrxn", "Report", new { id1 = item.CTNumbr }, new { @class = " " })   </td>
+                    </tr>
+                }
+                else if (Session["RoleID"].ToString() == "7" && item.EngId.ToString()== Session["ENGId"].ToString())
+                { //QLT ENG
+                    if (item.SuppOfferDate != null && item.EngAttendedDate != null)
+                    {
+                        DateTime date1 = item.SuppOfferDate ?? DateTime.Now;
+                        DateTime date2 = item.EngAttendedDate ?? DateTime.Now;
+                        TimeSpan ts = date2 - date1;
+
+                        Days = ts.Days.ToString();
+                        Hours = ts.Hours.ToString();
+                        Dif = Days + " Days  " + Hours + " Hrs";
+                    }
+                    <tr class="nowrap small" style="text-transform: uppercase;">
+                        <td>
+                            @if (item.Status == "Accepted")
+                            {
+                                <b id="Accepted">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Waiver")
+                            {
+                                <b id="Waiver">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Rejected")
+                            {
+                                <b id="Rejected">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CTNumbr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Supplier_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BP_Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualQty)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer_Code)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GMM_Drw_Rev)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QIEngineer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SuppOfferDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QAssignedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InspPlannedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EngAttendedDate)</td>
+                        <td>@Dif</td>
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td>
+                        @if (item.GMM_Drw_Numbr != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })</td>}
+                        else
+                        {
+                            <td></td>}
+                        @if (item.GMM_Insp_File != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFileInsp", new { Doc2 = item.GMM_Insp_File })</td>}
+                        else
+                        {
+                            <td></td>}
+                        <td>@Html.DisplayFor(modelItem => item.Supp_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QLT_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td>@Html.ActionLink("View", "QLTInspTrxn", "Report", new { id1 = item.CTNumbr }, new { @class = " " })   </td>
+                    </tr>
+                }
+                else if (Session["RoleID"].ToString() == "6" && item.Office == Session["PO"].ToString())
+                { //QltMgr
+                    if (item.SuppOfferDate != null && item.EngAttendedDate != null)
+                    {
+                        DateTime date1 = item.SuppOfferDate ?? DateTime.Now;
+                        DateTime date2 = item.EngAttendedDate ?? DateTime.Now;
+                        TimeSpan ts = date2 - date1;
+
+                        Days = ts.Days.ToString();
+                        Hours = ts.Hours.ToString();
+                        Dif = Days + " Days  " + Hours + " Hrs";
+                    }
+                    <tr class="nowrap small" style="text-transform: uppercase;">
+                        <td>
+                            @if (item.Status == "Accepted")
+                            {
+                                <b id="Accepted">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Waiver")
+                            {
+                                <b id="Waiver">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Rejected")
+                            {
+                                <b id="Rejected">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CTNumbr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Supplier_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BP_Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualQty)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer_Code)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GMM_Drw_Rev)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QIEngineer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SuppOfferDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QAssignedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InspPlannedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EngAttendedDate)</td>
+                        <td>@Dif</td>
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td>
+                        @if (item.GMM_Drw_Numbr != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })</td>}
+                        else
+                        {
+                            <td></td>}
+                        @if (item.GMM_Insp_File != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFileInsp", new { Doc2 = item.GMM_Insp_File })</td>}
+                        else
+                        {
+                            <td></td>}
+                        <td>@Html.DisplayFor(modelItem => item.Supp_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QLT_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td>@Html.ActionLink("View", "QLTInspTrxn", "Report", new { id1 = item.CTNumbr }, new { @class = " " })   </td>
+                    </tr>
+                }
+                else if (Session["RoleID"].ToString() == "1" || Session["RoleID"].ToString() == "2")
+                { //admin& super admin
+                    if (item.SuppOfferDate != null && item.EngAttendedDate != null)
+                    {
+                        DateTime date1 = item.SuppOfferDate ?? DateTime.Now;
+                        DateTime date2 = item.EngAttendedDate ?? DateTime.Now;
+                        TimeSpan ts = date2 - date1;
+
+                        Days = ts.Days.ToString();
+                        Hours = ts.Hours.ToString();
+                        Dif = Days + " Days  " + Hours + " Hrs";
+                    }
+                    <tr class="nowrap small" style="text-transform: uppercase;">
+                        <td>
+                            @if (item.Status == "Accepted")
+                            {
+                                <b id="Accepted">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Waiver")
+                            {
+                                <b id="Waiver">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                            else if (item.Status == "Rejected")
+                            {
+                                <b id="Rejected">@Html.DisplayFor(modelItem => item.Status)</b>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.CTNumbr)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Office)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Warehouse)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Sales_Order)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Supplier_ID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BP_Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Order_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Line_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualQty)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer_Code)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Buyer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Drawing_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GMM_Drw_Rev)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QIEngineer)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Revision_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SuppOfferDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QAssignedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InspPlannedDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EngAttendedDate)</td>
+                        <td>@Dif</td>
+                        <td>@Html.DisplayFor(modelItem => item.RReason)</td>
+                        @if (item.GMM_Drw_Numbr != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFile", new { Doc = item.GMM_Drw_Numbr })</td>}
+                        else
+                        {
+                            <td></td>}
+                        @if (item.GMM_Insp_File != null)
+                        {
+                            <td>@Html.ActionLink("Download", "DownLoadFileInsp", new { Doc2 = item.GMM_Insp_File })</td>}
+                        else
+                        {
+                            <td></td>}
+                        <td>@Html.DisplayFor(modelItem => item.Supp_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.QLT_Remarks)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td>@Html.ActionLink("View", "QLTInspTrxn", "Report", new { id1 = item.CTNumbr }, new { @class = " " })   </td>
+                    </tr>
+                }
+
+
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    #Accepted {
+        border-radius: 25px;
+        background: #7ac745;
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        color: white;
+    }
+
+    #Rejected {
+        border-radius: 25px;
+        background: #f01e2c;
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        color: white;
+    }
+
+    #Waiver {
+        border-radius: 25px;
+        background: #032980;
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        color: white;
+    }
+</style>

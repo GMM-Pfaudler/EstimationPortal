@@ -1,0 +1,622 @@
+﻿@model SUP_CORE.EFModel.Tbl_InquiryMasters
+@{
+    ViewBag.Title = "Edit Inquiry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* start toggle */
+    /* The Wide Track */
+    .side-toggle-container {
+        width: 70px; /* Reduced from 80px to 70px */
+        height: 30px;
+        background-color: #423d3e7d; /* Off State Gray/Red */
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        display: inline-block;
+    }
+
+    /* The Sliding Thumb */
+    .side-toggle-thumb {
+        width: 22px;
+        height: 22px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: 4px; /* Flawless 4px gap on the left */
+        box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        transition: left 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Active State (ON) */
+    .side-toggle-container.active {
+        background-color: #10b981; /* Premium Green */
+    }
+
+        /* Move thumb completely to the right side flawlessly */
+        .side-toggle-container.active .side-toggle-thumb {
+            /* Math remains perfect: 100% of 70px minus 26px (22px circle + 4px gap) leaves exactly a 4px gap on the right! */
+            left: calc(100% - 26px);
+        }
+    /* end toggle */
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .select2-selection--single {
+        height: 38px !important;
+        padding-top: 4px;
+    }
+    .required-label::after {
+        content: " *";
+        color: red;
+        font-size: 14px; /* adjust if needed */
+        font-weight: bold;
+    }
+
+    .field-icon {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        cursor: pointer;
+        color: #6c757d;
+    }
+    /* Container styling */
+    .order-form-container {
+        background-color: #f8fafc;
+        min-vh: 100vh;
+    }
+
+    /* Custom Input Styling to fix misalignment */
+    /*.custom-input {
+        border: none !important;
+        background-color: #f1f5f9 !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        color: #1e293b !important;
+        transition: all 0.2s ease;
+    }*/
+
+        .custom-input:focus {
+            background-color: #ffffff !important;
+            box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1) !important;
+            outline: 1px solid #00338d !important;
+        }
+
+    /* Checkbox Alignment */
+    .custom-checkbox .form-check-input {
+        width: 1.25em;
+        height: 1.25em;
+        margin-top: 0.15em;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .custom-checkbox .form-check-input:checked {
+            background-color: #00338d;
+            border-color: #00338d;
+        }
+
+    /* Label Styling */
+    .custom-field label {
+        letter-spacing: 0.5px;
+        font-size: 0.75rem;
+        display: block;
+    }
+
+    /* Button Hover */
+    .btn-primary:hover {
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+    }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="~/Content/css/EditProject.css" rel="stylesheet">
+
+<div class="order-form-container">
+    <div class="container-fluid py-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center page-header-container mb-4">
+            <div class="PageHeading">
+                <h2 class="fw-bold mb-1" style="color: #00338d;">@ViewBag.Title</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0" style="background:transparent; padding:0;">
+                        <li class="breadcrumb-item text-muted">Inquiry Master</li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Edit Inquiry</li>
+                    </ol>
+                </nav>
+            </div>
+            <a href="@Url.Action("Index")" class="btn-animate-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to List</span>
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="border-radius:15px;">
+            @*<div class="card-header border-0 py-3" style="background: #00338d;">
+            <h5 class="text-white mb-0 fw-bold"><i class="fas fa-clipboard-list me-2"></i> Update Information</h5>
+        </div>*@
+            <div class="card-header border-0 py-3 bg-transparent">
+                <span class="custom-tab">
+                    <i class="fas fa-clipboard-list me-2"></i> Update Information
+                </span>
+            </div>
+            
+            <div class="card-body p-4 p-lg-5 bg-white">
+
+                @using (Html.BeginForm("Edit", "InquiryMaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <!-- ================= BASIC INFORMATION ================= -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header fw-bold text-primary">📌 Basic Information</div>
+                        <div class="card-body">
+                            @*<div class="row g-4">
+
+                        <div class="col-md-2">
+                            <label class="required-label">SF No</label>
+                            @Html.TextBoxFor(m => m.SFNo, new { @class = "form-control custom-input" })
+                            @Html.ValidationMessageFor(m => m.SFNo, "", new { @class = "text-danger small" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label>Sales Person</label>
+                            @Html.DropDownListFor(m => m.SalesPerson, ViewBag.SalesPersonList as List<SelectListItem>, "-Select-", new { @class = "form-control custom-input" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label>Inquiry Receipt Date</label>
+                            @Html.TextBoxFor(m => m.InqReceiptDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label>Inquiry Type</label>
+                            @Html.DropDownListFor(m => m.InqType, ViewBag.InqTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <label>Dom / Exp</label>
+                            @Html.DropDownListFor(m => m.DomExp,
+                                new List<SelectListItem> {
+                                    new SelectListItem { Text = "Domestic", Value = "Domestic" },
+                                    new SelectListItem { Text = "Export", Value = "Export" }
+                                }, "-Select-", new { @class = "form-control custom-input" })
+                        </div>
+                        <div class="col-md-2">
+                            <label>Sub Type</label>
+                            @Html.DropDownListFor(m => m.SubType, ViewBag.SubTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                        </div>
+
+                    </div>
+                    <div class="row mt-3">
+
+                        <div class="col-md-2">
+                            <label>Due Date</label>
+                            @Html.TextBoxFor(m => m.DueDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                        </div>
+
+                        <div class="col-md-3">
+                            <label>Actual Submission Date</label>
+                            @Html.TextBoxFor(m => m.ActualSubDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                        </div>
+                        <div class="col-md-2">
+                            <label>Enquiry Status</label>
+                            @Html.DropDownListFor(m => m.EnqStatus, ViewBag.EnqStatusList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                        </div>
+                        <div class="col-md-2">
+                            <label>Status</label>
+                            @Html.DropDownListFor(m => m.IsDelete,
+                                new List<SelectListItem> {
+                                    new SelectListItem { Text = "Active", Value = "false" },
+                                    new SelectListItem { Text = "Deactive", Value = "true" }
+                                }, new { @class = "form-control custom-input" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>End User / Client</label>
+                            @Html.TextBoxFor(m => m.Client, new { @class = "form-control custom-input" })
+                        </div>
+                    </div>*@
+                            <div class="row g-4">
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label class="required-label">SF No</label>
+
+                                    @Html.TextBoxFor(m => m.SFNo,
+                                    new { @class = "form-control custom-input" })
+
+                                    @Html.ValidationMessageFor(m => m.SFNo, "",
+                                    new { @class = "text-danger small" })
+                                </div>
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Sales Person</label>
+
+                                    @Html.DropDownListFor(m => m.SalesPerson,
+                                    ViewBag.SalesPersonList as List<SelectListItem>,
+                                    "-Select-",
+                                    new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-xl-3 col-lg-3 col-md-4">
+                                    <label class="text-nowrap">Inquiry Receipt Date</label>
+
+                                    @Html.TextBoxFor(m => m.InqReceiptDate,
+                                    "{0:yyyy-MM-dd}",
+                                    new
+                                    {
+                                        type = "date",
+                                        @class = "form-control custom-input"
+                                    })
+                                </div>
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Inquiry Type</label>
+
+                                    @Html.DropDownListFor(m => m.InqType,
+                                    ViewBag.InqTypeList as List<SelectListItem>,
+                                    "-- Select --",
+                                    new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Dom / Exp</label>
+
+                                    @Html.DropDownListFor(m => m.DomExp,
+                                    new List<SelectListItem>
+                                    {
+                                        new SelectListItem { Text = "Domestic", Value = "Domestic" },
+                                        new SelectListItem { Text = "Export", Value = "Export" }
+                                    },
+                                    "-Select-",
+                                    new { @class = "form-control custom-input" })
+                                </div>
+
+                            </div>
+
+                            <div class="row g-4 mt-3">
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Sub Type</label>
+
+                                    @Html.DropDownListFor(m => m.SubType,
+                                    ViewBag.SubTypeList as List<SelectListItem>,
+                                    "-- Select --",
+                                    new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Due Date</label>
+
+                                    @Html.TextBoxFor(m => m.DueDate,
+                                    "{0:yyyy-MM-dd}",
+                                    new
+                                    {
+                                        type = "date",
+                                        @class = "form-control custom-input",
+                                        id = "DueDate"
+
+                                    })
+                                </div>
+
+                                <div class="col-xl-3 col-lg-3 col-md-4">
+                                    <label class="text-nowrap">Actual Submission Date</label>
+
+                                    @Html.TextBoxFor(m => m.ActualSubDate,
+                                    "{0:yyyy-MM-dd}",
+                                    new
+                                    {
+                                        type = "date",
+                                        @class = "form-control custom-input"
+                                    })
+                                </div>
+
+                                <div class="col-xl-2 col-lg-3 col-md-4">
+                                    <label>Enquiry Status</label>
+
+                                    @Html.DropDownListFor(m => m.EnqStatus,
+                                    ViewBag.EnqStatusList as List<SelectListItem>,
+                                    "-- Select --",
+                                    new { @class = "form-control custom-input" })
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-4">
+                                    <label>End User / Client</label>
+
+                                    @Html.TextBoxFor(m => m.Client,
+                                    new { @class = "form-control custom-input" })
+                                </div>
+
+
+                            </div>
+                            <div class="row g-4 mt-3">
+                                <div class="col-md-3">
+                                    <label>EPC / Licensor</label>
+                                    @Html.TextBoxFor(m => m.EPC, new { @class = "form-control custom-input" })
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Update File</label>
+                                    @Html.TextBoxFor(m => m.SelectedFile, null, new { @id = "SelectedFile", type = "file", @class = "form-control custom-input" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ================= PROJECT DETAILS ================= -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header fw-bold text-primary">🏗️ Project Details</div>
+                        <div class="card-body">
+                            <div class="row g-4">
+
+                                <div class="col-md-2">
+                                    <label>Project Number</label>
+                                    @Html.TextBoxFor(m => m.ProjectNo, new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Project Status</label>
+                                    @Html.DropDownListFor(m => m.ProjStatus,
+                                        new List<SelectListItem> {
+                                            new SelectListItem { Text = "Won", Value = "Won" },
+                                            new SelectListItem { Text = "Lost", Value = "Lost" },
+                                            new SelectListItem { Text = "Closed", Value = "Closed" },
+                                            new SelectListItem { Text = "Unknown", Value = "Unknown" },
+                                            new SelectListItem { Text = "Live", Value = "Live" }
+                                        }, "-Select-", new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Value (in Rs)</label>
+                                    @Html.TextBoxFor(m => m.RsValue, new { @class = "form-control custom-input" })
+                                </div>
+
+
+
+
+                                <div class="col-md-3">
+                                    <label>Project Received Date</label>
+                                    @Html.TextBoxFor(m => m.ProjReceivedDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control custom-input" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ================= TECHNICAL ================= -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header fw-bold text-primary">⚙️ Technical & Estimation Details</div>
+                        <div class="card-body">
+                            <div class="row g-4">
+
+                                <div class="col-md-2">
+                                    <label>Equipment Type</label>
+                                    @Html.DropDownListFor(m => m.EquipType, ViewBag.EquipTypeList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Tag Qty</label>
+                                    @Html.TextBoxFor(m => m.TagQty, new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label>Total Qty</label>
+                                    @Html.TextBoxFor(m => m.TotalQty, new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Major MOC</label>
+                                    @Html.TextBoxFor(m => m.MajorMOC, new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Design Scope</label>
+                                    @Html.DropDownListFor(m => m.DesignScope,
+                                        new List<SelectListItem> {
+                                            new SelectListItem { Text = "Thermal", Value = "Thermal" },
+                                            new SelectListItem { Text = "Mechanical", Value = "Mechanical" },
+                                            new SelectListItem { Text = "Thermal + Mechanical", Value = "Thermal + Mechanical" },
+                                            new SelectListItem { Text = "Not Applicable", Value = "Not Applicable" }
+                                        }, "-Select-", new { @class = "form-control custom-input" })
+                                </div>
+
+                            </div>
+                            <div class="row g-4 mt-3">
+                                <div class="col-md-3">
+                                    <label>Thermal Engineer</label>
+                                    @Html.DropDownListFor(m => m.TE, ViewBag.TEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Praposal Engineer</label>
+                                    @Html.DropDownListFor(m => m.PE, ViewBag.PEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Estimation Engineer</label>
+                                    @Html.DropDownListFor(m => m.EE, ViewBag.EEList as List<SelectListItem>, "-- Select --", new { @class = "form-control custom-input" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= REMARKS ================= -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header fw-bold text-primary">📝 Remarks</div>
+                        <div class="card-body">
+                            @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control custom-input", rows = 3 })
+                        </div>
+                    </div>
+                    @*<div class="row g-4 mt-3">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="form-check mt-2">
+                        @Html.CheckBoxFor(m=>m.IsMailTrigger, new { @class = "form-check-input", id = "IsMailTrigger" })
+                        <label class="form-check-label ps-3" for="IsMailTrigger" style="cursor: pointer;">
+                            Send email notification to engineer?
+                        </label>
+                    </div>
+                </div>
+            </div>*@
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+
+                                <div class="side-toggle-container" id="toggleWrapper">
+                                    @Html.CheckBoxFor(m => m.IsMailTrigger, new { id = "IsMailTrigger", style = "display:none;" })
+                                    <div class="side-toggle-thumb" id="toggleThumb"></div>
+                                </div>
+
+                                <label class="form-check-label ps-3 fw-semibold text-secondary" style="cursor: default; user-select: none;">
+                                    Send email notification to engineer?
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm mb-4 mt-3" id="mailNotesDiv" style="display:none;">
+                        <div class="card-header fw-bold text-primary">📝 Mail Notes</div>
+                        <div class="card-body">
+                            @Html.TextAreaFor(m => m.MailNotes, new { @class = "form-control custom-input", rows = 3 })
+                        </div>
+                    </div>
+                    <!-- ================= ACTIONS ================= -->
+                    <div class="col-12 mt-5 d-flex justify-content-end gap-2 pt-4 border-top">
+                        <a href="@Url.Action("Index")" class="btn btn-light rounded-pill px-4 fw-bold border" style="margin-right:10px;">Cancel</a>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" style="background: #00338d; border:none;">
+                            Update
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#SalesPerson').select2({
+            //placeholder: "-Select-",
+            //allowClear: true,
+            //width: '100%'
+        });
+        function checkStatus() {
+
+            var dueDateVal = $('#DueDate').val();
+            var actualSubDateVal = $('#ActualSubDate').val();
+
+            // CASE 1: Completed
+            if (actualSubDateVal !== '') {
+
+                $('#EnqStatus').val(
+                    $('#EnqStatus option').filter(function () {
+                        return $(this).text().trim() === 'Completed';
+                    }).val()
+                );
+
+                return;
+            }
+
+            // CASE 2: Overdue check
+            if (dueDateVal !== '' && actualSubDateVal === '') {
+
+                var dueDate = new Date(dueDateVal);
+                dueDate.setHours(0, 0, 0, 0);
+
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                if (dueDate < today) {
+
+                    $('#EnqStatus').val(
+                        $('#EnqStatus option').filter(function () {
+                            return $(this).text().trim() === 'Overdue';
+                        }).val()
+                    );
+
+                } else {
+
+                    $('#EnqStatus').val('');
+                }
+
+                return;
+            }
+
+            // CASE 3: Default
+            $('#EnqStatus').val('');
+        }
+
+        $('#DueDate').change(function () {
+            checkStatus();
+        });
+
+        $('#ActualSubDate').change(function () {
+            checkStatus();
+        });
+        
+    });
+    $(document).ready(function () {
+        const $container = $('#toggleWrapper');
+        const $checkbox = $('#IsMailTrigger');
+
+        // Sync initial state on page load
+        if ($checkbox.is(':checked')) {
+            $container.addClass('active');
+        }
+
+        $container.on('click', function (e) {
+            // Find the horizontal position of the click relative to the toggle box
+            const containerWidth = $(this).outerWidth();
+            const clickX = e.pageX - $(this).offset().left;
+
+            // Determine if click happened on the left or right half
+            if (clickX < containerWidth / 2) {
+                // Clicked Left Side -> Force FALSE (OFF)
+                setToggleState(false);
+            } else {
+                // Clicked Right Side -> Force TRUE (ON)
+                setToggleState(true);
+            }
+        });
+
+        function setToggleState(shouldBeActive) {
+            // Only update if the state is actually changing
+            if ($checkbox.is(':checked') !== shouldBeActive) {
+                $checkbox.prop('checked', shouldBeActive).change(); // Notify ASP.NET
+
+                if (shouldBeActive) {
+                    $container.addClass('active');
+                } else {
+                    $container.removeClass('active');
+                }
+            }
+        }
+    });
+    $(document).ready(function () {
+
+        function toggleMailNotes() {
+            if ($("#IsMailTrigger").is(":checked")) {
+                $("#mailNotesDiv").slideDown();
+            } else {
+                $("#mailNotesDiv").slideUp();
+                $("#MailNotes").val(""); // Clear textarea
+            }
+        }
+
+        // Initial page load
+        toggleMailNotes();
+
+        // Toggle click
+        $("#IsMailTrigger").change(function () {
+            toggleMailNotes();
+        });
+
+    });
+</script>

@@ -1,0 +1,233 @@
+﻿:root {
+    --primary: #4f46e5;
+    --primary-soft: #eef2ff;
+    --success: #10b981;
+    --success-soft: #ecfdf5;
+    --danger: #ef4444;
+    --danger-soft: #fef2f2;
+    --bg-main: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+}
+
+
+
+#content {
+    padding: 10px 15px 15px 15px;
+}
+
+/* Page Header Styling */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.breadcrumb-custom {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Modern Table Card */
+.table-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    border: none;
+    overflow: hidden;
+}
+
+/* DataTable Overrides */
+.dataTables_wrapper {
+    padding: 20px 0;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+    border: none;
+}
+
+thead th {
+    /*background-color: #f8fafc;
+        color: var(--text-muted);*/
+    background-color: rgba(20, 125, 201, 2);
+    color: white;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+tbody td {
+    padding: 14px 20px !important;
+    vertical-align: middle !important;
+    color: #334155;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+tbody tr:hover {
+    background-color: rgb(245, 245, 245) !important;
+}
+
+/* Avatar Styling */
+.emp-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+/* Badge Styling */
+.badge-soft-success {
+    background-color: var(--success-soft);
+    color: var(--success);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.badge-soft-danger {
+    background-color: var(--danger-soft);
+    color: var(--danger);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.btn-create {
+    /*background-color: var(--primary);*/
+    background-color: #0075C9;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+
+    .btn-create i {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-create:hover {
+        background-color: #f8fafc;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        color: #004692 !important; /* Slightly darker indigo */
+    }
+
+        /* The Arrow Animation */
+        .btn-create:hover i {
+            transform: translateX(-5px);
+        }
+.action-btn-container {
+    display: inline-flex;
+    gap: 8px; /* Spaces the buttons perfectly apart */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base style sharing rules for all action buttons */
+.btn-edit-icon, .btn-copy-icon, .btn-delete-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none; /* Prevents underlines on links */
+}
+
+/* Edit Icon Color Rules (Your Original Theme) */
+.btn-edit-icon {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+    .btn-edit-icon:hover {
+        background: var(--primary);
+        color: white;
+    }
+
+/* Copy Icon Color Rules (Informational Blue Accent) */
+.btn-copy-icon {
+    color: #2b6cb0;
+    background: #ebf8ff;
+}
+
+    .btn-copy-icon:hover {
+        background: #2b6cb0;
+        color: white;
+    }
+
+/* Delete Icon Color Rules (Alert/Danger Red Accent) */
+.btn-delete-icon {
+    color: #e53e3e;
+    background: #fff5f5;
+}
+
+    .btn-delete-icon:hover {
+        background: #e53e3e;
+        color: white;
+    }
+/*.btn-edit-icon {
+    color: var(--primary);
+    background: var(--primary-soft);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+    .btn-edit-icon:hover {
+        background: var(--primary);
+        color: white;
+    }*/
+
+/* Horizontal Scrollbar Customization */
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
