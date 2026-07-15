@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using DocumentFormat.OpenXml.EMMA;
 using EstimationPortal.CustomeAttribute;
 using SUP_CORE.EFModel;
+using SUP_CORE.EFModelViews;
 using SUP_DAL.EFContextProvider;
 
 namespace EstimationPortal.Controllers
@@ -399,6 +400,32 @@ namespace EstimationPortal.Controllers
                 .FirstOrDefault();
 
             return Json(client, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult UIndex()
+        {
+            string financialYear = Session["FinancialYear"]?.ToString();
+            var result = _db.Tbl_TqRegisters.Where(s => s.FinancialYear == financialYear && s.IsDelete == false).OrderByDescending(s => s.Id).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    var InqMasterData = _db.Tbl_InquiryMasters.Where(s => s.Id.ToString() == item.SFNo.Trim() && s.IsDelete == false).FirstOrDefault();
+                    if (InqMasterData != null)
+                    {
+                        item.Client = InqMasterData.Client != null ? InqMasterData.Client.Trim() : "";
+                        item.SFNo = InqMasterData.SFNo != null ? InqMasterData.SFNo.Trim() : "";
+
+                        item.TE = _db.Tbl_EngineerMasters.Where(s => s.Id.ToString() == InqMasterData.TE.Trim() && s.IsDelete == false).Select(s => s.EngineerName).FirstOrDefault();
+                        item.PE = _db.Tbl_EngineerMasters.Where(s => s.Id.ToString() == InqMasterData.PE.Trim() && s.IsDelete == false).Select(s => s.EngineerName).FirstOrDefault();
+                        item.EE = _db.Tbl_EngineerMasters.Where(s => s.Id.ToString() == InqMasterData.EE.Trim() && s.IsDelete == false).Select(s => s.EngineerName).FirstOrDefault();
+                    }
+
+
+                }
+            }
+            return View(result);
+
         }
     }
 }
